@@ -6,17 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2020 | DP&#39;s BLOG</title>
+  <title>系统故障对策 | DP&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="blogs">
-<meta property="og:type" content="website">
-<meta property="og:title" content="DP&#39;s BLOG">
-<meta property="og:url" content="http://example.com/archives/2020/index.html">
+  <meta name="description" content="可恢复操作的问题和模型这个与操作系统的文件系统在很多问题上都是同样的处理方法，在OS日志系统的介绍中主要使用的是redo方式来处理。 故障模式错误数据输入有的数据错误是不可能被检测到的，例如：如果某个职员把一个电话号码的一位输入错了。但是如果职员一楼了你的电话号码中的一位，数据就显然是错的了，处理数据输入错误的主要技术就是编写约数和触发器来找出被认为是错误的数据。 介质故障磁盘局部故障，即只改变少">
+<meta property="og:type" content="article">
+<meta property="og:title" content="系统故障对策">
+<meta property="og:url" content="http://example.com/2020/10/12/%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E5%AF%B9%E7%AD%96/index.html">
 <meta property="og:site_name" content="DP&#39;s BLOG">
-<meta property="og:description" content="blogs">
+<meta property="og:description" content="可恢复操作的问题和模型这个与操作系统的文件系统在很多问题上都是同样的处理方法，在OS日志系统的介绍中主要使用的是redo方式来处理。 故障模式错误数据输入有的数据错误是不可能被检测到的，例如：如果某个职员把一个电话号码的一位输入错了。但是如果职员一楼了你的电话号码中的一位，数据就显然是错的了，处理数据输入错误的主要技术就是编写约数和触发器来找出被认为是错误的数据。 介质故障磁盘局部故障，即只改变少">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201012111331062.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201012112828389.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201012112834647.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201012112842531.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201012120758989.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201012115514888.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201012141519945.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201016222830742.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201016223334561.png">
+<meta property="article:published_time" content="2020-10-12T04:02:40.041Z">
+<meta property="article:modified_time" content="2020-10-16T14:38:50.137Z">
 <meta property="article:author" content="DP">
+<meta property="article:tag" content="DB">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201012111331062.png">
   
     <link rel="alternative" href="/atom.xml" title="DP&#39;s BLOG" type="application/atom+xml">
   
@@ -150,302 +163,192 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-系统故障对策" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/16/%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/" class="archive-article-date">
-  	<time datetime="2020-10-16T14:58:44.726Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/16/%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/">并发控制</a>
+    <h1 class="article-title" itemprop="name">
+      系统故障对策
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">db</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/16/%E8%BF%9B%E4%B8%80%E6%AD%A5%E6%8E%8C%E6%8F%A1SQL%E8%AF%AD%E5%8F%A5/" class="archive-article-date">
-  	<time datetime="2020-10-16T07:15:52.939Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/16/%E8%BF%9B%E4%B8%80%E6%AD%A5%E6%8E%8C%E6%8F%A1SQL%E8%AF%AD%E5%8F%A5/">进一步掌握SQL语句</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/15/security-web-communication/" class="archive-article-date">
-  	<time datetime="2020-10-15T03:13:06.735Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/15/security-web-communication/">security web communication</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">development</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/14/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%9A%84web%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2/" class="archive-article-date">
-  	<time datetime="2020-10-14T10:55:34.867Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/14/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%9A%84web%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2/">前后端分离的web应用部署</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">development</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/13/Angular.JS/" class="archive-article-date">
-  	<time datetime="2020-10-13T15:39:39.342Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/13/Angular.JS/">Angular.JS</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">development</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/13/Express.js%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-10-13T07:30:35.476Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/13/Express.js%E4%BD%BF%E7%94%A8/">Express.js使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">development</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/13/javaEE/" class="archive-article-date">
-  	<time datetime="2020-10-12T16:02:27.749Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/13/javaEE/">javaEE</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/12/%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E5%AF%B9%E7%AD%96/" class="archive-article-date">
+        
+        <a href="/2020/10/12/%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E5%AF%B9%E7%AD%96/" class="archive-article-date">
   	<time datetime="2020-10-12T04:02:40.041Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-12</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/12/%E7%B3%BB%E7%BB%9F%E6%95%85%E9%9A%9C%E5%AF%B9%E7%AD%96/">系统故障对策</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="可恢复操作的问题和模型"><a href="#可恢复操作的问题和模型" class="headerlink" title="可恢复操作的问题和模型"></a>可恢复操作的问题和模型</h2><p>这个与操作系统的文件系统在很多问题上都是同样的处理方法，在OS日志系统的介绍中主要使用的是redo方式来处理。</p>
+<h4 id="故障模式"><a href="#故障模式" class="headerlink" title="故障模式"></a>故障模式</h4><h6 id="错误数据输入"><a href="#错误数据输入" class="headerlink" title="错误数据输入"></a>错误数据输入</h6><p>有的数据错误是不可能被检测到的，例如：如果某个职员把一个电话号码的一位输入错了。但是如果职员一楼了你的电话号码中的一位，数据就显然是错的了，处理数据输入错误的主要技术就是编写约数和触发器来找出被认为是错误的数据。</p>
+<h6 id="介质故障"><a href="#介质故障" class="headerlink" title="介质故障"></a>介质故障</h6><p>磁盘局部故障，即只改变少数几位的故障，我们可以通过checksum来检测。如果是整个磁盘的毁坏，那么我们可以通过RAID模式或者维护一个备份来完成。</p>
+<h6 id="灾难性故障"><a href="#灾难性故障" class="headerlink" title="灾难性故障"></a>灾难性故障</h6><p>这个是整个数据库节点爆炸或者大火以及而已破坏，只能通过备份来恢复。</p>
+<h6 id="系统故障"><a href="#系统故障" class="headerlink" title="系统故障"></a>系统故障</h6><p>事务状态丢失，比如：断电和软件错误。当内存丢失之后，事务状态就丢失了，我们不能确定事务的哪些部分已经进行，重新运行事务不一定能够修复问题。解决这类问题，我们需要通过分离的、非易失性的日志中记录所有数据库更新，必要时加以恢复。</p>
+<h4 id="关于事务讨论"><a href="#关于事务讨论" class="headerlink" title="关于事务讨论"></a>关于事务讨论</h4><p>事务时数据库操作执行的单位。事务必须原子执行，即全做或全不做，并且在事件上看起来似乎它是在某个实可一下子就执行完了一样。保证事务正确执行时事务管理器的工作，这一子系统完成的功能包括：</p>
+<ol>
+<li>给日志管理器发信号，使必需的信息能以“日志记录”的形式存储在日志中。</li>
+<li>保证并发执行的事务不会引入错误的方式相互干扰。</li>
+</ol>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201012111331062.png"></p>
+<p>日志的空间最初出现在内存缓冲区中，在一定的时候这些缓冲区必须拷贝到磁盘上。</p>
+<h4 id="事务的原语操作"><a href="#事务的原语操作" class="headerlink" title="事务的原语操作"></a>事务的原语操作</h4><p>我们考虑事务如何同数据库交互。有3个地址空间：</p>
+<ol>
+<li>保存数据库元素的磁盘空间</li>
+<li>缓冲管理器所管理的内存地址空间</li>
+<li>事务的局部地址空间</li>
+</ol>
+<p>事务读取数据库元素，该元素必需被取到内存中，接下来，缓冲区中的内容可以被事务读到其局部地址空间中。以下有数据移动的操作原语：</p>
+<ol>
+<li>INPUT(X)：将包含数据库元素X的磁盘拷贝到内存缓冲区中</li>
+<li>READ(X,t)：将数据库元素X拷贝到事务的局部变量t。</li>
+<li>WRITE(X,t)：将局部变量t的值拷贝到内存缓冲区中的数据库元素X。</li>
+<li>OUTPUT(X)：将包含X的缓冲区中的块拷贝回磁盘。</li>
+</ol>
+<h6 id="一个简单的例子"><a href="#一个简单的例子" class="headerlink" title="一个简单的例子"></a>一个简单的例子</h6><p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201012112828389.png" alt="image-20201012112828389"></p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201012112834647.png" alt="image-20201012112834647"></p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201012112842531.png" alt="image-20201012112842531"></p>
+<h2 id="undo日志"><a href="#undo日志" class="headerlink" title="undo日志"></a>undo日志</h2><p>日志是日志记录构成的文件，每个日志记录记载有挂事务已做的事的某些情况。第一种就是undo日志，它通过撤销事务在系统崩溃前还没没有完成的影响来恢复数据库状态。</p>
+<blockquote>
+<p>事务为什么会被中止：首先可能是代码本身的错误；也可能是事务陷入死锁状态需要中止该事务解除死锁。</p>
+</blockquote>
+<h4 id="日志记录"><a href="#日志记录" class="headerlink" title="日志记录"></a>日志记录</h4><p>日志管理器负责在日志中记录每个重要的事件。日志块最初在内存中创建，和DBMS所需的其他任何block一样由缓冲区管理器分配，一有可能，日志块就会被写到磁盘中。以下是日志用到的几种形式：</p>
+<ol>
+<li><START T>：事务的开始</li>
+<li><COMMIT T>：事务T成功完成并且堆数据库中的元素不再会有修改</li>
+<li><ABORT T>：事务不能成功完成。</li>
+</ol>
+<p>更新的记录是一个三元组&lt;T,X,v&gt;，事务T改变了数据库元素X，X原来的值是v。更新记录所反映的改变通常发生在主存中而不是磁盘上。</p>
+<h4 id="undo日志规则"><a href="#undo日志规则" class="headerlink" title="undo日志规则"></a>undo日志规则</h4><ul>
+<li>$U_1$ ：如果事务T改变了数据库元素X，那么形如&lt;T, X, v&gt;的日志记录必须在X的新值写入磁盘之前写到磁盘中。</li>
+<li>$U_2$ ：如果事务提交，则其COMMIT日志记录必须在事务改变的所有数据库元素先写到磁盘之后写道磁盘中单应尽快。</li>
+</ul>
+<p>为了强制将日志记录写到磁盘上，日志记录需要一条刷新日志命令来告诉缓冲区管理器将以前没有拷贝到日志的记录或从上次拷贝依赖发生修改的记录拷贝到磁盘中。</p>
+<h6 id="同一个例子"><a href="#同一个例子" class="headerlink" title="同一个例子"></a>同一个例子</h6><p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201012120758989.png" alt="image-20201012120758989"></p>
+<h4 id="使用undo日志的恢复"><a href="#使用undo日志的恢复" class="headerlink" title="使用undo日志的恢复"></a>使用undo日志的恢复</h4><p>当系统发生故障的时候，恢复管理器的第一个任务就是将事务划分为已提交事务和未提交事务。如果日志有<COMMIT T>，那么根据undo规则，事务T所做的所有改变都已经写入磁盘了。</p>
+<p>然而，假设我们在日志上发现了<SART T>记录，但未发现<COMMIT T>记录，那么有可能在崩溃前T对数据库所做的改变已经写道磁盘上了。此时T是一个未完成的事务必须被撤销。我们完全可以根据日志中的记录&lt;T, X, v&gt;来恢复原来的数据。</p>
+<p>由于日志中可能有多个未提交的事务，并且甚至可鞥有多个未提交的事务修改了X，所以我们在恢复值得顺序上必须是有计划得。恢复管理器必须从尾部开始扫描日志。在扫描过程中，恢复管理器记住所有<COMMIT T>或<ABORT T>记录得事务T。同时在其向后扫描过程中，如果它看见了记录&lt;T, X, v&gt;，则：</p>
+<ol>
+<li>如果T的COMMIT记录已被扫描到，则说明也不做。T已经提交因而不需要撤销。</li>
+<li>否则，T是一个未完成的事务或者一个中止的事务。恢复管理器必须将数据库中的X的值改为v，以防万一恰好在系统崩溃前X已经被修改了。</li>
+</ol>
+<p>做了这些改变之后，恢复管理器必须未以前未中止的且未完成的每个事务T写入一个日志记录<ABORT T>，然后刷新日志。</p>
+<h4 id="检查点"><a href="#检查点" class="headerlink" title="检查点"></a>检查点</h4><p>周期性地对日志做检查点：</p>
+<ol>
+<li>停止接收新地事务</li>
+<li>等到所有当前活跃地事务提交或中止并且在日志中写入了COMMIT或ABORT记录。</li>
+<li>将日志刷新到磁盘</li>
+<li>写入日志记录<CKPT>，并再次刷新日志</li>
+<li>重新开始接收事务</li>
+</ol>
+<p>所有检查点执行的事务将已经完成，并且根据规则其更新已经到达磁盘。因此，恢复时这些事务中的任何一个都不需要撤销。</p>
+<h4 id="非静止检查点"><a href="#非静止检查点" class="headerlink" title="非静止检查点"></a>非静止检查点</h4><p>上一小节提到的检查点有一个比较大的问题就是，其效果相当于我们进行检查点时必须关闭系统。由于活跃事务可能需要很长事件来提交或中止，在用户看来系统似乎停止了。因此，衍生了一种称为非静止检查点：</p>
+<ol>
+<li>写入日志记录&lt;START CKPT(T1,…,Tk)&gt; 并刷新日志。其中T1,…,Tk时所有活跃事务。</li>
+<li>等待T1,…,Tk中所有事务提交或中止，但允许其他事务开始。</li>
+<li>T1,…,Tk都已经完成时，写入日志记录<END CKPT>并刷新日志。</li>
+</ol>
+<p>对于非静止检查点，我们需要采用如下顺序恢复系统：</p>
+<ul>
+<li>如果我们先遇到了<END CKPT>记录，那么我们知道所有未完成事务在前一个&lt;STRAT CKPT(T1,…,Tk)&gt;记录后开始。因此我们可以向后扫描知道下一个START CKPT记录，然后停止；以前的日志没有用处，因而也是可以抛弃的。</li>
+<li>如果我们先遇到&lt;STRAT CKPT(T1,…,Tk)&gt;记录，那么崩溃发生在检查点过程中。</li>
+</ul>
+<h2 id="redo-日志"><a href="#redo-日志" class="headerlink" title="redo 日志"></a>redo 日志</h2><p>undo日志有一个比较大的问题就是，我们往往会缓存也被写入磁盘的任务，然后批量操作，这个时候undo会出现大面积未写commit的日志，一旦系统崩溃，undo日志需要撤回非常多的事务。</p>
+<p>redo和undo的区别如下：</p>
+<ol>
+<li>undo日志在恢复时消除未完成事务的影响并忽略已经提交事务，而redo日志忽略未完成的事务并重复已提交事务所做的改变。</li>
+<li>undo日志要i去我们在COMMIT日志记录到达磁盘前将膝盖后的数据库元素写道磁盘，而redo日志要求COMMT记录在任何修改后的值到达磁盘前出现在磁盘上。</li>
+<li>当遵循undo规则时，在恢复时我们需要的时发生改变的数据库元素的旧值，而使用redo日志恢复时，我们需要的是新值。</li>
+</ol>
+<h4 id="redo日志规则"><a href="#redo日志规则" class="headerlink" title="redo日志规则"></a>redo日志规则</h4><p>在redo日志中，日志记录&lt;T, X, v&gt;的含义是“事务T为数据库元素X写入新值v”。Redo有一条规则：</p>
+<ul>
+<li>$R_1$：在修改磁盘上的任何数据库元素X以前，要保证与X的这一修改相关的所有的日志记录，包括更新记录&lt;T, X, v&gt;以及<COMMIT T>记录，都必须出现在磁盘上。</li>
+</ul>
+<p>接下来我们来看看事务相关的材料写到磁盘的顺序：</p>
+<ol>
+<li>指出被修改的元素的日志记录</li>
+<li>COMMIT日志记录</li>
+<li>改变数据库元素自身</li>
+</ol>
+<h6 id="同一个例子-1"><a href="#同一个例子-1" class="headerlink" title="同一个例子"></a>同一个例子</h6><p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201012115514888.png" alt="image-20201012115514888"></p>
+<h4 id="使用redo日志恢复"><a href="#使用redo日志恢复" class="headerlink" title="使用redo日志恢复"></a>使用redo日志恢复</h4><p>在系统崩溃后我们需要使用redo做以下事情：</p>
+<ol>
+<li><p>确定已提交的事务</p>
+</li>
+<li><p>从首部开始扫描日志。对遇到的每一&lt;T, X, v&gt;记录：</p>
+<ul>
+<li>如果T是未提交事务，则说明也不做</li>
+<li>如果T是提交的事务，则为数据库元素X写入值v.</li>
+</ul>
+</li>
+<li><p>对每个为完成的事务T，在日志中写入一个<ABORT T>记录并刷新日志。</p>
+</li>
+</ol>
+<h4 id="redo日志的检查点"><a href="#redo日志的检查点" class="headerlink" title="redo日志的检查点"></a>redo日志的检查点</h4><p>redo日志的非静止检查点步骤如下：</p>
+<ol>
+<li>写入日志记录&lt;START CKPT(T1,…,Tk)&gt;，其中T1,…,Tk是所有活跃事务，并刷新日志。</li>
+<li>将START CKPT记录写入日志时所有已提交事务已经写道缓冲区但还没有写入磁盘的数据库元素写到磁盘。</li>
+<li>写入日志<END CKPT>并刷新日志。</li>
+</ol>
+<h2 id="undo-redo日志"><a href="#undo-redo日志" class="headerlink" title="undo/redo日志"></a>undo/redo日志</h2><p>undo/redo日志记录：&lt;T, X, v, w&gt;含义是事务T改变了数据库元素X的值，改变前为v，改变后为w。并且需要遵循以下规则</p>
+<ul>
+<li>$UR_1$：在由于某个事务T所做改变而修改磁盘上得数据库元素X前，更新记录&lt;T, X, v, w&gt; 必须出现在磁盘上。</li>
+<li>$UR_2$：<COMMIT T>记录一旦出现在日志中就必须被刷新到磁盘上。</li>
+</ul>
+<h6 id="同样的例子"><a href="#同样的例子" class="headerlink" title="同样的例子"></a>同样的例子</h6><p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201012141519945.png" alt="image-20201012141519945"></p>
+<h4 id="使用undo-redo日志恢复"><a href="#使用undo-redo日志恢复" class="headerlink" title="使用undo/redo日志恢复"></a>使用undo/redo日志恢复</h4><p>策略如下：</p>
+<ol>
+<li>按照从前往后顺序，重做所有已经提交的事务</li>
+<li>按照从后往前顺序，撤销所有未提交的事务</li>
+</ol>
+<h4 id="undo-redo日志检查点"><a href="#undo-redo日志检查点" class="headerlink" title="undo/redo日志检查点"></a>undo/redo日志检查点</h4><p>实现流程如下：</p>
+<ol>
+<li>写入日志记录&lt;START CKPT(T1, …, Tk)&gt;，其中T1, …, Tk是所有的活跃事务，并刷新日志</li>
+<li>将所有脏缓冲区写到磁盘，脏喊出去即包含一个或者多个修改过的数据库元素的缓冲区。和redo不同的是，我们刷新所有的脏缓冲区，而不仅仅是刷新哪些被提交事务写过的缓冲区。</li>
+<li>写入日志<END CKPT>并刷新日志。</li>
+</ol>
+<h2 id="介质故障-1"><a href="#介质故障-1" class="headerlink" title="介质故障"></a>介质故障</h2><p>日志针对的是内存数据丢失的问题，日志能够有效的前提条件是磁盘介质都是有效的。那么如果驻留在磁盘上的数据也丢失了我们该如何处理。</p>
+<h4 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h4><blockquote>
+<p>备份也就是维护与数据库自身分离的一个数据库拷贝。备份保存数据库在备份时的状态，而当介质故障发生时，数据库就可以被恢复到这一状态。</p>
+</blockquote>
+<p>如果我们想要在备份维护的状态前进（恢复到最新状态），我们需要使用日志（这个日志必须得到保存），并且日志在故障之后仍然存在。由于建立备份是一个冗长的过程，因此我们视图避免在备份的每个步骤都拷贝整个数据库。这样，我们区别两个级别的备份：</p>
+<ol>
+<li>完全转储，这个需要拷贝整个数据库</li>
+<li>增量转储，这时只需要拷贝上一次完全转储或增量转储后改变的那些数据库元素。也可以有多个级别的转储，其中完全转储被认为是0级转储，而i级转储拷贝ui后一个小于等于i级的转储之后改变过的所有内容。</li>
+</ol>
+<h4 id="非静止转储"><a href="#非静止转储" class="headerlink" title="非静止转储"></a>非静止转储</h4><p>大多数数据库不能再做备份拷贝所需要的一段时间内关闭。因此我们就需要考虑非静止转储。非静止转储视图建立转储开始时数据库的一个拷贝，而再转储进行的数分钟甚至数小时中，数据库活动可能改变磁盘上的许多数据元素。如果需要从备份中恢复数据库时，再转储过程中记录的日志项可以用来整理数据，使数据库达到一致的状态。</p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201016222830742.png" alt="image-20201016222830742"></p>
+<p>undo日志不适合与备份一起使用。</p>
+<ol>
+<li>写入日志记录<START DUMP></li>
+<li>根据采用的日志方式执行一个适当的检查点</li>
+<li>根据需要执行完全转储或增量转储，确定数据的拷贝已经到达安全的远程节点。</li>
+<li>确定足够的日志已经拷贝到安全的远程节点，至少保证第二项中的检查点以前且包括该检查点的日志再数据库介质故障后仍能存在。</li>
+<li>写入日志记录<END DUMP></li>
+</ol>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201016223334561.png" alt="image-20201016223334561"></p>
+<h4 id="使用备份和日志的恢复"><a href="#使用备份和日志的恢复" class="headerlink" title="使用备份和日志的恢复"></a>使用备份和日志的恢复</h4><p>假设发生了介质故障，并且我们要通过此前已到达安全的远程节点、在崩溃中未丢失的日志和最近的备份重建数据库：</p>
+<ol>
+<li><p>更具备份恢复数据库</p>
+<ul>
+<li>找到最近的完全转储，并根据它来恢复数据库。</li>
+<li>如果有后续的增量转储，按照从前往后做的顺序，根据增量转储修改数据库。</li>
+</ul>
+</li>
+<li><p>用保留下来的日志修改数据库。</p>
+</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -457,98 +360,63 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/12/%E6%9F%A5%E8%AF%A2%E6%89%A7%E8%A1%8C/" class="archive-article-date">
-  	<time datetime="2020-10-12T02:42:54.174Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-12</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/10/13/javaEE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          javaEE
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/10/12/%E6%9F%A5%E8%AF%A2%E6%89%A7%E8%A1%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">查询执行</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/12/%E6%9F%A5%E8%AF%A2%E6%89%A7%E8%A1%8C/">查询执行</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/11/Node.js/" class="archive-article-date">
-  	<time datetime="2020-10-11T13:51:21.053Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/11/Node.js/">Node.js</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">development</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -572,8 +440,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
