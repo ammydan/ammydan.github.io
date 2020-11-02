@@ -25,7 +25,7 @@
 <meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201016222830742.png">
 <meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201016223334561.png">
 <meta property="article:published_time" content="2020-10-12T04:02:40.041Z">
-<meta property="article:modified_time" content="2020-10-16T14:38:50.137Z">
+<meta property="article:modified_time" content="2020-10-18T17:08:32.049Z">
 <meta property="article:author" content="DP">
 <meta property="article:tag" content="DB">
 <meta name="twitter:card" content="summary">
@@ -224,7 +224,7 @@
 <p>更新的记录是一个三元组&lt;T,X,v&gt;，事务T改变了数据库元素X，X原来的值是v。更新记录所反映的改变通常发生在主存中而不是磁盘上。</p>
 <h4 id="undo日志规则"><a href="#undo日志规则" class="headerlink" title="undo日志规则"></a>undo日志规则</h4><ul>
 <li>$U_1$ ：如果事务T改变了数据库元素X，那么形如&lt;T, X, v&gt;的日志记录必须在X的新值写入磁盘之前写到磁盘中。</li>
-<li>$U_2$ ：如果事务提交，则其COMMIT日志记录必须在事务改变的所有数据库元素先写到磁盘之后写道磁盘中单应尽快。</li>
+<li>$U_2$ ：如果事务提交，则其COMMIT日志记录必须在事务改变的所有数据库元素先写到磁盘之后写到磁盘中单应尽快。</li>
 </ul>
 <p>为了强制将日志记录写到磁盘上，日志记录需要一条刷新日志命令来告诉缓冲区管理器将以前没有拷贝到日志的记录或从上次拷贝依赖发生修改的记录拷贝到磁盘中。</p>
 <h6 id="同一个例子"><a href="#同一个例子" class="headerlink" title="同一个例子"></a>同一个例子</h6><p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201012120758989.png" alt="image-20201012120758989"></p>
@@ -531,6 +531,30 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">practice</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">DistibutedSystem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">front</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTMLL</a>
               </li>
             
             <div class="clearfix"></div>

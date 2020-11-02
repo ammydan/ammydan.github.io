@@ -24,8 +24,18 @@
 <meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201017002233527.png">
 <meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201017002844073.png">
 <meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201017105906609.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201017112628972.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201017113219702.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201017113735848.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201017114904741.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201017115313619.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201017122022075.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201017124739994.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201017125308423.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201017141628968.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201017152624781.png">
 <meta property="article:published_time" content="2020-10-16T14:58:44.726Z">
-<meta property="article:modified_time" content="2020-10-17T02:59:38.441Z">
+<meta property="article:modified_time" content="2020-10-17T07:35:38.446Z">
 <meta property="article:author" content="DP">
 <meta property="article:tag" content="db">
 <meta name="twitter:card" content="summary">
@@ -247,7 +257,101 @@
 </ul>
 <p>注意，我们允许一个事务在同一个元素上既申请并持有共享锁又申请并持有排它锁。</p>
 <p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201017105906609.png" alt="image-20201017105906609"></p>
-<h4 id="相容性矩阵"><a href="#相容性矩阵" class="headerlink" title="相容性矩阵"></a>相容性矩阵</h4>
+<h4 id="相容性矩阵"><a href="#相容性矩阵" class="headerlink" title="相容性矩阵"></a>相容性矩阵</h4><p>每个封锁方式有一行和一列。行对应于数据库元素X上另一事务已经持有的锁，而列对应于X上申请的锁方式:</p>
+<ul>
+<li>我们能够授予C方式的锁，当且仅当对于其他事务在X上已经有的每个R方式锁对应的每一行R，在C列上有一个“是”。</li>
+</ul>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201017112628972.png" alt="image-20201017112628972"></p>
+<h4 id="锁的升级"><a href="#锁的升级" class="headerlink" title="锁的升级"></a>锁的升级</h4><p>占有X上的共享锁的事务T对其他事务来说是“友好的”，因为其他事务在T被允许访问X的同时也被允许访问X。因此，我们可能很想直到如果一个想要读X并写入新值的事务T首先获得X上的一个共享锁，而仅在后来当T准备号写入新值时将锁升级为排它锁。但是这种锁升级会导致更严重的死锁问题：</p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201017113219702.png" alt="image-20201017113219702"></p>
+<h4 id="更新锁"><a href="#更新锁" class="headerlink" title="更新锁"></a>更新锁</h4><p>通过使用更新锁的方式，我们可以避免锁升级的死锁问题。更新锁Ui(X)只给予事务Ti读X而不是写X的权限，但是只有更新锁能在以后升级为写锁，读锁时不能升级的。当X上已经有共享锁时我们可以授予X上的更新所，但是一旦X有了更新所，我们就禁止在X上加其他任何种类的锁。</p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201017113735848.png" alt="image-20201017113735848"></p>
+<h4 id="增量锁"><a href="#增量锁" class="headerlink" title="增量锁"></a>增量锁</h4><p>很多事务都只通过增加或减少存储的值来对数据库进行操作。增量动作有一个有用的性质是这些动作相互之间是可以交换的；但是另一方面，增量与读或写都不能交换。INC(A,c)：READ(A,t); t: =t+c; WRITE(A,t)。我们使用ili(X)表示Ti请求X上的增量锁。我们需要对事务一致性进行修改：</p>
+<ul>
+<li>一致的事务只有在它持有X上的增量锁时才能在X上进行增量动作。但增量锁并不能赋予读或写动作的权力。</li>
+<li>在一个合法的调度中，任何时候都可以有任意多个事务在X上持有增量所。但是，如果某个事务吃藕X上的增量锁，那么其他事务同时在X上既不能持有共享锁又不能持有排它锁。</li>
+</ul>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201017114904741.png" alt="image-20201017114904741"></p>
+<h2 id="封锁调度器的一种体系结构"><a href="#封锁调度器的一种体系结构" class="headerlink" title="封锁调度器的一种体系结构"></a>封锁调度器的一种体系结构</h2><ul>
+<li>事务自身不会申请封锁，或我们不能依赖于事务做这件事。在读、写以及其他访问数据的动作流中插入锁的动作时调度器的任务</li>
+<li>事务不释放锁，而是调度器在事务管理器告诉它事务将提交或终止时释放锁。</li>
+</ul>
+<h4 id="插入锁动作的调度器"><a href="#插入锁动作的调度器" class="headerlink" title="插入锁动作的调度器"></a>插入锁动作的调度器</h4><p>锁表使用的主存不是用于查询执行和日志缓冲池的一部分。</p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201017115313619.png" alt="image-20201017115313619"></p>
+<h6 id="1-第一部分"><a href="#1-第一部分" class="headerlink" title="1. 第一部分"></a>1. 第一部分</h6><p>接受事务产生的请求流，并在所有数据库访问操作如读、写、增量和更新前插入适当的锁动作。</p>
+<h6 id="2-第二部分"><a href="#2-第二部分" class="headerlink" title="2. 第二部分"></a>2. 第二部分</h6><p>接受由第一部分传俩的封锁和数据库访问动作序列。</p>
+<ul>
+<li>如果动作是数据库访问，这一动作被传送到数据库并被执行</li>
+<li>如果是封锁动作，它将查看锁表以决定锁是否能被授予。<ul>
+<li>如果是，修改锁表，将刚刚授予的锁包括进去</li>
+<li>如果不是，那么锁表中必须加入一项以表明该所以及被申请。调度器的第二部分接着推迟事务T直到锁被授予时。</li>
+</ul>
+</li>
+</ul>
+<h6 id="3-事务T提交或终止时"><a href="#3-事务T提交或终止时" class="headerlink" title="3.事务T提交或终止时"></a>3.事务T提交或终止时</h6><p>事务管理器将通知第1部分，第一部分于是释放T持有的所有锁。如果有事务等待这些锁中的任何一个，第1部分将通知第2部分。</p>
+<h6 id="4-第二部分被告知某个数据库元素上的锁可获得时"><a href="#4-第二部分被告知某个数据库元素上的锁可获得时" class="headerlink" title="4. 第二部分被告知某个数据库元素上的锁可获得时"></a>4. 第二部分被告知某个数据库元素上的锁可获得时</h6><p>第二部分决定接下来能获得X上的锁的一个或多个事务。</p>
+<h4 id="锁表"><a href="#锁表" class="headerlink" title="锁表"></a>锁表</h4><blockquote>
+<p> 锁表是将数据库元素与有关该元素的封锁信息联系起来的一个关系表。</p>
+</blockquote>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201017122022075.png" alt="image-20201017122022075"></p>
+<ul>
+<li><p>组模式概括事务申请A上的一个新所时锁面临的最苛刻的条件。</p>
+<ul>
+<li>S表示被持有的只有共享锁</li>
+<li>U表示有i个更新所，而且可能有一个或多个共享锁</li>
+<li>X表示有一个排它锁，并且没有其他的锁</li>
+</ul>
+</li>
+<li><p>等待位索命至少有一个事务等待A上的锁</p>
+</li>
+<li><p>一个列表描述所有或者在A上当前持有锁，或者在等待A上的锁的那些事务。每个列表项中游泳信息可能包括：</p>
+<ul>
+<li>持有锁或者等待锁的事务名</li>
+<li>该锁的方式</li>
+<li>事务是持有锁还是等待锁</li>
+</ul>
+</li>
+</ul>
+<h6 id="封锁请求处理"><a href="#封锁请求处理" class="headerlink" title="封锁请求处理"></a>封锁请求处理</h6><h6 id="解锁处理"><a href="#解锁处理" class="headerlink" title="解锁处理"></a>解锁处理</h6><h2 id="数据元素的层次"><a href="#数据元素的层次" class="headerlink" title="数据元素的层次"></a>数据元素的层次</h2><h4 id="多粒度的锁"><a href="#多粒度的锁" class="headerlink" title="多粒度的锁"></a>多粒度的锁</h4><h4 id="警示锁"><a href="#警示锁" class="headerlink" title="警示锁"></a>警示锁</h4><p>解决管理不同力度锁的这一问题方法牵涉一种新的锁，称为“警示”。我们可以看到三个级别的数据库元素：</p>
+<ul>
+<li>关系是最大的可封锁元素</li>
+<li>每个关系由一个或多个块或也组成，每个块或页上存储了关系的元素</li>
+<li>每个块包含一个或多个元组</li>
+</ul>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201017124739994.png" alt="image-20201017124739994"></p>
+<p>在数据元素层次上管理锁的规则由警示协议构成，它既包括“普通”锁又包括“警示”锁。我们将描述普通锁是S和X时的封锁模式。警示锁将通过在普通锁前加前缀I表示。警示协议的规则：</p>
+<ol>
+<li>要在任何元素上加S或X锁，我们必须从层次结构的根开始</li>
+<li>如果我们储与我们将要封锁的元素的位置，则不需要进一步查找。我们请求该元素上的S或X锁。</li>
+<li>如果我们希望封锁的元素在层次结构中更靠下，那么我们在这一节点上加上一个警示锁；也就是说，如果我们想要获得其子元素上的共享锁，我们请求该节点上的IS锁，如果我们想要获得其子元素上的排它锁，我们求情该节点上的IX锁。当前节点上的锁被授予之后，我们继续向适当的子节点进行。</li>
+</ol>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201017125308423.png" alt="image-20201017125308423"></p>
+<h4 id="幻象与插入的正确处理"><a href="#幻象与插入的正确处理" class="headerlink" title="幻象与插入的正确处理"></a>幻象与插入的正确处理</h4><p>当事务创建一个可封锁元素的新的子元素时，有时候会可能出错。问题在于我们只能封锁以及存在的项；封锁并不存在但以后可能被插入的数据库元素没有简单的方法。</p>
+<p>因此我们对于插入操作必须对整个关系进行封锁。</p>
+<h2 id="树协议"><a href="#树协议" class="headerlink" title="树协议"></a>树协议</h2><h4 id="基于树的封锁的动机"><a href="#基于树的封锁的动机" class="headerlink" title="基于树的封锁的动机"></a>基于树的封锁的动机</h4><p>我们考虑B树索引时，这一系统中将单个节点看作可封锁数据库元素。但是因为这种树结构并没又上一节提到的包含关系，所以可能使得整个并发过程无法进行。因为重写某一个元组的属性时，很可能导致根节点的变化，所以至少需要给根节点加上一个U锁。</p>
+<p>但是我们追寻到叶子节点时就可以立马判断是否更新路径上的节点，如果不用更新父节点那么我们就可以提前释放锁，这在一定程度上违反了2PL，因此我们不能确定访问B树的几个事务的调度时可串行化的。</p>
+<h4 id="访问树结构数据的规则"><a href="#访问树结构数据的规则" class="headerlink" title="访问树结构数据的规则"></a>访问树结构数据的规则</h4><p>规则如下：</p>
+<ol>
+<li>事务的第一个锁可以在树的任何节点上（但是必须时某一个树的根节点，那么如果是这个树的根节点，不一定是另一个树的根节点；或者只属于一个子树）。</li>
+<li>只有事务当前在父节点上持有锁时才能获得后续锁</li>
+<li>节点可以在任何时候解锁</li>
+<li>事务不能对一个它已经解锁的节点重新上锁，及时它在该节点的父节点上仍持有锁。</li>
+</ol>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201017141628968.png" alt="image-20201017141628968"></p>
+<h2 id="使用时间戳的并发控制"><a href="#使用时间戳的并发控制" class="headerlink" title="使用时间戳的并发控制"></a>使用时间戳的并发控制</h2><ul>
+<li>时间戳。为每个事务分配一个时间戳。</li>
+<li>有效性确认。当要提交一个事务时，检查事务和数据库元素的时间戳。</li>
+</ul>
+<p>乐观锁理论时乐观地认为没有非可串行行为发生，并且在发生问题的时候只能中止并重启视图参与非可串行化行为的事务，当很多事物只读时乐观调度器比封锁好。</p>
+<p>为了使用时间戳来作为并发控制方式，我们需要将每个数据库元素X与两个时间戳以及一个附加的位联系起来：</p>
+<ol>
+<li>RT(X)，X的读时间，它是读X的事务中最高的时间戳。</li>
+<li>WT(X)，X的写时间，它是写X的事务中最高的时间戳。</li>
+<li>C(X)，X的提交位，该位为真，当且仅当最近写X的事务已经提交。</li>
+</ol>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201017152624781.png" alt="image-20201017152624781"></p>
+<p>当事务T写数据库元素X时，写时“尝试性“的，且在T中中止时可以被撤销。提交位C(X)被设置false，调度器保存X的旧值和原有WT(X)的一个拷贝。</p>
+
       
 
       
@@ -278,6 +382,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/10/18/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          分布式系统
+        
+      </div>
+    </a>
   
   
     <a href="/2020/10/16/%E8%BF%9B%E4%B8%80%E6%AD%A5%E6%8E%8C%E6%8F%A1SQL%E8%AF%AD%E5%8F%A5/" id="article-nav-older" class="article-nav-link-wrap">
@@ -428,6 +541,30 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">practice</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">DistibutedSystem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">front</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTMLL</a>
               </li>
             
             <div class="clearfix"></div>

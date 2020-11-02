@@ -8,22 +8,30 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Angular.JS | DP&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="架构 Angular 是一个用 HTML 和 TypeScript 构建客户端应用的平台与框架。 Angular 本身就是用 TypeScript 写成的。   Angular应用的架构依赖于一些基本的概念。最基本的组成块是NgModules，NgModules为组件提供了编译环境。NgModules将相关代码集成一组功能。一个Angular应用被定义为一组NgModules。一个应用至少有一个r">
+  <meta name="description" content="快速搭建环境123npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.orgnpm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org npm config get registry   安装AngularJS，我们在此使用的是npm来进行安装，所以在安装之前需要先安装好Node.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular.JS">
 <meta property="og:url" content="http://example.com/2020/10/13/Angular.JS/index.html">
 <meta property="og:site_name" content="DP&#39;s BLOG">
-<meta property="og:description" content="架构 Angular 是一个用 HTML 和 TypeScript 构建客户端应用的平台与框架。 Angular 本身就是用 TypeScript 写成的。   Angular应用的架构依赖于一些基本的概念。最基本的组成块是NgModules，NgModules为组件提供了编译环境。NgModules将相关代码集成一组功能。一个Angular应用被定义为一组NgModules。一个应用至少有一个r">
+<meta property="og:description" content="快速搭建环境123npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.orgnpm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org npm config get registry   安装AngularJS，我们在此使用的是npm来进行安装，所以在安装之前需要先安装好Node.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201025020246091.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201025014244525.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201025014652095.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201025014446582.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201025015317986.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201025020019633.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201025024141591.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201025025120807.png">
 <meta property="og:image" content="https://angular.cn/generated/images/guide/architecture/overview2.png">
 <meta property="og:image" content="https://angular.cn/generated/images/guide/architecture/component-tree.png">
 <meta property="og:image" content="https://angular.cn/generated/images/guide/architecture/databinding.png">
 <meta property="article:published_time" content="2020-10-13T15:39:39.342Z">
-<meta property="article:modified_time" content="2020-10-14T03:07:57.261Z">
+<meta property="article:modified_time" content="2020-11-02T08:02:18.223Z">
 <meta property="article:author" content="DP">
 <meta property="article:tag" content="development">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://angular.cn/generated/images/guide/architecture/overview2.png">
+<meta name="twitter:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201025020246091.png">
   
     <link rel="alternative" href="/atom.xml" title="DP&#39;s BLOG" type="application/atom+xml">
   
@@ -177,7 +185,125 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><blockquote>
+        <h2 id="快速搭建环境"><a href="#快速搭建环境" class="headerlink" title="快速搭建环境"></a>快速搭建环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org </span><br><span class="line">npm config get registry </span><br></pre></td></tr></table></figure>
+
+<p>安装AngularJS，我们在此使用的是npm来进行安装，所以在安装之前需要先安装好Node.JS并且设置好全局安装包的位置。做好准备工作之后再使用以下命令安装AngularJS</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @angular/cli</span><br></pre></td></tr></table></figure>
+
+<p>在想要创建angularJS项目的文件夹下输入以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new &lt;my-app-project-name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>中间会询问一些配置信息，如果想要用默认配置，直接Enter键即可，创建项目需要一定的时间。</p>
+<p>测试：运行应用，这里使用了一个AngularJS附带的web服务器来部署前端项目，可以使用以下命令启动服务器。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng serve --open</span><br></pre></td></tr></table></figure>
+
+<p>我们在实际的过程中，是需要build项目得到对应的JS、CSS、HTML静态文件，然后根据需求既可以和后端代码部署在同一个服务器上，也可以前后端分离部署。</p>
+<p>如果我们需要在项目中创建一个组件，那么我们可以使用以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng g c &lt;componentname&gt;</span><br></pre></td></tr></table></figure>
+
+<p>我们常常需要ng来下载东西，所以我们最好修改以下ng的下载源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng config cli.packageManager cnpm</span><br></pre></td></tr></table></figure>
+
+<h4 id="配合安装和使用BootStrap4（ng-bootstrap"><a href="#配合安装和使用BootStrap4（ng-bootstrap" class="headerlink" title="配合安装和使用BootStrap4（ng-bootstrap)"></a>配合安装和使用BootStrap4（ng-bootstrap)</h4><p>在对应的项目文件夹下使用以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng add @ng-bootstrap/ng-bootstrap</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用material"><a href="#使用material" class="headerlink" title="使用material"></a>使用material</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng add @angular/material</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h4 id="git使用"><a href="#git使用" class="headerlink" title="git使用"></a>git使用</h4><p>放弃本地修改</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout .</span><br></pre></td></tr></table></figure>
+
+<p>回退到某个版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard &lt;checksum&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h4><p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201025020246091.png" alt="image-20201025020246091"></p>
+<p>build code and manage your code。文件太多的时候，我们需要一个模式来管理我们逐渐膨胀的代码文件，否则我们很难维护这个前端项目。</p>
+<p>使用：</p>
+<h6 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+
+<p>这个过程会需要我们回答很多问题，我们都可以enter键表示默认选项，然后我们在这个文件夹下，我们得到了package.json文件。这个文件管理我们的依赖。</p>
+<h6 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack --save-dev</span><br></pre></td></tr></table></figure>
+
+<p>–save-dev代表我们仅在开发阶段使用，并不会在生产环境中需要。</p>
+<h6 id="写npm脚本"><a href="#写npm脚本" class="headerlink" title="写npm脚本"></a>写npm脚本</h6><p>这个给了webpack一个切入点。</p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201025014244525.png" alt="image-20201025014244525"></p>
+<p>如果在最后加上一个 -p，表示生产环境，然后webpack会minify我们的代码</p>
+<h6 id="给定一个依赖hint"><a href="#给定一个依赖hint" class="headerlink" title="给定一个依赖hint"></a>给定一个依赖hint</h6><p>在切入点需要导入依赖的js文件，被依赖的文件需要export对应文件的变量和class等等才行。</p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201025014652095.png" alt="image-20201025014652095"></p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201025014446582.png" alt="image-20201025014446582"></p>
+<p>这是ES6特性，但是这仅仅是给webpack使用的，然后webpack会最终产生ES5代码。</p>
+<h6 id="本地热部署"><a href="#本地热部署" class="headerlink" title="本地热部署"></a>本地热部署</h6><p>随者你的代码改变，webpack也不断重新打包，而且这个是存储在你的内存里面的而不是磁盘文件。模拟一个服务器。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev webpack-dev-server</span><br></pre></td></tr></table></figure>
+
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201025015317986.png" alt="image-20201025015317986"></p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201025020019633.png" alt="image-20201025020019633"></p>
+<h6 id="webpack配置文件"><a href="#webpack配置文件" class="headerlink" title="webpack配置文件"></a>webpack配置文件</h6><p>webpack.config.js</p>
+<h6 id="下载导入css所需的package"><a href="#下载导入css所需的package" class="headerlink" title="下载导入css所需的package"></a>下载导入css所需的package</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install css-loader style-loader --save-dev</span><br></pre></td></tr></table></figure>
+
+<p>css同样需要在JS文件下进行导入</p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201025024141591.png" alt="image-20201025024141591"></p>
+<h6 id="这些包的作用"><a href="#这些包的作用" class="headerlink" title="这些包的作用"></a>这些包的作用</h6><ul>
+<li>css-loader这个是用来理解js文件中导入的css文件的。</li>
+<li>style-loader加载CSS代码到DOM中。</li>
+</ul>
+<p>注意webpack是反序进行加载loader</p>
+<h6 id="常见的loader"><a href="#常见的loader" class="headerlink" title="常见的loader"></a>常见的loader</h6><ul>
+<li>babel-loder将js转换为预期的语法规范代码</li>
+<li>css-loader</li>
+<li>style-loader</li>
+<li>html-loader</li>
+</ul>
+<h6 id="使用plugin"><a href="#使用plugin" class="headerlink" title="使用plugin"></a>使用plugin</h6><p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201025025120807.png" alt="image-20201025025120807"></p>
+<h4 id="常用词汇"><a href="#常用词汇" class="headerlink" title="常用词汇"></a>常用词汇</h4><h6 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h6><p>在原理图中，是指一个在文件树上运行的函数，用于以指定方式创建、删除或修改文件，并返回一个新的 <code>Tree</code> 对象。</p>
+<h6 id="文件树"><a href="#文件树" class="headerlink" title="文件树"></a>文件树</h6><p>在 schematics 中，一个用 <code>Tree</code> 类表示的虚拟文件系统。 Schematic 规则以一个 <code>tree</code> 对象作为输入，对它们进行操作，并且返回一个新的 <code>tree</code> 对象。</p>
+<h6 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h6><p>脚手架库会定义如何借助创建、修改、重构或移动文件和代码等操作来生成或转换某个项目。每个原理图定义了一些规则，以操作一个被称为文件树的虚拟文件系统。</p>
+<h2 id="Angular工作区配置"><a href="#Angular工作区配置" class="headerlink" title="Angular工作区配置"></a>Angular工作区配置</h2><p>项目根目录下的angular.json提供了全工作区级的配置和具体项目的默认配置，供Angular CLI中的构建工具和开发工具使用。该文件中的路径都是相对于工作区根目录的。</p>
+<table>
+<thead>
+<tr>
+<th><code>app/app.component.spec.ts</code></th>
+<th>为根组件 <code>AppComponent</code> 定义了一个单元测试。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th><code>main.ts</code></th>
+<th>应用的主要切入点。用 <a target="_blank" rel="noopener" href="https://angular.cn/guide/glossary#jit">JIT 编译器</a>编译应用，然后引导应用的根模块（AppModule）在浏览器中运行。你也可以在不改变任何代码的情况下改用 <a target="_blank" rel="noopener" href="https://angular.io/guide/aot-compiler">AOT 编译器</a>，只要在 CLI 的 <code>build</code> 和 <code>serve</code> 命令中加上 <code>--aot</code> 标志就可以了。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th><code>angular.json</code></th>
+<th>为工作区中的所有项目指定 CLI 的默认配置，包括 CLI 要用到的构建、启动开发服务器和测试工具的配置项</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="tsconfig-json"><a href="#tsconfig-json" class="headerlink" title="tsconfig.json"></a>tsconfig.json</h4><p>这个文件所在的目录预示着这个目录是TS项目的根目录。tsconfig.json通常设定了根目录和编译器参数。JS项目同样有自己的jsconfig.json文件。</p>
+<p>tsconfig.app.json是对tsconfig.json的拓展选项。</p>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><blockquote>
 <p>Angular 是一个用 HTML 和 TypeScript 构建客户端应用的平台与框架。 Angular 本身就是用 TypeScript 写成的。</p>
 </blockquote>
 <p><img src="https://angular.cn/generated/images/guide/architecture/overview2.png" alt="overview"></p>
@@ -522,6 +648,30 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">practice</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">DistibutedSystem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">front</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTMLL</a>
               </li>
             
             <div class="clearfix"></div>

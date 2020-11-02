@@ -17,8 +17,20 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201011164631578.png">
 <meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201012192705707.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201020233204186.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201022001722215.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201022001750288.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201022001534977.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201022005800833.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201022013211000.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201023000656012.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201023002839674.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201023004044046.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201023231342702.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201023233552579.png">
+<meta property="og:image" content="d:/frontEnd/ammydan.github.io/public/img/image-20201028195226303.png">
 <meta property="article:published_time" content="2020-10-11T08:35:10.262Z">
-<meta property="article:modified_time" content="2020-10-13T15:15:41.845Z">
+<meta property="article:modified_time" content="2020-10-28T11:53:14.001Z">
 <meta property="article:author" content="DP">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary">
@@ -183,6 +195,42 @@
 <p>一个图论问题可以转为DP问题，当且仅当图为拓扑图。DP是图论的一个子问题。</p>
 <h2 id="LIS最长上升子序列问题"><a href="#LIS最长上升子序列问题" class="headerlink" title="LIS最长上升子序列问题"></a>LIS最长上升子序列问题</h2><p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201012192705707.png" alt="image-20201012192705707"></p>
 <p>写了友好城市之后，发现LIS更本质的描述的是二维偏序的求解。看来看清楚最核心的问题才是我们提高班的意义。</p>
+<h4 id="LIS口诀"><a href="#LIS口诀" class="headerlink" title="LIS口诀"></a>LIS口诀</h4><h6 id="单一设备使用"><a href="#单一设备使用" class="headerlink" title="单一设备使用"></a>单一设备使用</h6><ul>
+<li>优先队列的末尾一定是递增递减的最值所在。</li>
+<li>所有获得的idx都需要+1。</li>
+</ul>
+<h6 id="多个设备（贪心）"><a href="#多个设备（贪心）" class="headerlink" title="多个设备（贪心）"></a>多个设备（贪心）</h6><ul>
+<li>所获得的idx无需+1，但是要检查是否是满足条件，否则要新开。</li>
+</ul>
+<p>DFS求最小值：</p>
+<ul>
+<li>记一个全局最小值</li>
+<li>迭代加法</li>
+</ul>
+<h2 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h2><p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201020233204186.png" alt="image-20201020233204186"></p>
+<p>当空间优化成1维之后，只有完全背包问题的体积是从小到大循环的。</p>
+<p>完全背包：求所有前缀的最大值</p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201022001722215.png" alt="image-20201022001722215"></p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201022001750288.png" alt="image-20201022001750288"></p>
+<p>多重背包：求滑动窗口内的最大值</p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201022001534977.png" alt="image-20201022001534977"></p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201022005800833.png" alt="image-20201022005800833"></p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201022013211000.png" alt="image-20201022013211000"></p>
+<h4 id="恰好"><a href="#恰好" class="headerlink" title="恰好"></a>恰好</h4><p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201023000656012.png" alt="image-20201023000656012"></p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201023002839674.png" alt="image-20201023002839674"></p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201023004044046.png" alt="image-20201023004044046"></p>
+<h4 id="求具体的方案"><a href="#求具体的方案" class="headerlink" title="求具体的方案"></a>求具体的方案</h4><p>在这种要求下，我们不能采用压缩数组的方式来求解。</p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201023231342702.png" alt="image-20201023231342702"></p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201023233552579.png" alt="image-20201023233552579"></p>
+<h4 id="类似求解空间的基"><a href="#类似求解空间的基" class="headerlink" title="类似求解空间的基"></a>类似求解空间的基</h4><p>在只能使用加法的空间。给定一组非基的数，求其能表示的空间的基。</p>
+<ul>
+<li>性质1：基一定能表示出原来数组的数。</li>
+<li>性质2：基一定在非基的数组中的数中。</li>
+<li>性质3：基中元素一定不能被基中其他的元素组合表示出来。</li>
+</ul>
+<p>我们排序，然后再进行模拟。</p>
+<h4 id="求解依赖背包"><a href="#求解依赖背包" class="headerlink" title="求解依赖背包"></a>求解依赖背包</h4><h4 id="最优解的方案数"><a href="#最优解的方案数" class="headerlink" title="最优解的方案数"></a>最优解的方案数</h4><p>需要另外加上一个数组记录最优解的方案数。</p>
+<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201028195226303.png" alt="image-20201028195226303"></p>
 
       
 
@@ -373,6 +421,30 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">practice</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">DistibutedSystem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">front</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTMLL</a>
               </li>
             
             <div class="clearfix"></div>
