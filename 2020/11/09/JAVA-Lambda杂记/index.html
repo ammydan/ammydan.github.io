@@ -1,0 +1,365 @@
+<!--layout.ejs-->
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+        DP&#39;s BLOG
+    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
+    
+<link rel="stylesheet" href="/css/libs/mo.css">
+
+    <meta charset="UTF-8">
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+<div class="blog-header">
+    <h1 class="blog-title">CreatorDP</h1>
+    <p class="lead blog-description">净学了些精致的淘气o(*￣▽￣*)o</p>
+</div>
+
+<div class="blog-masthead">
+    <div class="container">
+        <nav class="blog-nav">
+            
+                <a class="blog-nav-item" href="/projects">projects</a>
+            
+                <a class="blog-nav-item" href="/about">posts</a>
+            
+                <a class="blog-nav-item" target="_blank" rel="noopener" href="https://github.com/ammydan">hello</a>
+            
+        </nav>
+    </div>
+</div>
+
+ Android  CSCI HW8  Express.js使用  DP  JAVA Lambda杂记  Mysql体系结构和存储引擎  React  SASS  Hello World  RxJS  TypeScript  javaEE  security web communication  分布式系统  前端的一些单位  前后端分离的web应用部署  并发控制  系统故障对策  搭建博客  查询执行  进一步掌握SQL语句  Angular  Flex布局  Node.js 
+<div class="alert alert-primary" role="alert">
+    A simple primary alert—check it out!
+</div>
+<div class="blog-post">
+
+    <!-- Title -->
+    <h2 class="blog-post-title">
+        <a href="/2020/11/09/JAVA-Lambda杂记/">
+            JAVA Lambda杂记
+        </a>
+    </h2>
+
+    <!-- Date and Author -->
+    <p class="blog-post-meta">
+        2020-11-09
+        
+    </p>
+
+    <!-- Content -->
+    <p>一日水群，因为一个Arrays.sort()问题引发了对Lambda本质的思考，以及Comparator接口的思考，顺便复习了泛型。</p>
+<p>参考文章：</p>
+<p>Lambda 表达式有何用处？如何使用？ - Mingqi的回答 - 知乎 <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/20125256/answer/324121308">https://www.zhihu.com/question/20125256/answer/324121308</a></p>
+<p>Comparator官方文档：<a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html#compare-T-T-">https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html#compare-T-T-</a></p>
+<p>Arrays官方文档<a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#sort-T:A-java.util.Comparator-">https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#sort-T:A-java.util.Comparator-</a></p>
+<p>@FunctionalInterface<a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html">https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html</a></p>
+<p>Java 泛型 &lt;? super T&gt; 中 super 怎么 理解？与 extends 有何不同？ - 胖君的回答 - 知乎 <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/20400700/answer/117464182">https://www.zhihu.com/question/20400700/answer/117464182</a></p>
+<h2 id="Lambda本质—java万物皆为对象"><a href="#Lambda本质—java万物皆为对象" class="headerlink" title="Lambda本质—java万物皆为对象"></a>Lambda本质—java万物皆为对象</h2><p>JAVA1.8出现了一个很奇怪的东西——Lambada，本以为这个就是C/C++中的函数指针？这是要向C/C++靠拢？？但是其实是一个匿名接口而已。本人也学了JS，JS对于箭头函数而言，本质依旧是函数，在JS中函数即为对象，所以ES6出现了箭头函数并不令人惊奇。然而在java中，函数就只是类中的一个方法而已，所以出现Lambda实在令人称奇。我们接下来就揭开Lambda的神秘面纱。</p>
+<p>接口本质是规范方法，让实现这个接口的类都必须实现对应方法，这样基于这些方法而更进一步规范整个流程步骤（实质上是模板模式：流程确定，但是实现细节根据情况不同）。那么如果有些接口仅仅是为了传递一些方法，而不是作为规范呢？如果我们依然使用接口的老套路传递方法，那么我们会产生很多不必要的类，这样我们就污染环境（命名类太多了）。</p>
+<p>我们可以参考于匿名接口，我们直接用接口名实现一个临时接口，然后我们就可以直接使用了。</p>
+<pre><code class="java">int aValue = 129;
+
+String aString = &quot;Hello World!&quot;;
+
+Boolean aBoolean = aString.startWith(&quot;H&quot;);
+</code></pre>
+<p>如果我们想将下面的代码赋给一个变量将如何处置？</p>
+<pre><code class="java">public void doSomeThing(String s)&#123;
+    System.out.println(s);
+&#125;</code></pre>
+<p>当然是匿名类/接口了。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2020/06/nm-word-image-145.png" alt="img"></p>
+<pre><code class="java">//类
+class Polygon &#123;
+   public void display() &#123;
+      System.out.println(&quot;在 Polygon 类内部&quot;);
+   &#125;
+&#125;
+
+class AnonymousDemo &#123;
+   public void createClass() &#123;
+
+      // 创建的匿名类继承了 Polygon 类
+      Polygon p1 = new Polygon() &#123;
+         public void display() &#123;
+            System.out.println(&quot;在匿名类内部。&quot;);
+         &#125;
+      &#125;;
+      p1.display();
+   &#125;
+&#125;
+
+class Main &#123;
+   public static void main(String[] args) &#123;
+       AnonymousDemo an = new AnonymousDemo();
+       an.createClass();
+   &#125;
+&#125;
+
+
+//接口
+interface Polygon &#123;
+   public void display();
+&#125;
+
+class AnonymousDemo &#123;
+   public void createClass() &#123;
+
+      // 匿名类实现一个接口
+      Polygon p1 = new Polygon() &#123;
+         public void display() &#123;
+            System.out.println(&quot;在匿名类内部。&quot;);
+         &#125;
+      &#125;;
+      p1.display();
+   &#125;
+&#125;
+
+class Main &#123;
+   public static void main(String[] args) &#123;
+      AnonymousDemo an = new AnonymousDemo();
+      an.createClass();
+   &#125;
+&#125;</code></pre>
+<p>这样其实还不够简洁，我们如果只想传递方法，那么接口的方法只有一个，我们无需写明方法的名字，直接把方法体写进去即可。这个时候Lambda出世了。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-145a556d86806c3163391a13428e3f03_720w.jpg?source=1940ef5c" alt="img"></p>
+<p><img src="https://pic4.zhimg.com/80/v2-a712753b42972e094a548ae02fa82987_720w.jpg?source=1940ef5c" alt="img"></p>
+<p>但是本质上来说，我们的Lambda还是没有脱离接口。但是这里会引入一个问题，我怎么知道这个接口可以使用lambda（也就是说我的接口只有一个抽象方法）。——@FunctionalInterface，这个注解会检测抽象方法的个数，如果超过一个抽象函数，就说明不符合lambda接口的规范。</p>
+<h4 id="Comparator的疑惑"><a href="#Comparator的疑惑" class="headerlink" title="Comparator的疑惑"></a>Comparator的疑惑</h4><p>打开java 1.8，点击Abstract Method，惊奇地发现有两个抽象方法，这不是违反了规定吗？？？我们打开官方原文</p>
+<blockquote>
+<p>If an interface declares an abstract method overriding one of the public methods of <code>java.lang.Object</code>, that also does not count toward the interface’s abstract method count since any implementation of the interface will have an implementation from <code>java.lang.Object</code> or elsewhere.</p>
+</blockquote>
+<p>那么也就是说我们会使用Object的方法，那怕你在自己的接口中重新声明那么依然会是被Object实现。因为万物皆是Object，任意对象实现该接口自然而然有了Object的所有方法。当然接口是不能继承类的。</p>
+<h4 id="Arrays-sort-的疑云"><a href="#Arrays-sort-的疑云" class="headerlink" title="Arrays.sort()的疑云"></a>Arrays.sort()的疑云</h4><p>那么我们为什么在使用一维数组的时候就直接报错了呢？</p>
+<pre><code class="java">import java.util.*;
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        System.out.println(&quot;Hello W3Cschool!&quot;);
+        int[] a =&#123;1,7,3,6,96,23&#125;;
+        Arrays.sort(a,(o1,o2)-&gt;o1-o2);
+    &#125;
+&#125;
+
+//报错
+/*Main.java:6: error: no suitable method found for sort(int[],(o1,o2)-&gt;o1 - o2)
+        Arrays.sort(a,(o1,o2)-&gt;o1-o2);
+              ^
+    method Arrays.&lt;T#1&gt;sort(T#1[],Comparator&lt;? super T#1&gt;) is not applicable
+      (inference variable T#1 has incompatible bounds
+        equality constraints: int
+        upper bounds: Object)
+    method Arrays.&lt;T#2&gt;sort(T#2[],int,int,Comparator&lt;? super T#2&gt;) is not applicable
+      (cannot infer type-variable(s) T#2
+        (actual and formal argument lists differ in length))
+  where T#1,T#2 are type-variables:
+    T#1 extends Object declared in method &lt;T#1&gt;sort(T#1[],Comparator&lt;? super T#1&gt;)
+    T#2 extends Object declared in method &lt;T#2&gt;sort(T#2[],int,int,Comparator&lt;? super T#2&gt;)
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error*/</code></pre>
+<p>我们打开Arrays的官方文档</p>
+<pre><code class="java">public static &lt;T&gt; void sort(T[] a, Comparator&lt;? super T&gt; c)</code></pre>
+<p>这里我们使用Arrays.sort的时候，使用的是泛型函数如果我们传入的数组是int[]，那么T=int了。那么对应这个方法会变成以下形式</p>
+<pre><code class="java">public static void sort (int [] a, Comparator&lt;? super int&gt; c)//这个是显然错误的，我们根本没有int类型，int是java中的基本类型。所以会报错不匹配类型。</code></pre>
+<pre><code class="java">//突发奇想，将方法泛型声明为Integer是不是问题就可以解决了？
+import java.util.*;
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        System.out.println(&quot;Hello W3Cschool!&quot;);
+        int[] a =&#123;1,7,3,6,96,23&#125;;
+        Arrays.&lt;Integer&gt;sort(a,(o1,o2)-&gt;o1-o2);
+    &#125;
+&#125;
+
+//error
+/*
+Main.java:6: error: incompatible types: int[] cannot be converted to Integer[]
+        Arrays.&lt;Integer&gt;sort(a,(o1,o2)-&gt;o1-o2);
+                             ^
+Note: Main.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error
+*/</code></pre>
+<p>自动包装只针对基本类型，对于数组是不生效的。</p>
+<pre><code class="java">import java.util.*;
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        System.out.println(&quot;Hello W3Cschool!&quot;);
+        Test&lt;? super Object&gt; objtest = new Test();
+        objtest.getWhat(123);
+    &#125;
+&#125;
+
+class Test&lt;T&gt;&#123;
+    public void getWhat(T x)&#123;
+        System.out.println(x);
+    &#125;
+&#125;
+
+//Hello W3Cschool!
+//123</code></pre>
+<pre><code class="java">import java.util.*;
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        System.out.println(&quot;Hello W3Cschool!&quot;);
+        int[] a =&#123;1,7,3,6,96,23&#125;;
+        Arrays.&lt;Integer&gt;sort(a,(o1,o2)-&gt;o1-o2);
+        Test&lt;? super Object&gt; objtest = new Test();
+        objtest.getWhat(123);
+    &#125;
+&#125;
+
+class Test&lt;T&gt;&#123;
+    public void getWhat(T x)&#123;
+        System.out.println(x&gt;0);
+    &#125;
+&#125;
+//error
+/*
+Main.java:6: error: incompatible types: int[] cannot be converted to Integer[]
+        Arrays.&lt;Integer&gt;sort(a,(o1,o2)-&gt;o1-o2);
+                             ^
+Main.java:14: error: bad operand types for binary operator &#39;&gt;&#39;
+        System.out.println(x&gt;0);
+                            ^
+  first type:  T
+  second type: int
+  where T is a type-variable:
+    T extends Object declared in class Test
+Note: Main.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+2 errors
+*/</code></pre>
+<h2 id="泛型温故"><a href="#泛型温故" class="headerlink" title="泛型温故"></a>泛型温故</h2><p>提醒：凡是类泛型在声明引用的时候没有确定泛型类型，那么默认是Object。</p>
+<p>lambda的泛型通常是根据引用类型确定的。</p>
+<h4 id="泛型通配符和上下界问题"><a href="#泛型通配符和上下界问题" class="headerlink" title="泛型通配符和上下界问题"></a>泛型通配符和上下界问题</h4><p>我当初看到这些上下界通配符的时候，脑袋嗡嗡作响，不知道为什么要创作上下界。这个还有一段故事，以前写认真学了以下泛型，但是最近又忘记了，大概因为自己没有遇到一些活生生的例子。这次趁着这次实例机会再来探究一下java的泛型问题。</p>
+<h6 id="为什么要用通配符和边界？"><a href="#为什么要用通配符和边界？" class="headerlink" title="为什么要用通配符和边界？"></a>为什么要用通配符和边界？</h6><pre><code class="java">class Fruit &#123;&#125;
+class Apple extends Fruit &#123;&#125;</code></pre>
+<pre><code class="java">class Plate&lt;T&gt;&#123;
+    private T item;
+    public Plate(T t)&#123;item=t;&#125;
+    public void set(T t)&#123;ite=t;&#125;
+    public T get()&#123;return item;&#125;
+&#125;</code></pre>
+<p>按理说我们的水果盘子应该可以装苹果，general水果盘也可以作为Apple盘的引用类型。</p>
+<pre><code class="java">Plate&lt;Fruit&gt; p = new Plate&lt;Apple&gt;(new Apple());
+//报错
+//error: incompatible types: Plate&lt;Apple&gt; cannot be converted to Plate&lt;Fruit&gt;</code></pre>
+<p>这个严重不符合我们的继承关系（这也没办法，官方规定泛型类是没有继承关系的）。那么我们怎么弥补这个缺口呢？——通配符和上下界。</p>
+<h6 id="通配符和上下界"><a href="#通配符和上下界" class="headerlink" title="通配符和上下界"></a>通配符和上下界</h6><ul>
+<li><p>通配符+上界</p>
+<pre><code class="java">Plate&lt;? extends Fruit&gt;</code></pre>
+<p>表示只要父祖类是Fruit，都可以使用这个作为引用类型。这样我们的先前报错的代码可以改成以下方式。</p>
+<pre><code class="java">Plate&lt;? extends Fruit&gt; p = new Plate&lt;Apple&gt;(new Apple());</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>通配符+下界</p>
+<pre><code class="java">Plate&lt;? super Fruit&gt;</code></pre>
+<p>至少是Fruit辈分的类才行，往下辈分的都不可以作为引用类型。</p>
+</li>
+</ul>
+<h6 id="副作用"><a href="#副作用" class="headerlink" title="副作用"></a>副作用</h6><p>我们有了这两个工具，似乎我们就可以完全克服继承的问题了，但是其实这两个符号产生了严重的副作用。</p>
+<ul>
+<li><p>上界不能存只能取</p>
+<pre><code class="java">Plate&lt;? extends Fruit&gt; p = new Plate&lt;Apple&gt;(new Apple());
+p.set(new Fruit()); //Error
+p.set(new Apple());//Error
+
+Fruit newFruit1 = p.get();
+Object newFuit2 = p.get();
+Apple newFruit3 = p.get();//Error</code></pre>
+<p>这是为什么呢？——因为我们?表示任意，那么在编译的时候是会使用一个占位符CAP#1来代替的，extends只是限制了其上限，但是这个类里面泛型到底是什么完全无从知晓，所以你贸然加进去，如果类中的方法使用了这个子类特有的方法和变量那么会导致严重的问题，JVM直接给你判错。</p>
+</li>
+<li><p>下界只能存不能取</p>
+<pre><code class="java">Plate&lt;? super Fruit&gt; p = new Plate&lt;Fruit&gt;(new Fruit());
+
+p.set(new Fruit());
+p.set(new Apple());
+
+Apple newFruit3 = p.get();//Error
+Fruit newFruit1 = p.get();//Error
+Object newFruit2 = p.get();</code></pre>
+<p>这个的原因在于我们的?限制住了下限，也就是说我们知道这里面放的东西是Fuit或者更长辈的类，那么我们放进去一些子类进去也无妨，因为父类有的功能，子类全都具备。</p>
+</li>
+</ul>
+<h6 id="PECS原则"><a href="#PECS原则" class="headerlink" title="PECS原则"></a>PECS原则</h6><p>Producer Extends Consumer Super</p>
+<h4 id="泛型数组问题"><a href="#泛型数组问题" class="headerlink" title="泛型数组问题"></a>泛型数组问题</h4><p>为了确保数组类型安全，那么就会明确知道内部类型，每次插入的时候都会进行类型检查。但是我们的数组又是可以进行引用类型继承关系的。</p>
+<pre><code class="java">Object[] ducks = new Integer[10];
+ducks[0] = &quot;Hello&quot;;//error</code></pre>
+<p>这样即使继承，我们也不允许在原来数组中放入奇奇怪怪的东西。</p>
+<p>但是泛型这个怪物，本身是编译擦除的，那么如果这个时候记录的是Object那么我们的数组可以放入任何类型的泛型类了。</p>
+<pre><code class="java">public static void main(String[] args)&#123;
+    GM&lt;RealGD&gt; [] gm = new GM&lt;RealGM&gt;[3];
+    GM[] ducks = gm;
+    ducks[0] = new GM&lt;Wolf&gt;();
+    RealGM rgm = ducks[0].get();//我们得到了超出预期的东西。
+&#125;</code></pre>
+<p>这种漏洞特别是在参数传递的时候会暴露。</p>
+<pre><code class="java">List&lt;Integer&gt;[] ga = (List&lt;Integer&gt;[])new ArrayList[0];</code></pre>
+<p>这只是问题的一个方面，还有泛型的内部数组，同样是类型擦除的原因。</p>
+<pre><code class="java">T[] x = new T[100];//Error
+T[] x = (T[])new T[100];</code></pre>
+<h4 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h4><pre><code class="java">public &lt;T&gt; T genericMethod(Class&lt;T&gt; tClass)throws InstantiationException ,
+  IllegalAccessException&#123;
+        T instance = tClass.newInstance();
+        return instance;
+&#125;</code></pre>
+<p>传递的参数会帮助确认T的类型，泛型定义在.符号后面，object.&lt;&gt;method();</p>
+
+
+    <hr />
+
+    <!-- Tags and Categories links -->
+    
+
+    
+    <div class="blog-tags-container">
+        <span class="glyphicon glyphicon-tags"></span>
+        <a href="/tags/java/">#java</a>
+    </div>
+
+
+    
+
+
+</div>
+
+
+
+
+<footer class="blog-footer">
+    <p>Blog template built for <a target="_blank" rel="noopener" href="http://getbootstrap.com">Bootstrap</a> by <a target="_blank" rel="noopener" href="https://twitter.com/mdo">@mdo</a>.</p>
+    <p>Adapted to Hexo by <a target="_blank" rel="noopener" href="https://github.com/ammydan">CreatorDP</a>.</p>
+    <p><a href="#">Back to top</a></p>
+</footer>
+
+
+<!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+<!-- For drop down -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+</html>
