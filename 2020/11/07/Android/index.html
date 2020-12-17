@@ -1,111 +1,612 @@
-<!--layout.ejs-->
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>
-        DP&#39;s BLOG
-    </title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="CreatorDP">
+
+
+
+    <meta name="description" content="净学了些精致的淘气o(*￣▽￣*)o">
+
+
+
+<title>Android | DP&#39;s BLOG</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
     
-<link rel="stylesheet" href="/css/libs/mo.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
 
-    <meta charset="UTF-8">
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
 <meta name="generator" content="Hexo 5.2.0"></head>
-
 <body>
-<div class="blog-header">
-    <h1 class="blog-title">CreatorDP</h1>
-    <p class="lead blog-description">净学了些精致的淘气o(*￣▽￣*)o</p>
-</div>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Bentham&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
 
-<div class="blog-masthead">
-    <div class="container">
-        <nav class="blog-nav">
-            
-                <a class="blog-nav-item" href="/projects">projects</a>
-            
-                <a class="blog-nav-item" href="/about">posts</a>
-            
-                <a class="blog-nav-item" target="_blank" rel="noopener" href="https://github.com/ammydan">hello</a>
-            
-        </nav>
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Bentham&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
     </div>
 </div>
 
- Android  CSCI HW8  Express.js使用  DP  JAVA Lambda杂记  Mysql体系结构和存储引擎  React  SASS  Hello World  RxJS  TypeScript  javaEE  security web communication  分布式系统  前端的一些单位  前后端分离的web应用部署  并发控制  系统故障对策  搭建博客  查询执行  进一步掌握SQL语句  Angular  Flex布局  Node.js 
-<div class="alert alert-primary" role="alert">
-    A simple primary alert—check it out!
-</div>
-<div class="blog-post">
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
 
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/11/07/Android/">
-            Android
-        </a>
-    </h2>
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
 
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-11-07
-        
-    </p>
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
 
-    <!-- Content -->
-    <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h4 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h4><p><img src="./image/image-20201107121936992.png" alt="image-20201107121936992"></p>
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Android</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">CreatorDP</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">November 7, 2020&nbsp;&nbsp;12:19:05</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><h6 id="JAVASE"><a href="#JAVASE" class="headerlink" title="JAVASE"></a>JAVASE</h6><p>去Oracle 下载JavaSE sdk</p>
+<h6 id="Android-Studio"><a href="#Android-Studio" class="headerlink" title="Android Studio"></a>Android Studio</h6><p>这是开发IDE，包括了代码开发工具，还包括了模拟工具，帮助大家在实际机器上进行查看。</p>
+<h4 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h4><p><img src="./image/image-20201114170105283.png" alt="image-20201114170105283"></p>
+<h6 id="操作系统内核（控制硬件，红色）"><a href="#操作系统内核（控制硬件，红色）" class="headerlink" title="操作系统内核（控制硬件，红色）"></a>操作系统内核（控制硬件，红色）</h6><ul>
+<li><p>Device Drivers：外围低速设备</p>
+</li>
+<li><p>Memory Management：内存控制</p>
+</li>
+<li><p>进程控制部分：实现多进程、并发控制。</p>
+</li>
+</ul>
+<h6 id="核心功能部分（绿色）"><a href="#核心功能部分（绿色）" class="headerlink" title="核心功能部分（绿色）"></a>核心功能部分（绿色）</h6><p>绿色部分是本地代码写的C/C++，代表着核心功能，</p>
+<ul>
+<li><p>Surface Manager管理windows；OpenGL|ES实现3D绘画；SGL实现2D绘画。</p>
+</li>
+<li><p>Media Framework媒体转码和处理。</p>
+</li>
+<li><p>FreeType处理字体。</p>
+</li>
+<li><p>SQLite作为本地数据库。</p>
+</li>
+<li><p>WebKit是浏览器核引擎(safari)</p>
+</li>
+</ul>
+<h6 id="运行时环境（黄色）"><a href="#运行时环境（黄色）" class="headerlink" title="运行时环境（黄色）"></a>运行时环境（黄色）</h6><p>黄色部分，DVM几乎和JVM一样，进行内存管理。</p>
+<ul>
+<li>Core Library使用的是最核心的编程功能。</li>
+</ul>
+<h6 id="应用框架（蓝色）"><a href="#应用框架（蓝色）" class="headerlink" title="应用框架（蓝色）"></a>应用框架（蓝色）</h6><p>这个部分在后面详细介绍，而且我们绝大部分开发过程只涉及到这一部分使用，底层使用其实不需要我们掌握，知道Libraries和runtime部分知识即可。</p>
+<p><img src="./image/image-20201107121936992.png" alt="image-20201107121936992"></p>
 <p><img src="./image/image-20201107122014994.png" alt="image-20201107122014994"></p>
-<h4 id="开发组件"><a href="#开发组件" class="headerlink" title="开发组件"></a>开发组件</h4><h6 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h6><p>用户交互界面UI</p>
+<h4 id="开发组件"><a href="#开发组件" class="headerlink" title="开发组件"></a>开发组件</h4><h6 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h6><p>用户交互界面UI，一个activity代表着一个屏幕的与用户间环的界面，是ContextThemeWrapper的子类。</p>
+<p><img src="./image/image-20201113152232060.png" alt="image-20201113152232060"></p>
 <h6 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h6><p>逻辑实现，事件处理服务</p>
 <h6 id="BroadcastReceiver"><a href="#BroadcastReceiver" class="headerlink" title="BroadcastReceiver"></a>BroadcastReceiver</h6><p>消息接收和处理Event Handling</p>
 <h6 id="ContentProvider"><a href="#ContentProvider" class="headerlink" title="ContentProvider"></a>ContentProvider</h6><p>数据库</p>
+<h4 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h4><p><img src="D:\frontEnd\ammydan.github.io\source_posts\image\image-20201113151301859.png" alt="image-20201113151301859"></p>
+<h6 id="mainfest"><a href="#mainfest" class="headerlink" title="mainfest"></a>mainfest</h6><p>提供了一些关于你的app的一些重要的信息给Android System。这是系统运行你的app前必读的文件。</p>
+<p><img src="./image/image-20201113175421361.png" alt="image-20201113175421361"></p>
+<h2 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h2><h2 id="Activity-1"><a href="#Activity-1" class="headerlink" title="Activity"></a>Activity</h2><p>Activity是应用程序的屏幕显示。</p>
+<ul>
+<li>它是应用程序与用户交互的接口</li>
+<li>每个acrivity有一个layout文件放置UI组件</li>
+<li>一个应用程序可以有很多不同的activities.</li>
+<li>Activity在屏幕显示的方式可以有不同如：悬浮框、或者是其他activity的一部分。</li>
+</ul>
+<h4 id="Activity-Life-Cycle"><a href="#Activity-Life-Cycle" class="headerlink" title="Activity Life Cycle"></a>Activity Life Cycle</h4><p><img src="./image/image-20201113175649413.png" alt="image-20201113175649413"></p>
+<p>当我们点击Home键的时候，当前的应用activity会进入到onPause状态，如果在这个时候改变手机显示方向，那么就会从onPause进入onStop。如果仍然选择自己则onStart()和onResume()。</p>
+<p>如果自己的app的activity点击了back键，就会到达onDestroy()状态了。</p>
+<h4 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h4><p><img src="https://pic002.cnblogs.com/images/2011/71380/2011120920332773.png" alt="img"></p>
+<p>这是一个和Activity绑定的UI，定义一个Layout有两个方法：</p>
+<ol>
+<li>在XML中声明一个UI元素：Layout定义在layout.xml文件中并且放置在res/layout文件夹下。</li>
+<li>运行时实例化一个layout元素</li>
+</ol>
+<p><img src="./image/image-20201113181400657.png" alt="image-20201113181400657"></p>
+<h6 id="常见元素格式"><a href="#常见元素格式" class="headerlink" title="常见元素格式"></a>常见元素格式</h6><ul>
+<li>wrap_content：好包含自己里面的值，也就是根据自己的子元素的大小而变化（类似于css中父类的auto）。</li>
+<li>match_parent：填充至充满整个父元素的空间（类似于子类元素的auto）。</li>
+</ul>
+<h6 id="ConstrintsLayout"><a href="#ConstrintsLayout" class="headerlink" title="ConstrintsLayout"></a>ConstrintsLayout</h6><p>详细参见<a target="_blank" rel="noopener" href="https://blog.csdn.net/guolin_blog/article/details/53122387">博客</a></p>
+<p>初始化的时候自动生成的是constraintslayout</p>
+<p><img src="./image%5Cimage-20201113182020564.png" alt="image-20201113182020564"></p>
+<h6 id="Linear-Layout"><a href="#Linear-Layout" class="headerlink" title="Linear Layout"></a>Linear Layout</h6><p>所有的子元素都安排在一个方向，横向或者竖。</p>
+<ul>
+<li>android:orientation设置方向</li>
+<li>android:weight设置大小</li>
+</ul>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:orientation=&quot;vertical&quot; android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;&gt;
+
+&lt;/LinearLayout&gt;</code></pre>
+<p>我们可以linear layout 嵌套然后使用不同方向的排布</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:orientation=&quot;vertical&quot; android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;&gt;
+
+    &lt;Button
+        android:id=&quot;@+id/button4&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Button&quot; /&gt;
+
+    &lt;Button
+        android:id=&quot;@+id/button5&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Button&quot; /&gt;
+
+    &lt;LinearLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:orientation=&quot;horizontal&quot;&gt;
+        &lt;Button
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;bn1&quot;&gt;
+
+        &lt;/Button&gt;
+        &lt;Button
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;bn2&quot;&gt;
+
+        &lt;/Button&gt;
+    &lt;/LinearLayout&gt;
+&lt;/LinearLayout&gt;</code></pre>
+<p><img src="./image/image-20201113184049696.png" alt="image-20201113184049696"></p>
+<h6 id="Relative-Layout"><a href="#Relative-Layout" class="headerlink" title="Relative Layout"></a>Relative Layout</h6><p>所有元素根据相对于兄弟元素的位置进行排布。</p>
+<h6 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h6><p>展示一些列(list)可以滑动的元素，使用adapter来获取list内容，可以自己创建一个自定义的adapter class，但是必须继承ArrayAdapter或者BaseAdapter或者SimpleCursorAdapter。</p>
+<pre><code class="java">ListView listView;
+    ArrayAdapter&lt;String&gt; adapter;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) &#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_listview);
+        Log.i(TAG, &quot;onCreate&quot;);
+//        textView = findViewById(R.id.textView);
+        listView = findViewById(R.id.listView);
+        adapter = new ArrayAdapter&lt;String&gt;(this, android.R.layout.simple_list_item_1);
+        adapter.add(&quot;Amazon&quot;);
+        adapter.add(&quot;Ebay&quot;);
+        adapter.add(&quot;Alibaba&quot;);
+        adapter.add(&quot;Flipkart&quot;);
+        listView.setAdapter(adapter);
+    &#125;</code></pre>
+<p>这个布局还可以实现点击事件，然后我们实现具体的操作：</p>
+<ul>
+<li>实现AdapterView.OnItemClickListener接口</li>
+<li>绑定事件处理</li>
+<li>编写事件处理handler</li>
+</ul>
+<h6 id="Grid-View"><a href="#Grid-View" class="headerlink" title="Grid View"></a>Grid View</h6><p>在二维空间上展示可滑动浏览的格式，同样需要ListAdapter进行内容获取。</p>
+<p><img src="./image/image-20201114151716592.png" alt="image-20201114151716592"></p>
+<h6 id="Recycler-View"><a href="#Recycler-View" class="headerlink" title="Recycler View"></a>Recycler View</h6><p>backup support</p>
+<p><img src="./image/image-20201114152000210.png" alt="image-20201114152000210"></p>
+<h6 id="如何寻找页面上的组件并绑定"><a href="#如何寻找页面上的组件并绑定" class="headerlink" title="如何寻找页面上的组件并绑定"></a>如何寻找页面上的组件并绑定</h6><pre><code class="xm">adroid:id//在xml设置对应的组件id方便查询</code></pre>
+<pre><code class="java">setContentView(id);用来绑定我们的事件处理和我们的组件。</code></pre>
+<h4 id="Event"><a href="#Event" class="headerlink" title="Event"></a>Event</h4><p>Event Listeners是界面交互返回信息给Event Handler</p>
+<p>Event Handler是应对某件事情发生时采取的措施。</p>
+<h6 id="实现Event"><a href="#实现Event" class="headerlink" title="实现Event"></a>实现Event</h6><p>实现事件处理需要两个步骤：</p>
+<ol>
+<li><p>实现一个listener类，并实现event handler方法，最后绑定到对应的view(layout)上。</p>
+<pre><code class="java">public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener &#123;
+
+    String TAG = &quot;ActivityOne&quot;;
+//    TextView textView;
+    ListView listView;
+    ArrayAdapter&lt;String&gt; adapter;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) &#123;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_listview);
+        Log.i(TAG, &quot;onCreate&quot;);
+//        textView = findViewById(R.id.textView);
+        listView = findViewById(R.id.listView);
+        ...
+        listView.setOnItemClickListener(this);
+    &#125;
+    ...
+&#125;</code></pre>
+</li>
+<li><p>绑定到对应的文件中需要使用的是findviewById(R.id….);</p>
+</li>
+</ol>
+<h6 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h6><ul>
+<li>onClick()</li>
+<li>onFocusChange()</li>
+<li>onLongClick()</li>
+<li>onKey()</li>
+<li>onTouch()</li>
+</ul>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><h4 id="串联场景"><a href="#串联场景" class="headerlink" title="串联场景"></a>串联场景</h4><h6 id="activity之间的转换"><a href="#activity之间的转换" class="headerlink" title="activity之间的转换"></a>activity之间的转换</h6><pre><code class="java">Intent intent = new Intent(MainActivity.this,activityTwo.class);
+startActivity(intent);</code></pre>
+<h2 id="网络部分"><a href="#网络部分" class="headerlink" title="网络部分"></a>网络部分</h2><p>volley</p>
+<h4 id="使用基本流程"><a href="#使用基本流程" class="headerlink" title="使用基本流程"></a>使用基本流程</h4><ul>
+<li><p>下载第三方库：gradle</p>
+<pre><code class="yaml">dependencies &#123;
+    ...
+    implementation &#39;com.android.volley:volley:1.1.1&#39;
+&#125;</code></pre>
+</li>
+<li><p>在AndroidManifest.xml允许使用网络</p>
+<pre><code class="xml">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;&gt;&lt;/uses-permission&gt;</code></pre>
+</li>
+<li><p>写一个简单的请求</p>
+<pre><code class="java">final TextView textView = (TextView) findViewById(R.id.text);
+// ...
+
+// Instantiate the RequestQueue.
+RequestQueue queue = Volley.newRequestQueue(this);
+String url =&quot;https://www.google.com&quot;;
+
+// Request a string response from the provided URL.
+StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+            new Response.Listener&lt;String&gt;() &#123;
+    @Override
+    public void onResponse(String response) &#123;
+        // Display the first 500 characters of the response string.
+        textView.setText(&quot;Response is: &quot;+ response.substring(0,500));
+    &#125;
+&#125;, new Response.ErrorListener() &#123;
+    @Override
+    public void onErrorResponse(VolleyError error) &#123;
+        textView.setText(&quot;That didn&#39;t work!&quot;);
+    &#125;
+&#125;);
+
+// Add the request to the RequestQueue.
+queue.add(stringRequest);</code></pre>
+</li>
+</ul>
+<h4 id="网络请求流程"><a href="#网络请求流程" class="headerlink" title="网络请求流程"></a>网络请求流程</h4><p><img src="https://developer.android.com/images/training/volley-request.png" alt="system bars"></p>
+<h2 id="Trouble-shooting-and-some-Java-knowledge"><a href="#Trouble-shooting-and-some-Java-knowledge" class="headerlink" title="Trouble shooting and some Java knowledge"></a>Trouble shooting and some Java knowledge</h2><h4 id="无法启动的模拟器"><a href="#无法启动的模拟器" class="headerlink" title="无法启动的模拟器"></a>无法启动的模拟器</h4><p>准备用自带的本地模拟器模拟一下最简单的app项目，但是居然发现无法启动。直接产生了Android studio error: The emulator process for AVD (xxx) was killed错误，google了一下，有两种可能：1.Intel X86 Emulator Accelerator(HAXM installer)没有被下载安装；2. AVD文件所在的磁盘空间不够。</p>
+<h6 id="检测是否已经下载安装所需的文件"><a href="#检测是否已经下载安装所需的文件" class="headerlink" title="检测是否已经下载安装所需的文件"></a>检测是否已经下载安装所需的文件</h6><p>Tools-&gt;SDK manager-&gt;Appearance&amp;Behavior-&gt;System Settings-&gt;Android SDK-&gt;SDK Tools</p>
+<p>检测Intel X86 Emulator Accelerator(HAXM installer)是否已经被安装</p>
+<p><img src="./image/image-20201113165836282.png" alt="image-20201113165836282"></p>
+<p>检测了一下，明显已经安装了。如果你没有安装，那么请你直接在这里点击安装。</p>
+<h6 id="检测是否磁盘不够"><a href="#检测是否磁盘不够" class="headerlink" title="检测是否磁盘不够"></a>检测是否磁盘不够</h6><p>首先我们要找到avd文件到底放置在哪里。</p>
+<p>Tools-&gt;avd manager-&gt;show on disk</p>
+<p><img src="./image/image-20201113170046275.png" alt="image-20201113170046275"></p>
+<p>我的显示在C盘下，然后我的C盘是一块128G的SSD，经过了三年多的洗礼，早已经所剩无几。显然我这个是因为没有了足够的空间容量。因此我需要将我的AVD默认安装磁盘转移。那么如何转换呢？Android官方是推荐使用ANDROID_AVD_HOME的系统变量。</p>
+<p>如何修改系统变量大家应该知道，不知道的可以百度、google一下。</p>
+<p>改变变量之后将原来的avd删除，新建一个新的avd模拟，此时一切都运行正常了。</p>
+<h4 id="java匿名类和闭包"><a href="#java匿名类和闭包" class="headerlink" title="java匿名类和闭包"></a>java匿名类和闭包</h4><p>其实一谈到闭包，我记忆中第一个回想起来的就是JS，但是java也会牵扯到一些闭包问题，因为java也有匿名类和匿名接口实现。在我们实现匿名类和匿名接口的时候，很有可能想要使用局部变量（在栈中的变量），但是java中似乎没有和js类似于执行链的概念，如果使用了局部变量，那么在方法执行完毕这个局部变量就会被销毁，而我们创建的匿名类和接口并不会被立即销毁（在堆中）。这里会出现问题，我们在匿名类和接口中使用的变量该如何处理呢？</p>
+<p>在java的规定中，指明匿名类不能使用局部变量除非是final修饰的变量。那么我们接下来就需要一探究竟，这背后隐藏着什么秘密。</p>
+<h6 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h6><p>在JS定义中闭包是指一个函数有权访问另一个函数内部环境的变量和函数表达式的权限。那么我们的java到底有没有闭包呢？其实按广泛的定义是有的，只是我们将这个JS定义的“函数内部环境”定义为对象，通过对象我们可以在对象内部肆无忌惮地使用各种变量和方法。除了对象，内部类其实是一个典型的闭包，我们java编译的时候会在内部类内部保存一个外部类的指针来获取外部类所有信息；特别是在获取外部类同名变量的时候，我们需要用外部类名.this.变量名——获取，这样就表现了内外类的环境不同（可以看下面一小节内部类的补充）。</p>
+<p>其实匿名类和接口是部分支持了闭包，也就是可以使用final修饰的局部变量，本质是将外部的局部变量拷贝到了内部，但是如果不是用final修饰的话，我们局部变量是可以改变的，那么我们内部拷贝的部分却没有进行变化，这导致了数据的不一致，所以编译器强制我们只有在final修饰时才可以使用对应的局部变量。</p>
+<p>而针对于内部类，我们内部类拿到的是外部类的引用，通过引用来使用外部类的变量，就变量本身而言就只有一份。另外，一个对象本身来说是不可以修改自己的this引用的，所以从某种意义来说，我们之所以没有对外部类需要final修饰是因为this本身不会改变。</p>
+<h6 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h6><ul>
+<li><p>静态内部类</p>
+<pre><code class="java">//源码
+package coreJava;
+
+public class Outter &#123;
+    public static int a = 102;
+    public static class Inner &#123;
+        public void print()&#123;
+            System.out.println(&quot;inner: &quot;+a);
+        &#125;
+    &#125;
+    public static void main(String []args) &#123;
+        Inner test = new Inner();
+        test.print();
+    &#125;
+&#125;</code></pre>
+<pre><code class="java">//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)编译后的class文件
+//
+
+package coreJava;
+
+public class Outter &#123;
+    public static int a = 102;
+
+    public Outter() &#123;
+    &#125;
+
+    public static void main(String[] args) &#123;
+        Outter.Inner test = new Outter.Inner();
+        test.print();
+    &#125;
+
+    public static class Inner &#123;
+        public Inner() &#123;
+        &#125;
+
+        public void print() &#123;
+            System.out.println(&quot;inner: &quot; + Outter.a);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</li>
+<li><p>成员内部类</p>
+<pre><code class="java">package coreJava;
+
+public class Member &#123;
+    int x = 2000;
+    int c = 80;
+    TopMember m = new TopMember();
+    class TopMember&#123;
+        int x = 100;
+        int y = 200;
+        void print()&#123;
+            System.out.println(&quot;y&quot;+y);
+            System.out.println(&quot;x&quot;+x);
+            System.out.println(&quot;Member.this.x&quot;+Member.this.x);
+            System.out.println(&quot;c&quot;+c);
+        &#125;
+    &#125;
+&#125;
+class Test&#123;
+    public static void main(String[] args)&#123;
+        Member member = new Member();
+        member.m.print();
+    &#125;
+&#125;
+</code></pre>
+<p>  编译后产生了三个文件，我们看看命名最奇怪的Member$TopMember</p>
+<pre><code class="java">//Member$TopMember.class
+
+</code></pre>
+</li>
+</ul>
+<pre><code>package coreJava;
+
+class Member$TopMember &#123;
+    int x;
+    int y;
+
+    Member$TopMember(Member var1) &#123;
+        this.this$0 = var1;
+        this.x = 100;
+        this.y = 200;
+    &#125;
+
+    void print() &#123;
+        System.out.println(&quot;y&quot; + this.y);
+        System.out.println(&quot;x&quot; + this.x);
+        System.out.println(&quot;Member.this.x&quot; + this.this$0.x);
+        System.out.println(&quot;c&quot; + this.this$0.c);
+    &#125;
+&#125;
+
+```
+
+出现了奇怪的this$0变量，我们可以使用javap -verbose XXX.class来查看具体的情况，这个是生成的对外部类变量的一个引用，而且可以绕过安全检测，也就是说可以查看private 变量和方法。
+
+**Here is an Android threading cheatsheet:**
+
+- `Runnable`: an interface that does nothing on its own but is used when interacting with many other threading related classes
+- `Thread`: most elemental way to run code off the main thread of a process.
+- `AsyncTask`: basic Android-centric way to run code off the main thread, there is a single thread devoted to all AsyncTask instances so only one can ever run at a time in your process
+- `HandlerThread`: convenient way to send messages (possibly with a delay) between your main thread and another thread
+- `ExecutorService`: powerful thread pool that allows you to take advantage of multiple CPU cores
+- `Service` (Android): an android component which does not have a user interface but whose methods still run on the main thread
+- `IntentService`: an android Service subclass you may extend which contains a single background thread on which work without an associated Activity can be done
+- `AlarmManager`: a mechanism provided by the Android system to start Android components at a particular time, but which forgets everything upon reboot
+- `JobScheduler`: a Lollipop and above mechanism provided by Android system to start android Services based on a description of the work to be done and which can optionally retain configuration across reboots (prefer WorkManager now)
+- `WorkManager`: an Android architecture component (library provided by Google which runs on many versions of Android) which works similarly to JobScheduler but additionally allows multiple jobs to be coordinated</code></pre>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>CreatorDP</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://ammydan.github.io/2020/11/07/Android/">https://ammydan.github.io/2020/11/07/Android/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/development/"># development</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/11/09/React/">React</a>
+            
+            
+            <a class="next" rel="next" href="/2020/10/25/TypeScript/">TypeScript</a>
+            
+        </section>
 
 
-    <hr />
-
-    <!-- Tags and Categories links -->
-    
-
-    
-    <div class="blog-tags-container">
-        <span class="glyphicon glyphicon-tags"></span>
-        <a href="/tags/development/">#development</a>
-    </div>
-
-
-    
-
-
+    </article>
 </div>
 
-
-
-
-<footer class="blog-footer">
-    <p>Blog template built for <a target="_blank" rel="noopener" href="http://getbootstrap.com">Bootstrap</a> by <a target="_blank" rel="noopener" href="https://twitter.com/mdo">@mdo</a>.</p>
-    <p>Adapted to Hexo by <a target="_blank" rel="noopener" href="https://github.com/ammydan">CreatorDP</a>.</p>
-    <p><a href="#">Back to top</a></p>
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© CreatorDP | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
 </footer>
 
-
-<!-- jQuery -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-
-<!-- For drop down -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
-<script>
-    hljs.initHighlightingOnLoad();
-</script>
-
+    </div>
 </body>
 </html>

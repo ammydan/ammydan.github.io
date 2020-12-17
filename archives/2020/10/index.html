@@ -1,544 +1,219 @@
-<!--layout.ejs-->
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>
-        DP&#39;s BLOG
-    </title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
-    
-<link rel="stylesheet" href="/css/libs/mo.css">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta charset="UTF-8">
+    <meta name="author" content="CreatorDP">
+
+
+
+    <meta name="description" content="净学了些精致的淘气o(*￣▽￣*)o">
+
+
+
+<title>Archives: 2020/10 | DP&#39;s BLOG</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
 <meta name="generator" content="Hexo 5.2.0"></head>
-
 <body>
-<div class="blog-header">
-    <h1 class="blog-title">CreatorDP</h1>
-    <p class="lead blog-description">净学了些精致的淘气o(*￣▽￣*)o</p>
-</div>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Bentham&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
 
-<div class="blog-masthead">
-    <div class="container">
-        <nav class="blog-nav">
-            
-                <a class="blog-nav-item" href="/projects">projects</a>
-            
-                <a class="blog-nav-item" href="/about">posts</a>
-            
-                <a class="blog-nav-item" target="_blank" rel="noopener" href="https://github.com/ammydan">hello</a>
-            
-        </nav>
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Bentham&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="post-wrap archive">
+    
+    
+        
+
+        
+            <h3>2020</h3>
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/25/TypeScript/">TypeScript</a>
+            <span class="archive-item-date">October 25, 2020</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/25/RxJS/">RxJS</a>
+            <span class="archive-item-date">October 25, 2020</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/20/%E5%89%8D%E7%AB%AF%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8D%95%E4%BD%8D/">前端的一些单位</a>
+            <span class="archive-item-date">October 20, 2020</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/20/SASS/">SASS</a>
+            <span class="archive-item-date">October 20, 2020</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/19/Mysql%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%92%8C%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/">Mysql体系结构和存储引擎</a>
+            <span class="archive-item-date">October 19, 2020</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/19/Flex%E5%B8%83%E5%B1%80/">Flex布局</a>
+            <span class="archive-item-date">October 19, 2020</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/19/CSCI-HW8/">CSCI HW8</a>
+            <span class="archive-item-date">October 19, 2020</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/18/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/">分布式系统</a>
+            <span class="archive-item-date">October 18, 2020</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/16/%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/">并发控制</a>
+            <span class="archive-item-date">October 16, 2020</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/16/%E8%BF%9B%E4%B8%80%E6%AD%A5%E6%8E%8C%E6%8F%A1SQL%E8%AF%AD%E5%8F%A5/">进一步掌握SQL语句</a>
+            <span class="archive-item-date">October 16, 2020</span>
+        </article>
+    
+    
+    <nav class="pagination">
+        <span class="page-number current">1</span><a class="page-number" href="/archives/2020/10/page/2/">2</a>
+    </nav>
+
+</div>
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© CreatorDP | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
     </div>
-</div>
-
- Android  CSCI HW8  Express.js使用  DP  JAVA Lambda杂记  Mysql体系结构和存储引擎  React  SASS  Hello World  RxJS  TypeScript  javaEE  security web communication  分布式系统  前端的一些单位  前后端分离的web应用部署  并发控制  系统故障对策  搭建博客  查询执行  进一步掌握SQL语句  Angular  Flex布局  Node.js 
-<div class="alert alert-primary" role="alert">
-    A simple primary alert—check it out!
-</div>
-
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/25/TypeScript/">
-            TypeScript
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-25
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><p>TS是ES超集，所以我们先要了解一下ES6的新特性（现在大部分人都是只熟悉ES5语法），然后再接触TS。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5672046-1765d858664877f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/442/format/webp" alt="img"></p>
-<h2 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h2><h4 id="回忆ES5回调-Callback"><a href="#回忆ES5回调-Callback" class="headerlink" title="回忆ES5回调(Callback)"></a>回忆ES5回调(Callback)</h4><h6 id="什么是callback"><a href="#什么是callback" class="headerlink" title="什么是callback"></a>什么是callback</h6><blockquote>
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/25/TypeScript/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/25/RxJS/">
-            RxJS
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-25
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>RxJS是使用Observable实现反应式编程的库，使得异步或者回调更加容易。这个库并不是使用ES原生的Promise来实现，而是使用了观察者模式来实现。</p>
-<h4 id="Observable"><a href="#Observable" class="headerlink" title="Observable"></a>Observable</h4><p>观察者模式不必在这里再仔细介绍，可以参考设计模式中的观察者来了解观察者模式的结构。观察者模式分为两个部分：主题和观察者。主题是对时常变化的数据的包装，更新变化数据；观察者则是需要这个主题的数据的人。主题接口必须有两个方法——订阅和退订，以及一组观察者；观察者必须要有一个方法——根据传入的参数进行更新展示或者数据处理，以及订阅的主题。</p>
-<p>在Java中，主题是直接使用一个数组记录订阅人员对象，然后一旦数据更新就调用订阅者的update方法传入更新后的数据；观察者是通过自己掌握的主题对象根据自己需求在特定时期进行订阅，在不必要的时候使用主题的退订方法进行退订（退订即将订阅者从主题拥有的订阅者数组中删除）。</p>
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/25/RxJS/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/20/前端的一些单位/">
-            前端的一些单位
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-20
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><h4 id="常用单位"><a href="#常用单位" class="headerlink" title="常用单位"></a>常用单位</h4><p>我们在开发前端的时候，往往遇见了很多不一样的单位，我们常常弄混，以至于最后直接放弃然后全部使用px。这里介绍了一些常用的单位。注意这里的单位都是相对单位，没有一个是绝对单位的。</p>
-<h6 id="px"><a href="#px" class="headerlink" title="px"></a>px</h6><p>px就是像素的意思，是一个图的最小的点，电脑像素1024x768，那么在水平方向有1024个像素点，垂直方向是768个像素点。很明显这是一个相对单位，因为会随着你屏幕的大小以及显示器的像素变换。（比如，你修改电脑像素显示的时候就会感觉到图标的大小变换；你在设置px单位来显示的时候电脑和手机上的大小有所变化，手机上显示得更小了，就是因为手机得屏幕更小，一个像素点的大小页变得更小了。）</p>
-<h6 id="em"><a href="#em" class="headerlink" title="em"></a>em</h6><p>参考物是父元素的font-size，具有继承的特点。如果自身定义了font-size按自身来计算。这是一个css级别的相对单位。</p>
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/20/前端的一些单位/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/20/SASS/">
-            SASS
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-20
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><h2 id="特色"><a href="#特色" class="headerlink" title="特色"></a>特色</h2><ul>
-<li>完全兼容 CSS3</li>
-<li>在 CSS 基础上增加变量、嵌套 (nesting)、混合 (mixins) 等功能</li>
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/20/SASS/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/19/Mysql体系结构和存储引擎/">
-            Mysql体系结构和存储引擎
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-19
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><h2 id="MySQL体系结构"><a href="#MySQL体系结构" class="headerlink" title="MySQL体系结构"></a>MySQL体系结构</h2><p>数据库和数据库实例：数据库是存储数据文件的，数据库实例是数据库管理系统的一次运行实例。</p>
-<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201019201522405.png" alt="image-20201019201522405"></p>
-<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201019202713382.png" alt="image-20201019202713382"></p>
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/19/Mysql体系结构和存储引擎/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/19/Flex布局/">
-            Flex布局
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-19
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071001.gif" alt="img"></p>
-<p>处理居中布局</p>
-<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h4 id="Flex布局是什么"><a href="#Flex布局是什么" class="headerlink" title="Flex布局是什么"></a>Flex布局是什么</h4><p>用来为盒状模型提供最大的灵活性。任何一个容器都可以指定为Flex布局，行内元素也可以使用Flex布局。</p>
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/19/Flex布局/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/19/CSCI-HW8/">
-            CSCI HW8
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-19
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><p>前端使用工具：Bootstrap、AngularJS开发。Bootstrap需要正确导入css和js文件。</p>
-<h2 id="前端样式设计"><a href="#前端样式设计" class="headerlink" title="前端样式设计"></a>前端样式设计</h2><h4 id="主页面"><a href="#主页面" class="headerlink" title="主页面"></a>主页面</h4><p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201019143108329.png" alt="image-20201019143108329"></p>
-<p>这个是主页面的样式，我们来拆分一下结构。</p>
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/19/CSCI-HW8/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/18/分布式系统/">
-            分布式系统
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-18
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><p>分布式系统面临的一个主要问题就是如何处理组件的失效，能够在组件失效的情况下还能保证事务不受影响；另一个主题就是如何处理不可能的网络通讯；第三个主题就是分布式系统如何保证效率；最后一个主题是安全问题，如何验证联系人的身份，如何防止通讯被监听等等。</p>
-<h2 id="通讯基础"><a href="#通讯基础" class="headerlink" title="通讯基础"></a>通讯基础</h2><p>网络因为各种原因被</p>
-<p>将分布式系统看作一个运行的程序更为合理。如果我们将一个分布式系统看作一个OS的话，这样的系统是非常脆弱和低效的，因为一个单独的系统读取内存内容是非常快的，如果我们的内容分布在不同机器上，效率就非常低下而且如果一台机器出现了错误，那么就意味一部分内存丢失，这样的结果是不能接受的。</p>
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/18/分布式系统/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/16/并发控制/">
-            并发控制
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-16
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><h2 id="串行调度和可串行化调度"><a href="#串行调度和可串行化调度" class="headerlink" title="串行调度和可串行化调度"></a>串行调度和可串行化调度</h2><p>“正确性原则”：每个事务如果在隔离的情况下执行（即没有其他任何事务与之同时执行），将把任何一致的状态转换到另一个一致的状态。</p>
-<h4 id="调度"><a href="#调度" class="headerlink" title="调度"></a>调度</h4><p>调度是一个或多个事务的重要动作的一个序列。当研究并发控制时，重要的读写动作放生在主存缓冲区中，而不是磁盘上。</p>
-<h4 id="串行调度"><a href="#串行调度" class="headerlink" title="串行调度"></a>串行调度</h4><p>如果一个调度的动作组成首先是一个事务的所有动作，然后是另一个事务的所有动作，依次类推，那么这一调度是串行的，不允许动作的混合。</p>
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/16/并发控制/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/16/进一步掌握SQL语句/">
-            进一步掌握SQL语句
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-16
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/16/进一步掌握SQL语句/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-
-
-<nav>
-    <ul class="pager">
-        
-        
-            <li><a href="/archives/2020/10/page/2/">Next</a></li>
-        
-    </ul>
-</nav>
-
-
-
-
-<footer class="blog-footer">
-    <p>Blog template built for <a target="_blank" rel="noopener" href="http://getbootstrap.com">Bootstrap</a> by <a target="_blank" rel="noopener" href="https://twitter.com/mdo">@mdo</a>.</p>
-    <p>Adapted to Hexo by <a target="_blank" rel="noopener" href="https://github.com/ammydan">CreatorDP</a>.</p>
-    <p><a href="#">Back to top</a></p>
 </footer>
 
-
-<!-- jQuery -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-
-<!-- For drop down -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
-<script>
-    hljs.initHighlightingOnLoad();
-</script>
-
+    </div>
 </body>
 </html>

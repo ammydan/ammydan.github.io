@@ -1,69 +1,204 @@
-<!--layout.ejs-->
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>
-        DP&#39;s BLOG
-    </title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="CreatorDP">
+
+
+
+    <meta name="description" content="净学了些精致的淘气o(*￣▽￣*)o">
+
+
+
+<title>DP | DP&#39;s BLOG</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
     
-<link rel="stylesheet" href="/css/libs/mo.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
 
-    <meta charset="UTF-8">
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
 <meta name="generator" content="Hexo 5.2.0"></head>
-
 <body>
-<div class="blog-header">
-    <h1 class="blog-title">CreatorDP</h1>
-    <p class="lead blog-description">净学了些精致的淘气o(*￣▽￣*)o</p>
-</div>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Bentham&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
 
-<div class="blog-masthead">
-    <div class="container">
-        <nav class="blog-nav">
-            
-                <a class="blog-nav-item" href="/projects">projects</a>
-            
-                <a class="blog-nav-item" href="/about">posts</a>
-            
-                <a class="blog-nav-item" target="_blank" rel="noopener" href="https://github.com/ammydan">hello</a>
-            
-        </nav>
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Bentham&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
     </div>
 </div>
 
- Android  CSCI HW8  Express.js使用  DP  JAVA Lambda杂记  Mysql体系结构和存储引擎  React  SASS  Hello World  RxJS  TypeScript  javaEE  security web communication  分布式系统  前端的一些单位  前后端分离的web应用部署  并发控制  系统故障对策  搭建博客  查询执行  进一步掌握SQL语句  Angular  Flex布局  Node.js 
-<div class="alert alert-primary" role="alert">
-    A simple primary alert—check it out!
-</div>
-<div class="blog-post">
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
 
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/11/DP/">
-            DP
-        </a>
-    </h2>
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
 
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-11
-        
-    </p>
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
 
-    <!-- Content -->
-    <p>传统DP思考方式：阶段、决策、最优子结构、无后效性。</p>
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">DP</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">CreatorDP</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">October 11, 2020&nbsp;&nbsp;16:35:10</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>传统DP思考方式：阶段、决策、最优子结构、无后效性。</p>
 <p>新的思考方式：从集合角度（通过将集合分类，以及最优子结构的特性将大问题分成小问题取最优或者取SUM）。</p>
 <h2 id="数字三角形模型"><a href="#数字三角形模型" class="headerlink" title="数字三角形模型"></a>数字三角形模型</h2><p>我们需要提高我们的题目阅读和抽象的能力，整个提高模块就是提高我们这一块的能力。</p>
 <p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201011164631578.png" alt="image-20201011164631578"></p>
 <p>一个图论问题可以转为DP问题，当且仅当图为拓扑图。DP是图论的一个子问题。</p>
-<h2 id="LIS最长上升子序列问题"><a href="#LIS最长上升子序列问题" class="headerlink" title="LIS最长上升子序列问题"></a>LIS最长上升子序列问题</h2><p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201012192705707.png" alt="image-20201012192705707"></p>
+<h2 id="LIS最长上升子序列问题"><a href="#LIS最长上升子序列问题" class="headerlink" title="LIS最长上升子序列问题"></a>LIS最长上升子序列问题</h2><p><img src="./image/image-20201119163442076.png" alt="image-20201119163442076"></p>
 <p>写了友好城市之后，发现LIS更本质的描述的是二维偏序的求解。看来看清楚最核心的问题才是我们提高班的意义。</p>
 <h4 id="LIS口诀"><a href="#LIS口诀" class="headerlink" title="LIS口诀"></a>LIS口诀</h4><h6 id="单一设备使用"><a href="#单一设备使用" class="headerlink" title="单一设备使用"></a>单一设备使用</h6><ul>
 <li>优先队列的末尾一定是递增递减的最值所在。</li>
@@ -99,7 +234,12 @@
 <li>性质3：基中元素一定不能被基中其他的元素组合表示出来。</li>
 </ul>
 <p>我们排序，然后再进行模拟。</p>
-<h4 id="求解依赖背包"><a href="#求解依赖背包" class="headerlink" title="求解依赖背包"></a>求解依赖背包</h4><h4 id="最优解的方案数"><a href="#最优解的方案数" class="headerlink" title="最优解的方案数"></a>最优解的方案数</h4><p>需要另外加上一个数组记录最优解的方案数。</p>
+<h4 id="求解依赖背包"><a href="#求解依赖背包" class="headerlink" title="求解依赖背包"></a>求解依赖背包</h4><ul>
+<li><p>树形依赖</p>
+<p>  计算出每个节点为根在V限制内的最优解集合，然后父节点需要这些作为基础进行获取来得到最优解。假设有K个点，V为整个限制的树。如果不采用DP优化，那么方案数有2^K个方案；采取DP方法则有KV的复杂度。</p>
+</li>
+</ul>
+<h4 id="最优解的方案数"><a href="#最优解的方案数" class="headerlink" title="最优解的方案数"></a>最优解的方案数</h4><p>需要另外加上一个数组记录最优解的方案数。</p>
 <p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201028195226303.png" alt="image-20201028195226303"></p>
 <h4 id="贪心-DP"><a href="#贪心-DP" class="headerlink" title="贪心+DP"></a>贪心+DP</h4><p>利用贪心获取递推关系（用来划分子集），然后DP获得总的最优解。凡是这种顺序影响结果的题目，我们可以考虑交换相邻两个对象的来尝试用贪心进行处理。</p>
 <h2 id="状态机"><a href="#状态机" class="headerlink" title="状态机"></a>状态机</h2><p>更好地区分状态，使得我们的集合区分更加方便。</p>
@@ -107,7 +247,18 @@
 <p>有一道题涉及到了平均数的处理以及均方差的概念：</p>
 <p>计算和化简过程如下：</p>
 <p><img src="./image/image-20201109204631272.png" alt="image-20201109204631272"></p>
-<h2 id="数形DP"><a href="#数形DP" class="headerlink" title="数形DP"></a>数形DP</h2><h4 id="找树的直径"><a href="#找树的直径" class="headerlink" title="找树的直径"></a>找树的直径</h4><p>树的最长的路径被称为树的直径。</p>
+<h2 id="状态压缩DP"><a href="#状态压缩DP" class="headerlink" title="状态压缩DP"></a>状态压缩DP</h2><h4 id="棋盘式（基于连通）"><a href="#棋盘式（基于连通）" class="headerlink" title="棋盘式（基于连通）"></a>棋盘式（基于连通）</h4><h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4><h6 id="重复覆盖问题"><a href="#重复覆盖问题" class="headerlink" title="重复覆盖问题"></a>重复覆盖问题</h6><p>本质，一个矩阵大小的0/1平面，尽可能地选择较少地行来覆盖每一列；升级版本：覆盖每一列且只被覆盖一次。— Dancing link（这个只是优化暴搜的代码，但是Dancing link本身确实非常复杂的，我们得到的时间复杂度还是一样的）</p>
+<p>DFS暴搜，这里我们可以使用状态压缩DP来替代Dancing link。</p>
+<pre><code>void dfs(int state, int cnt)//state存储当前哪些列已被覆盖
+&#123;
+    if(state 已经包含所有列)ans=min(ans,cnt), return;
+    任选没有被覆盖的一列x
+    枚举所有覆盖x的抛物线
+        更新一下state-&gt;new_state
+        dfs(new_state);
+&#125;</code></pre>
+<h2 id="树形DP"><a href="#树形DP" class="headerlink" title="树形DP"></a>树形DP</h2><p>树形DP初始化是在对一个的节点进行的。</p>
+<h4 id="找树的直径"><a href="#找树的直径" class="headerlink" title="找树的直径"></a>找树的直径</h4><p>树的最长的路径被称为树的直径。</p>
 <ol>
 <li>任取一点作为起点，找到距离该点最远的一个点U。DFS/BFS</li>
 <li>再找到距离U最远的一点V。DFS/BFS</li>
@@ -118,50 +269,87 @@
 <li>因为是无向的，我们需要防止子节点返回到父节点导致死循环，我们无需和图一样建立st[]对整个路径进行摘除，只需要排除父节点即可。</li>
 <li></li>
 </ol>
+<p>每个数的约数之和是唯一的，但是一个数可能是多个数的约数之和。</p>
+<h4 id="最大独立集—逆问题"><a href="#最大独立集—逆问题" class="headerlink" title="最大独立集—逆问题"></a>最大独立集—逆问题</h4><p>没有上司的舞会：每条边上最多选择一个点，求最大权值</p>
+<p>（逆问题）战略游戏：每条边上最少选择一个点，求最小权值。</p>
+<h2 id="数位DP"><a href="#数位DP" class="headerlink" title="数位DP"></a>数位DP</h2><p>题目形式：某个区间里面满足某种性质的个数。</p>
+<h5 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h5><ul>
+<li>我们求解的都是[x,y] =&gt; opt[y]-opt[x-1]，类似于前缀和的问题。</li>
+<li>从树的角度来考虑。</li>
+</ul>
+<p>我们在DP在使用特定线路转换而来的基本上是计算个数的而不是计算最值的。</p>
 <h2 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h2><h4 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h4><p><img src="https://www.shuxuele.com/algebra/images/matrix-multiply-a.svg" alt="矩阵乘法点积"></p>
 <p><img src="https://www.shuxuele.com/algebra/images/matrix-multiply-b.svg"></p>
+<h4 id="求1-n的所有的数的约数之和"><a href="#求1-n的所有的数的约数之和" class="headerlink" title="求1-n的所有的数的约数之和"></a>求1-n的所有的数的约数之和</h4><p>一开始我们在基础课中使用的是O(sqrt(n))的方法（试除法）求解约数，后来又有avg(logn)方法求解方法。这里都是单单求得n的约数之和，而不是1-n的方法。所以进行n遍的话，我们需要O(nsqrt(n))的复杂度。这里我们可以逐步相乘将复杂度降为O(nlogn)。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>CreatorDP</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://ammydan.github.io/2020/10/11/DP/">https://ammydan.github.io/2020/10/11/DP/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/algorithm/"># algorithm</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/10/11/Node.js/">Node.js</a>
+            
+            
+            <a class="next" rel="next" href="/2020/09/24/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">搭建博客</a>
+            
+        </section>
 
 
-    <hr />
-
-    <!-- Tags and Categories links -->
-    
-
-    
-    <div class="blog-tags-container">
-        <span class="glyphicon glyphicon-tags"></span>
-        <a href="/tags/algorithm/">#algorithm</a>
-    </div>
-
-
-    
-
-
+    </article>
 </div>
 
-
-
-
-<footer class="blog-footer">
-    <p>Blog template built for <a target="_blank" rel="noopener" href="http://getbootstrap.com">Bootstrap</a> by <a target="_blank" rel="noopener" href="https://twitter.com/mdo">@mdo</a>.</p>
-    <p>Adapted to Hexo by <a target="_blank" rel="noopener" href="https://github.com/ammydan">CreatorDP</a>.</p>
-    <p><a href="#">Back to top</a></p>
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© CreatorDP | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
 </footer>
 
-
-<!-- jQuery -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-
-<!-- For drop down -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
-<script>
-    hljs.initHighlightingOnLoad();
-</script>
-
+    </div>
 </body>
 </html>

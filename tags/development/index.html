@@ -1,505 +1,215 @@
-<!--layout.ejs-->
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>
-        DP&#39;s BLOG
-    </title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
-    
-<link rel="stylesheet" href="/css/libs/mo.css">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta charset="UTF-8">
+    <meta name="author" content="CreatorDP">
+
+
+
+    <meta name="description" content="净学了些精致的淘气o(*￣▽￣*)o">
+
+
+
+<title>Tag: development | DP&#39;s BLOG</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
 <meta name="generator" content="Hexo 5.2.0"></head>
-
 <body>
-<div class="blog-header">
-    <h1 class="blog-title">CreatorDP</h1>
-    <p class="lead blog-description">净学了些精致的淘气o(*￣▽￣*)o</p>
-</div>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Bentham&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
 
-<div class="blog-masthead">
-    <div class="container">
-        <nav class="blog-nav">
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Bentham&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
             
-                <a class="blog-nav-item" href="/projects">projects</a>
-            
-                <a class="blog-nav-item" href="/about">posts</a>
-            
-                <a class="blog-nav-item" target="_blank" rel="noopener" href="https://github.com/ammydan">hello</a>
-            
-        </nav>
+
+    
+<div class="container">
+    <div class="post-wrap tags">
+        <h2 class="post-title">-&nbsp;Tag&nbsp;·&nbsp;development-</h2>
     </div>
-</div>
-
- Android  CSCI HW8  Express.js使用  DP  JAVA Lambda杂记  Mysql体系结构和存储引擎  React  SASS  Hello World  RxJS  TypeScript  javaEE  security web communication  分布式系统  前端的一些单位  前后端分离的web应用部署  并发控制  系统故障对策  搭建博客  查询执行  进一步掌握SQL语句  Angular  Flex布局  Node.js 
-<div class="alert alert-primary" role="alert">
-    A simple primary alert—check it out!
-</div>
-
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/11/09/React/">
-            React
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-11-09
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><p>组件类需要继承React.compenent</p>
-<p>组件类的样式需要用reader()</p>
-<pre><code class="javascript">reader()&#123;
-<p>
+    <div class="post-wrap archive">
     
     
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/11/09/React/">
-                Read More
-            </a>
-        </p>
-    
-</div>
+        
 
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/11/07/Android/">
-            Android
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-11-07
         
-    </p>
+            <h3>2020</h3>
+        
 
-    <!-- Content -->
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/11/09/React/">React</a>
+            <span class="archive-item-date">November 9, 2020</span>
+        </article>
     
         
+
         
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h4 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h4><p><img src="./image/image-20201107121936992.png" alt="image-20201107121936992"></p>
-<p><img src="./image/image-20201107122014994.png" alt="image-20201107122014994"></p>
-<h4 id="开发组件"><a href="#开发组件" class="headerlink" title="开发组件"></a>开发组件</h4><h6 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h6><p>用户交互界面UI</p>
-<p>
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/11/07/Android/">Android</a>
+            <span class="archive-item-date">November 7, 2020</span>
+        </article>
     
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/25/RxJS/">RxJS</a>
+            <span class="archive-item-date">October 25, 2020</span>
+        </article>
     
-    <!-- Only display the Read More link if we are displaying an excerpt -->
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/15/security-web-communication/">security web communication</a>
+            <span class="archive-item-date">October 15, 2020</span>
+        </article>
     
-        <p>
-            <a href="/2020/11/07/Android/">
-                Read More
-            </a>
-        </p>
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/14/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%9A%84web%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2/">前后端分离的web应用部署</a>
+            <span class="archive-item-date">October 14, 2020</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/13/Angular/">Angular</a>
+            <span class="archive-item-date">October 13, 2020</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/13/Express.js%E4%BD%BF%E7%94%A8/">Express.js使用</a>
+            <span class="archive-item-date">October 13, 2020</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/10/11/Node.js/">Node.js</a>
+            <span class="archive-item-date">October 11, 2020</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2020/09/24/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">搭建博客</a>
+            <span class="archive-item-date">September 24, 2020</span>
+        </article>
+    
     
 </div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/25/RxJS/">
-            RxJS
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-25
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>RxJS是使用Observable实现反应式编程的库，使得异步或者回调更加容易。这个库并不是使用ES原生的Promise来实现，而是使用了观察者模式来实现。</p>
-<h4 id="Observable"><a href="#Observable" class="headerlink" title="Observable"></a>Observable</h4><p>观察者模式不必在这里再仔细介绍，可以参考设计模式中的观察者来了解观察者模式的结构。观察者模式分为两个部分：主题和观察者。主题是对时常变化的数据的包装，更新变化数据；观察者则是需要这个主题的数据的人。主题接口必须有两个方法——订阅和退订，以及一组观察者；观察者必须要有一个方法——根据传入的参数进行更新展示或者数据处理，以及订阅的主题。</p>
-<p>在Java中，主题是直接使用一个数组记录订阅人员对象，然后一旦数据更新就调用订阅者的update方法传入更新后的数据；观察者是通过自己掌握的主题对象根据自己需求在特定时期进行订阅，在不必要的时候使用主题的退订方法进行退订（退订即将订阅者从主题拥有的订阅者数组中删除）。</p>
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/25/RxJS/">
-                Read More
-            </a>
-        </p>
-    
 </div>
 
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/15/security-web-communication/">
-            security web communication
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-15
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><h2 id="WEB安全通信"><a href="#WEB安全通信" class="headerlink" title="WEB安全通信"></a>WEB安全通信</h2><h4 id="Public-and-Private-KEY-Cryptography"><a href="#Public-and-Private-KEY-Cryptography" class="headerlink" title="Public and Private KEY Cryptography"></a>Public and Private KEY Cryptography</h4><h6 id="方案一：私钥加密（对称加密算法）：发送者和接收者之间共享私钥"><a href="#方案一：私钥加密（对称加密算法）：发送者和接收者之间共享私钥" class="headerlink" title="方案一：私钥加密（对称加密算法）：发送者和接收者之间共享私钥"></a>方案一：私钥加密（对称加密算法）：发送者和接收者之间共享私钥</h6><p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201015111511895.png" alt="image-20201015111511895"></p>
-<p>如果你想要和某个人进行加密通信，那么我们就可以将私钥给他们。但是这里会有问题：私钥丢失、私钥被窃取都会导致严重问题。</p>
-<h6 id="方案二：私钥公钥一起使用（非对称加密算法）"><a href="#方案二：私钥公钥一起使用（非对称加密算法）" class="headerlink" title="方案二：私钥公钥一起使用（非对称加密算法）"></a>方案二：私钥公钥一起使用（非对称加密算法）</h6><p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201015113010072.png" alt="image-20201015113010072"></p>
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/15/security-web-communication/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/14/前后端分离的web应用部署/">
-            前后端分离的web应用部署
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-14
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><h2 id="应用信息"><a href="#应用信息" class="headerlink" title="应用信息"></a>应用信息</h2><h6 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h6><p>使用了前端的开发框架：Angular.JS</p>
-<h6 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h6><p>后端仍然使用JS开发，使用的是Node.js+express.js开发框架。</p>
-<h2 id="前端部署"><a href="#前端部署" class="headerlink" title="前端部署"></a>前端部署</h2><p>对于AngularJS来说，整个过程是比较简单的。有两种方式，这里用的第一种，就是单独部署前端到nignx；第二种方式在后端部署时一起部署到服务器中，这个将在后端部署中介绍。</p>
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/14/前后端分离的web应用部署/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/13/Angular/">
-            Angular
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-13
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><p><img src="https://i.stack.imgur.com/ylFmG.png" alt="Angular&#39;s two way of binding"></p>
-<p><img src="https://i.stack.imgur.com/4H7QJ.png" alt="React&#39;s one way binding"></p>
-<h2 id="快速搭建环境"><a href="#快速搭建环境" class="headerlink" title="快速搭建环境"></a>快速搭建环境</h2><pre><code class="bash">npm install -g cnpm --registry=https://registry.npm.taobao.org
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/13/Angular/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/13/Express.js使用/">
-            Express.js使用
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-13
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>假设您已经安装了 <a target="_blank" rel="noopener" href="https://nodejs.org/">Node.js</a>，创建目录以保存应用程序，并将其设置为工作目录。</p>
-<pre><code class="sh">$ mkdir myapp
-$ cd myapp</code></pre>
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/13/Express.js使用/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/10/11/Node.js/">
-            Node.js
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-10-11
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h4 id="设置安装目录"><a href="#设置安装目录" class="headerlink" title="设置安装目录"></a>设置安装目录</h4><p>我们默认的全局安装目录是在C盘下面的，如果我们想要自定义安装目录需要用以下命令</p>
-<pre><code class="bash">npm config set prefix &quot;&lt;目录&gt;&quot;
-
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/10/11/Node.js/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-    <div class="blog-post">
-
-    <!-- Title -->
-    <h2 class="blog-post-title">
-        <a href="/2020/09/24/搭建博客/">
-            搭建博客
-        </a>
-    </h2>
-
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2020-09-24
-        
-    </p>
-
-    <!-- Content -->
-    
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            <p><p>无业在校码农搭建一个长期博客，肯定要先看看有没有免费的路子，实在不行就只能自己买一个便宜的服务器搭建了。好在有这么一个路子，github pages+hexo/其他静态网站生成器——&gt;0元即可拥有一个静态站点。</p>
-<h2 id="简单一套流程"><a href="#简单一套流程" class="headerlink" title="简单一套流程"></a>简单一套流程</h2><h4 id="下载以及配置Node-js"><a href="#下载以及配置Node-js" class="headerlink" title="下载以及配置Node.js"></a>下载以及配置Node.js</h4><blockquote>
-<p>Node.js在官方的定义是js运行环境还顺带包含了一些命令行指令。（这样我们就可以脱离浏览器来运行JS了，基本上和Java，python运行环境一致，npm类似于python的pip）</p>
-<p>
-    
-    
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-        <p>
-            <a href="/2020/09/24/搭建博客/">
-                Read More
-            </a>
-        </p>
-    
-</div>
-
-
-
-
-<nav>
-    <ul class="pager">
-        
-        
-    </ul>
-</nav>
-
-
-
-
-<footer class="blog-footer">
-    <p>Blog template built for <a target="_blank" rel="noopener" href="http://getbootstrap.com">Bootstrap</a> by <a target="_blank" rel="noopener" href="https://twitter.com/mdo">@mdo</a>.</p>
-    <p>Adapted to Hexo by <a target="_blank" rel="noopener" href="https://github.com/ammydan">CreatorDP</a>.</p>
-    <p><a href="#">Back to top</a></p>
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© CreatorDP | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
 </footer>
 
-
-<!-- jQuery -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-
-<!-- For drop down -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
-<script>
-    hljs.initHighlightingOnLoad();
-</script>
-
+    </div>
 </body>
 </html>

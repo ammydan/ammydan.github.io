@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="CreatorDP">
+
+
+
+    <meta name="description" content="净学了些精致的淘气o(*￣▽￣*)o">
+
+
+
+<title>Leetcode | DP&#39;s BLOG</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Bentham&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Bentham&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Leetcode</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">CreatorDP</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">December 5, 2020&nbsp;&nbsp;8:02:42</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="1-冷却时间-间隔保证"><a href="#1-冷却时间-间隔保证" class="headerlink" title="1. 冷却时间/间隔保证"></a>1. 冷却时间/间隔保证</h2><h4 id="入门1（求最少时间）"><a href="#入门1（求最少时间）" class="headerlink" title="入门1（求最少时间）"></a>入门1（求最少时间）</h4><h6 id="621任务调度器"><a href="#621任务调度器" class="headerlink" title="621任务调度器"></a>621任务调度器</h6><p>给你一个用字符数组 tasks 表示的 CPU 需要执行的任务列表。其中每个字母表示一种不同种类的任务。任务可以以任意顺序执行，并且每个任务都可以在 1 个单位时间内执行完。在任何一个单位时间，CPU 可以完成一个任务，或者处于待命状态。</p>
+<p>然而，两个 相同种类 的任务之间必须有长度为整数 n 的冷却时间，因此至少有连续 n 个单位时间内 CPU 在执行不同的任务，或者在待命状态。</p>
+<p>你需要计算完成所有任务所需要的 最短时间 。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/task-scheduler">https://leetcode-cn.com/problems/task-scheduler</a></p>
+<h6 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h6><p>给定的数据表示，每一次使用一个字母，那么我们需要n时间的冷却。我们入手是需要一定的贪心算法。首先我们需要知道最大的一种任务数(max)。然后最少时间是在所有任务数(sum)和(max-1)*(n+1)+cnt。cnt代表有和我们的最大任务数相同的任务。</p>
+<h4 id="入门2（求一个最少时间的例子）"><a href="#入门2（求一个最少时间的例子）" class="headerlink" title="入门2（求一个最少时间的例子）"></a>入门2（求一个最少时间的例子）</h4><h6 id="767重构字符串"><a href="#767重构字符串" class="headerlink" title="767重构字符串"></a>767重构字符串</h6><p>给定一个字符串<code>S</code>，检查是否能重新排布其中的字母，使得两相邻的字符不同。</p>
+<p>若可行，输出任意可行的结果。若不可行，返回空字符串。</p>
+<h6 id="解决思路1"><a href="#解决思路1" class="headerlink" title="解决思路1"></a>解决思路1</h6><p>使用大小堆，我们按一个字母出现的次数作为比较大小的依据，然后每次取出两个进行摆放，减去1之后如果为0那么我们就抛弃，如果不为零我们将其再次放入大小堆中。在实现之前我们是需要进行判断的，判断是否能够完成。这种字母判断非常简单，只要最大字母数小于或者等于总数一半即可。</p>
+<h6 id="解决思路2"><a href="#解决思路2" class="headerlink" title="解决思路2"></a>解决思路2</h6><p>同样需要先判断是否能够完成。之后我们可以将最大出现的字母放在双数，然后再将其他字母进行填充（如果最大字母数没要超过最大数那么其他字母依然可以继续填充双数位，最后填充单数位。</p>
+<h4 id="提升"><a href="#提升" class="headerlink" title="提升"></a>提升</h4><h6 id="358K距离间隔冲排字符串"><a href="#358K距离间隔冲排字符串" class="headerlink" title="358K距离间隔冲排字符串"></a>358K距离间隔冲排字符串</h6><p>给你一个非空的字符串 s 和一个整数 k，你要将这个字符串中的字母进行重新排列，使得重排后的字符串中相同字母的位置间隔距离至少为 k。</p>
+<p>所有输入的字符串都由小写字母组成，如果找不到距离至少为 k 的重排结果，请返回一个空字符串 “”。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/rearrange-string-k-distance-apart">https://leetcode-cn.com/problems/rearrange-string-k-distance-apart</a></p>
+<h6 id="解决思路-1"><a href="#解决思路-1" class="headerlink" title="解决思路"></a>解决思路</h6><p>我们这里需要先进行判断，可以使用入门1进行判断，那么我们如何得到一个例子呢？这里特别需要注意的入门2的思路2是不能使用的，因为可能会出现重复的可能，只能使用思路1的方式进行。</p>
+<h2 id="2-排列"><a href="#2-排列" class="headerlink" title="2. 排列"></a>2. 排列</h2><h4 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h4><h6 id="剑指offer38"><a href="#剑指offer38" class="headerlink" title="剑指offer38"></a>剑指offer38</h6><p>输入一个字符串，打印出该字符串中字符的所有排列。你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。</p>
+<h6 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h6><p>和排列相关的题目使用回溯比较好，因为刚好可以对应的每个分支的结果。</p>
+<p>这里注意我们题目给出的东西可能出现重复，所以需要进行排除重复的处理，可以使用set进行排除，但是我们可以换一种遍历所有结果的方式，可以进行剪枝操作。</p>
+<h2 id="3-区间贪心问题"><a href="#3-区间贪心问题" class="headerlink" title="3.区间贪心问题"></a>3.区间贪心问题</h2><h4 id="入门1（合并）"><a href="#入门1（合并）" class="headerlink" title="入门1（合并）"></a>入门1（合并）</h4><h6 id="56-合并区间"><a href="#56-合并区间" class="headerlink" title="56 合并区间"></a>56 合并区间</h6><p>给出一个区间的集合，请合并所有重叠的区间。</p>
+<h6 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h6><p>典型的贪心问题，但是需要注意这种区间贪心问题需要考虑到底对开始还是结束进行排序。我们需要得到所有的合并区间，我们不能按照结束点进行排序，因为你不知道从哪一个开始！！！！</p>
+<h4 id="入门2（不相交）"><a href="#入门2（不相交）" class="headerlink" title="入门2（不相交）"></a>入门2（不相交）</h4><h6 id="252-会议室"><a href="#252-会议室" class="headerlink" title="252. 会议室"></a>252. 会议室</h6><p>给定一个会议时间安排的数组 intervals ，每个会议时间都会包括开始和结束的时间 intervals[i] = [starti, endi] ，请你判断一个人是否能够参加这里面的全部会议。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/meeting-rooms">https://leetcode-cn.com/problems/meeting-rooms</a></p>
+<h6 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h6><p>仍然是一个贪心问题，这里我们只是做一个判断，而不是计算出区间，所以我们可以直接对起点进行排序然后，然后再开一个list数组保存改组最后一个时间终点。这道题我们还可以使用终点进行排序，然后再判断。</p>
+<h4 id="入门3（不相交个数）"><a href="#入门3（不相交个数）" class="headerlink" title="入门3（不相交个数）"></a>入门3（不相交个数）</h4><h6 id="acwing-908-最大不相交区间数量"><a href="#acwing-908-最大不相交区间数量" class="headerlink" title="acwing 908 最大不相交区间数量"></a>acwing 908 最大不相交区间数量</h6><p>给定N个闭区间[ai,biai,bi]，请你在数轴上选择若干区间，使得选中的区间之间互不相交（包括端点）。</p>
+<p>输出可选取区间的最大数量。</p>
+<h6 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h6><p>终点排序，然后进行判断。这里不能使用起点进行排序，是因为可能起点最小但是终点最大，这样子我们无法求得最大不相交区间数量了。</p>
+<h4 id="入门4（区间分组）"><a href="#入门4（区间分组）" class="headerlink" title="入门4（区间分组）"></a>入门4（区间分组）</h4><h6 id="acwing-906-区间分组"><a href="#acwing-906-区间分组" class="headerlink" title="acwing 906. 区间分组"></a>acwing 906. 区间分组</h6><p>给定N个闭区间[ai,biai,bi]，请你将这些区间分成若干组，使得每组内部的区间两两之间（包括端点）没有交集，并使得组数尽可能小。</p>
+<p>输出最小组数。</p>
+<h6 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h6><p>对起点进行排序，然后选出能够满足的一个数组放入即可。</p>
+<h4 id="入门5-（区间选点）"><a href="#入门5-（区间选点）" class="headerlink" title="入门5 （区间选点）"></a>入门5 （区间选点）</h4><h6 id="acwing-905-区间选点"><a href="#acwing-905-区间选点" class="headerlink" title="acwing 905. 区间选点"></a>acwing 905. 区间选点</h6><p>给定N个闭区间[ai,biai,bi]，请你在数轴上选择尽量少的点，使得每个区间内至少包含一个选出的点。</p>
+<p>输出选择的点的最小数量。</p>
+<p>位于区间端点上的点也算作区间内。</p>
+<h6 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h6><p>我们按照终点进行排序，然后选择每一位的终点作为选点，如果后面的区间和该区间有重叠的部分我就不取新的终点；如果没有重叠的部分我们就选择新的终点作为选点。</p>
+<h4 id="提升1（覆盖指定区间）"><a href="#提升1（覆盖指定区间）" class="headerlink" title="提升1（覆盖指定区间）"></a>提升1（覆盖指定区间）</h4><h6 id="acwing-907-区间覆盖"><a href="#acwing-907-区间覆盖" class="headerlink" title="acwing 907. 区间覆盖"></a>acwing 907. 区间覆盖</h6><h2 id="3-自动状态机"><a href="#3-自动状态机" class="headerlink" title="3.自动状态机"></a>3.自动状态机</h2><h4 id="入门1"><a href="#入门1" class="headerlink" title="入门1"></a>入门1</h4><h6 id="剑指-Offer-20-表示数值的字符串"><a href="#剑指-Offer-20-表示数值的字符串" class="headerlink" title="剑指 Offer 20. 表示数值的字符串"></a>剑指 Offer 20. 表示数值的字符串</h6><p>请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”、”5e2”、”-123”、”3.1416”、”-1E-16”、”0123”都表示数值，但”12e”、”1a3.14”、”1.2.3”、”+-5”及”12e+5.4”都不是。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof">https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof</a></p>
+<h6 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h6><p>其实一开是我的思路是进行拆分，将数字都拆分成整数，然后我们再写一个整数的判断，但是这样写的细节太多了，我要分很多情况。这里可以引入一个自动状态机来解决这种匹配问题。</p>
+<blockquote>
+<p>确定有限状态自动机（以下简称「自动机」）是一类计算模型。它包含一系列状态，这些状态中：</p>
+<p>有一个特殊的状态，被称作「初始状态」。<br>还有一系列状态被称为「接受状态」，它们组成了一个特殊的集合。其中，一个状态可能既是「初始状态」，也是「接受状态」。<br>起初，这个自动机处于「初始状态」。随后，它顺序地读取字符串中的每一个字符，并根据当前状态和读入的字符，按照某个事先约定好的「转移规则」，从当前状态转移到下一个状态；当状态转移完成后，它就读取下一个字符。当字符串全部读取完毕后，如果自动机处于某个「接受状态」，则判定该字符串「被接受」；否则，判定该字符串「被拒绝」。</p>
+<p>作者：LeetCode-Solution<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/solution/biao-shi-shu-zhi-de-zi-fu-chuan-by-leetcode-soluti/">https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/solution/biao-shi-shu-zhi-de-zi-fu-chuan-by-leetcode-soluti/</a></p>
+</blockquote>
+<p>我们使用有限状态自动机，需要确定几个预备条件：</p>
+<ul>
+<li><p>所有字符</p>
+<p>  空格 「 」、数字「 0—9 」 、正负号 「 +-」 、小数点 「 . 」 、幂符号 「 eE 」</p>
+</li>
+<li><p>状态定义</p>
+<ol start="0">
+<li>开始的空格</li>
+<li>幂符号前的正负号</li>
+<li>小数点前的数字</li>
+<li>小数点、小数点后的数字</li>
+<li>当小数点前为空格时，小数点、小数点后的数字</li>
+<li>幂符号</li>
+<li>幂符号后的正负号</li>
+<li>幂符号后的数字</li>
+<li>结尾的空格</li>
+</ol>
+</li>
+<li><p>结束状态</p>
+<p>  合法的结束状态有 2, 3, 7, 8 。</p>
+<p>  <img src="https://pic.leetcode-cn.com/6f41d7e46fd0344c013980e3f46429dd7a7311bb4292783a482466a90f15747b-Picture1.png" alt="Picture1.png"></p>
+</li>
+</ul>
+<p>有些时候同一个符号会因为所处状态的不同，那么它能转移的状态也就不同了。</p>
+<h2 id="4-字符串相等转换（转换为同类）"><a href="#4-字符串相等转换（转换为同类）" class="headerlink" title="4.字符串相等转换（转换为同类）"></a>4.字符串相等转换（转换为同类）</h2><p>字符串相等有很多的定义，最常见的是两个字符串完全相同；其次是只有包含的字符数目都相同即可；还有字符相对位置相同（但是字符可以不同）也可以。</p>
+<h4 id="group入门1（字符数目相等"><a href="#group入门1（字符数目相等" class="headerlink" title="group入门1（字符数目相等)"></a>group入门1（字符数目相等)</h4><h6 id="49-Group-Anagrams"><a href="#49-Group-Anagrams" class="headerlink" title="49. Group Anagrams"></a>49. Group Anagrams</h6><p>Given an array of strings strs, group the anagrams together. You can return the answer in any order.</p>
+<p>An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/group-anagrams">https://leetcode-cn.com/problems/group-anagrams</a></p>
+<h6 id="思路1"><a href="#思路1" class="headerlink" title="思路1"></a>思路1</h6><p>我们可以将每一个String转换为char[]数组之后，然后使用Arrays.sort进行排序。这时候我们就可以快速进行判断。</p>
+<h6 id="思路2"><a href="#思路2" class="headerlink" title="思路2"></a>思路2</h6><p>我们可以将String 进行字母数目统计，然后我们再按照顺序进行获得新的字符串。</p>
+<h4 id="group入门2-（字符相对位置）"><a href="#group入门2-（字符相对位置）" class="headerlink" title="group入门2 （字符相对位置）"></a>group入门2 （字符相对位置）</h4><h6 id="249-Group-Shifted-Strings"><a href="#249-Group-Shifted-Strings" class="headerlink" title="249. Group Shifted Strings"></a>249. Group Shifted Strings</h6><p>Given a string, we can “shift” each of its letter to its successive letter, for example: “abc” -&gt; “bcd”. We can keep “shifting” which forms the sequence:</p>
+<p>“abc” -&gt; “bcd” -&gt; … -&gt; “xyz”<br>Given a list of non-empty strings which contains only lowercase alphabets, group all strings that belong to the same shifting sequence.</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/group-shifted-strings">https://leetcode-cn.com/problems/group-shifted-strings</a></p>
+<h6 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h6><p>我们可以将转移String的第0个位置变成a，其他的位置也减去相同的大小（我们需要进行26位的大小转换。）</p>
+<h4 id="识别是否有—提升1（字符数目相等）"><a href="#识别是否有—提升1（字符数目相等）" class="headerlink" title="识别是否有—提升1（字符数目相等）"></a>识别是否有—提升1（字符数目相等）</h4><h6 id="567-Permutation-in-String"><a href="#567-Permutation-in-String" class="headerlink" title="567. Permutation in String"></a>567. Permutation in String</h6><p>Given two strings s1 and s2, write a function to return true if s2 contains the permutation of s1. In other words, one of the first string’s permutations is the substring of the second string.</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/permutation-in-string">https://leetcode-cn.com/problems/permutation-in-string</a></p>
+<h6 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h6><p>我们需要找到字符数目相同的子字符串即可，但是我们使用排序的方式来用equals比较很是繁琐，而且无法利用前面的信息。我们这里直接存储j-i的所有我们想要的字符的个数，然后如果最终达到要求，我们再逐步减去前面的字符来达到我们长度的要求。（这里仍然是使用的数量比较的方式）。</p>
+<h2 id="5-数字变换（贪心）"><a href="#5-数字变换（贪心）" class="headerlink" title="5. 数字变换（贪心）"></a>5. 数字变换（贪心）</h2><blockquote>
+<p>单调栈的本质是在有限的长度（你可以删除或者保留一定长度的情况下）来取得最大值或者最小值。</p>
+</blockquote>
+<h4 id="入门1-递增最大小于N"><a href="#入门1-递增最大小于N" class="headerlink" title="入门1 递增最大小于N"></a>入门1 递增最大小于N</h4><h6 id="738-Monotone-Increasing-Digits"><a href="#738-Monotone-Increasing-Digits" class="headerlink" title="738. Monotone Increasing Digits"></a>738. Monotone Increasing Digits</h6><p>Given a non-negative integer N, find the largest number that is less than or equal to N with monotone increasing digits.</p>
+<p>(Recall that an integer has monotone increasing digits if and only if each pair of adjacent digits x and y satisfy x &lt;= y.)</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/monotone-increasing-digits">https://leetcode-cn.com/problems/monotone-increasing-digits</a></p>
+<h6 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h6><p>我们这里需要最大，但是不大于N。那么我们需高位越大越好，那么最好的情况就是等于N。但是这里我们需要从高到低需要变大，那么我们在某一位不能满足的时候我们就比该位小于1，后面我们就可以取999了。那么我们什么时候可以取呢？——当该位后面不和自己的一位相等next比较（除非一直到最后一位都一样），如果该位大于next那么我们这一位就需要-1后面取9，如果小于等于next那么我们就可以取自己这位最大值。</p>
+<h4 id="入门2-删除k位取最小值"><a href="#入门2-删除k位取最小值" class="headerlink" title="入门2 删除k位取最小值"></a>入门2 删除k位取最小值</h4><h6 id="402-Remove-K-Digits"><a href="#402-Remove-K-Digits" class="headerlink" title="402. Remove K Digits"></a>402. Remove K Digits</h6><p>Given a non-negative integer num represented as a string, remove k digits from the number so that the new number is the smallest possible.</p>
+<p>Note:<br>The length of num is less than 10002 and will be ≥ k.<br>The given num does not contain any leading zero.</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-k-digits">https://leetcode-cn.com/problems/remove-k-digits</a></p>
+<h6 id="思路-10"><a href="#思路-10" class="headerlink" title="思路"></a>思路</h6><p>使用单调队列来处理。但是 一定要注意到三种情况：1.我们的k已经用完了，后面的不能再保持单调了；2. 我们的k到最后也没有用完，其实我们可以直接在获取结果的时候减去对应的长度；3.恰好用完，这种情况无需进一步的操作。</p>
+<h4 id="提升1-删除重复元素"><a href="#提升1-删除重复元素" class="headerlink" title="提升1 删除重复元素"></a>提升1 删除重复元素</h4><h6 id="316-Remove-Duplicate-Letters"><a href="#316-Remove-Duplicate-Letters" class="headerlink" title="316. Remove Duplicate Letters"></a>316. Remove Duplicate Letters</h6><p>Given a string s, remove duplicate letters so that every letter appears once and only once. You must make sure your result is the smallest in lexicographical order among all possible results.</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-duplicate-letters">https://leetcode-cn.com/problems/remove-duplicate-letters</a></p>
+<h6 id="思路-11"><a href="#思路-11" class="headerlink" title="思路"></a>思路</h6><p>我们这里需要变通一下，因为不再是删除任意个k字符，只能删除重复元素。我们同样使用单调栈来处理，只是这一次我们要判断该字符能不能删除才能进行删除操作。如果最后还剩多余的K，我们直接从前往后删除对应字符。最后需要注意的是我们不能让重复出现的字符再次放入字符串中。</p>
+<h4 id="提升2-从两个里面获取k个元素"><a href="#提升2-从两个里面获取k个元素" class="headerlink" title="提升2 从两个里面获取k个元素"></a>提升2 从两个里面获取k个元素</h4><h6 id="321-Create-Maximum-Number"><a href="#321-Create-Maximum-Number" class="headerlink" title="321. Create Maximum Number"></a>321. Create Maximum Number</h6><p>Given two arrays of length m and n with digits 0-9 representing two numbers. Create the maximum number of length k &lt;= m + n from digits of the two. The relative order of the digits from the same array must be preserved. Return an array of the k digits.</p>
+<p>Note: You should try to optimize your time and space complexity.</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/create-maximum-number">https://leetcode-cn.com/problems/create-maximum-number</a></p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>CreatorDP</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://ammydan.github.io/2020/12/05/Leetcode/">https://ammydan.github.io/2020/12/05/Leetcode/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/leetcode/"># leetcode</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/12/16/%E6%8F%90%E9%AB%98%E2%80%94%E2%80%94%E6%90%9C%E7%B4%A2/">提高——搜索</a>
+            
+            
+            <a class="next" rel="next" href="/2020/11/09/JAVA-Lambda%E6%9D%82%E8%AE%B0/">JAVA Lambda杂记</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© CreatorDP | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
