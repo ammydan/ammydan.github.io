@@ -85,7 +85,7 @@ document.ready(
         // ready function.
 		const aplayer = new APlayer({
 			container: document.getElementById('player'),
-			mini: true,
+			fixed: true,
 			loop: 'all',
 			order: 'list',
 			autoplay: true,
