@@ -83,6 +83,22 @@ document.ready(
         _Blog.toggleTheme();
 
         // ready function.
-
+		const aplayer = new APlayer({
+			container: document.getElementById('player'),
+			mini: true,
+			audio: [{
+				name: 'Outside',
+				artist: '张钰琪',
+				url: 'https://dpassests.oss-cn-shanghai.aliyuncs.com/music/outside_cyq.mp3',
+				cover: 'https://dpassests.oss-cn-shanghai.aliyuncs.com/music_cover.jpg',
+			},
+			{
+				name: '死里复活',
+				artist: '阿朵',
+				url: 'https://dpassests.oss-cn-shanghai.aliyuncs.com/music/revive_ad.mp3',
+				cover: 'https://dpassests.oss-cn-shanghai.aliyuncs.com/music_cover.jpg',
+			}
+			]
+		});
     }
 );
