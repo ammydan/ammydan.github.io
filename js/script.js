@@ -86,6 +86,9 @@ document.ready(
 		const aplayer = new APlayer({
 			container: document.getElementById('player'),
 			mini: true,
+			loop: 'all',
+			order: 'list',
+			autoplay: true,
 			audio: [{
 				name: 'Outside',
 				artist: '张钰琪',
