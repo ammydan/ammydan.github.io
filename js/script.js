@@ -90,6 +90,11 @@ document.ready(
 			order: 'list',
 			autoplay: false,
 			audio: [{
+				name: "Baby don't cry"
+				aritst: '张钰琪',
+				url:'https://dpassests.oss-cn-shanghai.aliyuncs.com/music/baby%20don%27t%20cry_zyq.mp3',
+				cover: 'https://dpassests.oss-cn-shanghai.aliyuncs.com/music_cover.jpg'
+			},{
 				name: 'Outside',
 				artist: '张钰琪',
 				url: 'https://dpassests.oss-cn-shanghai.aliyuncs.com/music/outside_cyq.mp3',
