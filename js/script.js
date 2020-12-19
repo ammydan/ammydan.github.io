@@ -103,5 +103,10 @@ document.ready(
 			}
 			]
 		});
+		var pjax = new Pjax({
+		  selectors: [
+			"main"
+		  ]
+		})
     }
 );
