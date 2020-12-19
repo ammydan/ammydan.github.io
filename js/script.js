@@ -90,7 +90,7 @@ document.ready(
 			order: 'list',
 			autoplay: false,
 			audio: [{
-				name: "Baby don't cry"
+				name: "Baby don't cry",
 				artist: '张钰琪',
 				url:'https://dpassests.oss-cn-shanghai.aliyuncs.com/music/baby%20don%27t%20cry_zyq.mp3',
 				cover: 'https://dpassests.oss-cn-shanghai.aliyuncs.com/music_cover.jpg'
