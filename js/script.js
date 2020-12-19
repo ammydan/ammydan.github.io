@@ -105,7 +105,7 @@ document.ready(
 		});
 		var pjax = new Pjax({
 		  selectors: [
-			"main"
+			".main"
 		  ]
 		})
     }
