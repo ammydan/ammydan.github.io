@@ -192,6 +192,13 @@
                         </span>
                     
                     
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Algorithm/">Algorithm</a>
+                            
+                        </span>
+                    
                 </div>
             
         </header>
@@ -219,7 +226,15 @@ for(int i=0;i&lt;4;i++)&#123;
 </li>
 </ol>
 <h4 id="求到达最近起点的最短距离（多个起点）"><a href="#求到达最近起点的最短距离（多个起点）" class="headerlink" title="求到达最近起点的最短距离（多个起点）"></a>求到达最近起点的最短距离（多个起点）</h4><p>这种类型的题目，可以转换为单个起点最短路问题。我们可以假设一个虚拟起点，到达各个起点的距离为0或者1，然后进行计算。我们实现的时候是将多个起点提前添加到队列中即可。</p>
-
+<h4 id="0-1边权——双端队列"><a href="#0-1边权——双端队列" class="headerlink" title="0,1边权——双端队列"></a>0,1边权——双端队列</h4><p>整个图中只存在0和1两种边权。我们可以通过一个队列，当边权为0时，将其插入队头；将边权为1时，将其插入队尾。</p>
+<h4 id="提高搜索效率1——双向广搜"><a href="#提高搜索效率1——双向广搜" class="headerlink" title="提高搜索效率1——双向广搜"></a>提高搜索效率1——双向广搜</h4><h4 id="提高搜索效率2——A"><a href="#提高搜索效率2——A" class="headerlink" title="提高搜索效率2——A*"></a>提高搜索效率2——A*</h4><p><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/image-20201221152226706.png" alt="image-20201221152226706"></p>
+<p>八数码问题要有解，必须逆序对为偶数。</p>
+<h2 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><h4 id="基于连通性"><a href="#基于连通性" class="headerlink" title="基于连通性"></a>基于连通性</h4><p><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/image-20201225200655455.png" alt="image-20201225200655455"></p>
+<h4 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h4><p><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/image-20201226182816191.png" alt="image-20201226182816191"></p>
+<h6 id="1-优化搜索顺序"><a href="#1-优化搜索顺序" class="headerlink" title="1. 优化搜索顺序"></a>1. 优化搜索顺序</h6><p>大部分情况下，我们应该优先搜索分支较少的节点。（特别是我们在剪枝的情况下）</p>
+<p><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/image-20201226183217096.png" alt="image-20201226183217096"></p>
+<h6 id="2-排除冗余等效"><a href="#2-排除冗余等效" class="headerlink" title="2. 排除冗余等效"></a>2. 排除冗余等效</h6><p>比如顺序并不重要，我们就将其变换成组合遍历</p>
+<h6 id="3-可行性剪枝"><a href="#3-可行性剪枝" class="headerlink" title="3. 可行性剪枝"></a>3. 可行性剪枝</h6><h6 id="4-最优性剪枝"><a href="#4-最优性剪枝" class="headerlink" title="4. 最优性剪枝"></a>4. 最优性剪枝</h6><h6 id="6-记忆化搜索（DP）"><a href="#6-记忆化搜索（DP）" class="headerlink" title="6. 记忆化搜索（DP）"></a>6. 记忆化搜索（DP）</h6>
         </div>
 
         
@@ -256,10 +271,6 @@ for(int i=0;i&lt;4;i++)&#123;
                 <span>Tag(s):</span>
                 <span class="tag">
                     
-                    
-                        <a href="/tags/Algorithm/"># Algorithm</a>
-                    
-                        
                 </span>
             </div>
             <div>
