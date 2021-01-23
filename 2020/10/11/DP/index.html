@@ -205,10 +205,14 @@
 
         <div class="post-content">
             <p>传统DP思考方式：阶段、决策、最优子结构、无后效性。</p>
-<p>新的思考方式：从集合角度（通过将集合分类，以及最优子结构的特性将大问题分成小问题取最优或者取SUM）。</p>
+<p>新的思考方式：从集合角度（通过将集合分类，以及最优子结构的特性将大问题分成小问题取最优或者取SUM），这不意味着不考虑传统DP思考方式，但是我们可以先从集合角度进行考虑，然后通过传统DP思考方式来验证正确性。</p>
 <h2 id="数字三角形模型"><a href="#数字三角形模型" class="headerlink" title="数字三角形模型"></a>数字三角形模型</h2><p>我们需要提高我们的题目阅读和抽象的能力，整个提高模块就是提高我们这一块的能力。</p>
-<p><img src="D:\frontEnd\ammydan.github.io\public\img\image-20201011164631578.png" alt="image-20201011164631578"></p>
 <p>一个图论问题可以转为DP问题，当且仅当图为拓扑图。DP是图论的一个子问题。</p>
+<h4 id="普通三角形模型"><a href="#普通三角形模型" class="headerlink" title="普通三角形模型"></a>普通三角形模型</h4><h4 id="一次拓扑图DP"><a href="#一次拓扑图DP" class="headerlink" title="一次拓扑图DP"></a>一次拓扑图DP</h4><p>也就是可以有多个父节点，但是不能有子节点到父节点的方向路径，在我们见过的DP中最经典的就是:从左上到右下，且只能往下或者往右走。这种题非常简单，这里不做描述。</p>
+<h4 id="二次拓扑图DP"><a href="#二次拓扑图DP" class="headerlink" title="二次拓扑图DP"></a>二次拓扑图DP</h4><p>我们在一次拓扑图的题目上加上一个新规则，我们可以走两次，但是我们经过某个格子之后会改变格子的状态。</p>
+<h6 id="格子的值发生变化，但仍然能通过"><a href="#格子的值发生变化，但仍然能通过" class="headerlink" title="格子的值发生变化，但仍然能通过"></a>格子的值发生变化，但仍然能通过</h6><p>我们走两次的话，我们使用opt[x1,y1,x2,y2]表示走两次的时候，分别经过(x1,y1),(x2,y2)的路径最大。在这里我们可以做一个优化，x1+y1==x2+y2的时候，我们的格子才会走到同一个点。</p>
+<p>opt[k, x1, x2]，k表示走了k步，x表示垂直方向。我们只需要在划分的时候保证我们本身这个状态重复经过时会只加一次w，那么为什么前面的状态还是能够保证正确性呢？因为我们起始状态时上一个从k=0开始，且k=0时opt状态只会是0，那么我们就可以保证正确性了。</p>
+<h6 id="格子不能通过，即此路不通"><a href="#格子不能通过，即此路不通" class="headerlink" title="格子不能通过，即此路不通"></a>格子不能通过，即此路不通</h6><p>这个状况其实和上一个小分支解法一模一样，这里提供一个证明链接<a target="_blank" rel="noopener" href="https://www.acwing.com/solution/content/12389/">https://www.acwing.com/solution/content/12389/</a></p>
 <h2 id="LIS最长上升子序列问题"><a href="#LIS最长上升子序列问题" class="headerlink" title="LIS最长上升子序列问题"></a>LIS最长上升子序列问题</h2><p><img src="./image/image-20201119163442076.png" alt="image-20201119163442076"></p>
 <p>写了友好城市之后，发现LIS更本质的描述的是二维偏序的求解。看来看清楚最核心的问题才是我们提高班的意义。</p>
 <h4 id="LIS口诀"><a href="#LIS口诀" class="headerlink" title="LIS口诀"></a>LIS口诀</h4><h6 id="单一设备使用"><a href="#单一设备使用" class="headerlink" title="单一设备使用"></a>单一设备使用</h6><ul>
@@ -358,7 +362,7 @@
 </footer>
 
     </div>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/nietzche.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 <div id="player" style="z-index: 99999;">
 </div>
 </html>

@@ -324,7 +324,7 @@
 <li>查找出所有等于1的一行，写出对应的式子（全部使用*连接）</li>
 <li>通过逻辑运算定理推出最终的答案。（不同的式子之间使用+连接）</li>
 </ol>
-<p>设当前状态为XYXY，输入为ZZ，那么我们可以分别为XX和YY列出真值表</p>
+<p>设当前状态为XY，输入为Z，那么我们可以分别为X和Y列出真值表</p>
 <h4 id="提升2（如何分离两个数）"><a href="#提升2（如何分离两个数）" class="headerlink" title="提升2（如何分离两个数）"></a>提升2（如何分离两个数）</h4><h6 id="260-Single-Number-III"><a href="#260-Single-Number-III" class="headerlink" title="260. Single Number III"></a>260. Single Number III</h6><p>Given an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once. You can return the answer in any order.</p>
 <p>Follow up: Your algorithm should run in linear runtime complexity. Could you implement it using only constant space complexity?</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number-iii">https://leetcode-cn.com/problems/single-number-iii</a></p>
@@ -384,6 +384,9 @@
 <p>例如，输入12，1～12这些整数中包含1 的数字有1、10、11和12，1一共出现了5次。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof">https://leetcode-cn.com/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof</a></p>
 <h6 id="思路-29"><a href="#思路-29" class="headerlink" title="思路"></a>思路</h6><p>像这种9次方的数据量的时候，我们可以考虑将数字拆为每一位计算。</p>
+<h4 id="如何使得乘积最大"><a href="#如何使得乘积最大" class="headerlink" title="如何使得乘积最大"></a>如何使得乘积最大</h4><h6 id="剑指-Offer-14-I-剪绳子"><a href="#剑指-Offer-14-I-剪绳子" class="headerlink" title="剑指 Offer 14- I. 剪绳子"></a>剑指 Offer 14- I. 剪绳子</h6><p>给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n&gt;1并且m&gt;1），每段绳子的长度记为 k[0],k[1]…k[m-1] 。请问 k[0]<em>k[1]</em>…*k[m-1] 可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/jian-sheng-zi-lcof">https://leetcode-cn.com/problems/jian-sheng-zi-lcof</a></p>
+<h6 id="思路-30"><a href="#思路-30" class="headerlink" title="思路"></a>思路</h6><p>看题目的时候觉得就是使用DP，而且n的大小刚好比较小，使用dp绰绰有余，但是题解中看到了数学解决方法觉得很有意思这里参考：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/integer-break/solution/343-zheng-shu-chai-fen-tan-xin-by-jyd/%E3%80%82%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95%E5%9C%A8%E5%B8%B8%E6%95%B0%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%86%85%E5%8D%B3%E5%8F%AF%E3%80%82">https://leetcode-cn.com/problems/integer-break/solution/343-zheng-shu-chai-fen-tan-xin-by-jyd/。数学方法在常数时间复杂度内即可。</a></p>
 <h2 id="数据结构设计"><a href="#数据结构设计" class="headerlink" title="数据结构设计"></a>数据结构设计</h2><h4 id="LRU-Least-Recently-Used"><a href="#LRU-Least-Recently-Used" class="headerlink" title="LRU(Least Recently Used)"></a>LRU(Least Recently Used)</h4><h6 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h6><ol>
 <li>一个最大容量，get、put、size。</li>
 <li>保证所有的操作都是O(1)复杂度</li>
@@ -391,7 +394,44 @@
 </ol>
 <h6 id="使用什么数据结构"><a href="#使用什么数据结构" class="headerlink" title="使用什么数据结构"></a>使用什么数据结构</h6><p>双向链表+哈希map</p>
 <p><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/image-20201230232755459.png" alt="image-20201230232755459"></p>
-<h4 id="LFU"><a href="#LFU" class="headerlink" title="LFU"></a>LFU</h4>
+<p>HashMap中存储的是key和指针。</p>
+<ol>
+<li>删除，删除队头元素。</li>
+<li>更新，通过hashmap找到对应元素更新val，然后将该元素放置队尾。</li>
+</ol>
+<h4 id="LFU"><a href="#LFU" class="headerlink" title="LFU"></a>LFU</h4><h2 id="逆向思考"><a href="#逆向思考" class="headerlink" title="逆向思考"></a>逆向思考</h2><h4 id="并查集逆向合并"><a href="#并查集逆向合并" class="headerlink" title="并查集逆向合并"></a>并查集逆向合并</h4><h6 id="803-打砖块"><a href="#803-打砖块" class="headerlink" title="803 打砖块"></a>803 打砖块</h6><p>有一个 m x n 的二元网格，其中 1 表示砖块，0 表示空白。砖块 稳定（不会掉落）的前提是：</p>
+<p>一块砖直接连接到网格的顶部，或者<br>至少有一块相邻（4 个方向之一）砖块 稳定 不会掉落时<br>给你一个数组 hits ，这是需要依次消除砖块的位置。每当消除 hits[i] = (rowi, coli) 位置上的砖块时，对应位置的砖块（若存在）会消失，然后其他的砖块可能因为这一消除操作而掉落。一旦砖块掉落，它会立即从网格中消失（即，它不会落在其他稳定的砖块上）。</p>
+<p>返回一个数组 result ，其中 result[i] 表示第 i 次消除操作对应掉落的砖块数目。</p>
+<p>注意，消除可能指向是没有砖块的空白位置，如果发生这种情况，则没有砖块掉落。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/bricks-falling-when-hit">https://leetcode-cn.com/problems/bricks-falling-when-hit</a></p>
+<h6 id="思路-31"><a href="#思路-31" class="headerlink" title="思路"></a>思路</h6><p>当初思路就是判断是不是卡点（也就是该点将连通块一分为二的点，且分开后两个连通块，其中一块不能连通到顶部），但是这样动态维护始终没有想到比较好的方法。</p>
+<p>看了题解之后，恍然大悟，并查集本身是将两个点合并在一起，那么这道题的逆向不就是合并吗。当我们将一个不稳定的连通块合并后变得稳定，那么该连通块的数量就是我们消除的额外砖块。</p>
+<h4 id="DP无后效性"><a href="#DP无后效性" class="headerlink" title="DP无后效性"></a>DP无后效性</h4><h6 id="174-地下城游戏"><a href="#174-地下城游戏" class="headerlink" title="174. 地下城游戏"></a>174. 地下城游戏</h6><p>一些恶魔抓住了公主（P）并将她关在了地下城的右下角。地下城是由 M x N 个房间组成的二维网格。我们英勇的骑士（K）最初被安置在左上角的房间里，他必须穿过地下城并通过对抗恶魔来拯救公主。</p>
+<p>骑士的初始健康点数为一个正整数。如果他的健康点数在某一时刻降至 0 或以下，他会立即死亡。</p>
+<p>有些房间由恶魔守卫，因此骑士在进入这些房间时会失去健康点数（若房间里的值为负整数，则表示骑士将损失健康点数）；其他房间要么是空的（房间里的值为 0），要么包含增加骑士健康点数的魔法球（若房间里的值为正整数，则表示骑士将增加健康点数）。</p>
+<p>为了尽快到达公主，骑士决定每次只向右或向下移动一步。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/dungeon-game">https://leetcode-cn.com/problems/dungeon-game</a></p>
+<h6 id="思路-32"><a href="#思路-32" class="headerlink" title="思路"></a>思路</h6><p>对于这个东西，我们需要知道为什么我们正序来更新dp数组会失败，因为累计和会影响该路径后半部分的最小值。这样我们就无法使用DP了。</p>
+<p>逆序为什么可以呢？因为逆序之后我们我们累计和无法影响路径前半部分最小值的变化。</p>
+<h2 id="并查集的综和应用"><a href="#并查集的综和应用" class="headerlink" title="并查集的综和应用"></a>并查集的综和应用</h2><h4 id="移除同一连通块的方块"><a href="#移除同一连通块的方块" class="headerlink" title="移除同一连通块的方块"></a>移除同一连通块的方块</h4><h6 id="947-移除最多的同行或同列石头"><a href="#947-移除最多的同行或同列石头" class="headerlink" title="947. 移除最多的同行或同列石头"></a>947. 移除最多的同行或同列石头</h6><p>n 块石头放置在二维平面中的一些整数坐标点上。每个坐标点上最多只能有一块石头。</p>
+<p>如果一块石头的 同行或者同列 上有其他石头存在，那么就可以移除这块石头。</p>
+<p>给你一个长度为 n 的数组 stones ，其中 stones[i] = [xi, yi] 表示第 i 块石头的位置，返回 可以移除的石子 的最大数量。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/most-stones-removed-with-same-row-or-column">https://leetcode-cn.com/problems/most-stones-removed-with-same-row-or-column</a></p>
+<h6 id="思路-33"><a href="#思路-33" class="headerlink" title="思路"></a>思路</h6><p>理解题目意思比自己吭哧吭哧瞎写好很多，这个意思就是连通块最后只剩下一个，那么我们可以统计一下连通块的个数，然后用总个数减去连通块的个数。</p>
+<p>那么如何改进并查集来实现连通块的统计呢？我们可以使用hashmap替代传统的数组，然后我们在root的时候检测一下是否有对应的键值对，没有的话需要cnt++，在union时cnt–。（因为hashmap没有提前初始化，在root的时候才会进行初始化）。</p>
+<h4 id="存在多余的边（变成树）"><a href="#存在多余的边（变成树）" class="headerlink" title="存在多余的边（变成树）"></a>存在多余的边（变成树）</h4><h6 id="684-冗余连接"><a href="#684-冗余连接" class="headerlink" title="684. 冗余连接"></a>684. 冗余连接</h6><p>在本问题中, 树指的是一个连通且无环的无向图。</p>
+<p>输入一个图，该图由一个有着N个节点 (节点值不重复1, 2, …, N) 的树及一条附加的边构成。附加的边的两个顶点包含在1到N中间，这条附加的边不属于树中已存在的边。</p>
+<p>结果图是一个以边组成的二维数组。每一个边的元素是一对[u, v] ，满足 u &lt; v，表示连接顶点u 和v的无向图的边。</p>
+<p>返回一条可以删去的边，使得结果图是一个有着N个节点的树。如果有多个答案，则返回二维数组中最后出现的边。答案边 [u, v] 应满足相同的格式 u &lt; v。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/redundant-connection">https://leetcode-cn.com/problems/redundant-connection</a></p>
+<h6 id="思路-34"><a href="#思路-34" class="headerlink" title="思路"></a>思路</h6><p>树上多出了一条边，那么一定会形成一个三个点及三点以上的环，那么我们使用并查集，在发现添加一条边之前两个点就在一个连通块里面了，那么这条边是可以删除的。</p>
+<h2 id="拓扑"><a href="#拓扑" class="headerlink" title="拓扑"></a>拓扑</h2><h4 id="分组拓扑"><a href="#分组拓扑" class="headerlink" title="分组拓扑"></a>分组拓扑</h4><h6 id="203-项目管理"><a href="#203-项目管理" class="headerlink" title="203. 项目管理"></a>203. 项目管理</h6><p>有 n 个项目，每个项目或者不属于任何小组，或者属于 m 个小组之一。group[i] 表示第 i 个小组所属的小组，如果第 i 个项目不属于任何小组，则 group[i] 等于 -1。项目和小组都是从零开始编号的。可能存在小组不负责任何项目，即没有任何项目属于这个小组。</p>
+<p>请你帮忙按要求安排这些项目的进度，并返回排序后的项目列表：</p>
+<p>同一小组的项目，排序后在列表中彼此相邻。<br>项目之间存在一定的依赖关系，我们用一个列表 beforeItems 来表示，其中 beforeItems[i] 表示在进行第 i 个项目前（位于第 i 个项目左侧）应该完成的所有项目。<br>如果存在多个解决方案，只需要返回其中任意一个即可。如果没有合适的解决方案，就请返回一个 空列表 。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sort-items-by-groups-respecting-dependencies">https://leetcode-cn.com/problems/sort-items-by-groups-respecting-dependencies</a></p>
+<h6 id="思路-35"><a href="#思路-35" class="headerlink" title="思路"></a>思路</h6><p>在xxx之前或者说在xxx之后，我们可以迅速联想到拓扑序。这里有一个难点就是需要分组，每组需要连续，那么如何处理这样的拓扑序呢？其实我们可以进行组内外两次拓扑序，首先我们检测组外拓扑序是否成功，然后再进行组内拓扑序连接。</p>
+<h2 id="bfprt"><a href="#bfprt" class="headerlink" title="bfprt"></a>bfprt</h2><pre><code class="java"></code></pre>
+
         </div>
 
         
@@ -457,7 +497,7 @@
 </footer>
 
     </div>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/nietzche.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 <div id="player" style="z-index: 99999;">
 </div>
 </html>
