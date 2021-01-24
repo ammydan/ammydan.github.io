@@ -614,10 +614,20 @@ header label {
 .post-wrap .archive-item {
   margin-left: 2rem;
 }
+.newpost {
+  display: inline-block;
+  margin-left: 2%;
+  max-width: 10%;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #c7254e;
+}
 .archive-item-link {
   display: inline-block;
+  max-width: 65%;
   text-decoration: none;
   overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 .archive-item-link:hover {
@@ -710,14 +720,17 @@ header label {
   margin: 1em 0 1em 0;
 }
 .post-wrap .post-header h1 {
+  text-align: center;
   margin: 0 !important;
 }
 .post-wrap .post-title {
-  font-size: 2em;
+  font-family: SimHei;
+  font-size: 2.2em;
   line-height: 1.5em;
 }
 .post-wrap .post-meta {
   color: rgba(85,85,85,0.529) !important;
+  text-align: center;
 }
 .dark-theme .post-wrap .post-meta {
   color: #87878d !important;
@@ -738,13 +751,28 @@ header label {
   padding-top: 2rem;
   text-align: justify;
 }
+.post-content h1,
+.post-content h2 {
+  font-size: 2em;
+  border-bottom: 1px solid #eee;
+}
+.post-content h3,
+.post-content h4 {
+  font-size: 1.5em;
+}
+.post-content h5,
+.post-content h6 {
+  font-size: 1em;
+}
 .post-content h2,
 .post-content h3,
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-  padding-top: 0.8em;
-  padding-bottom: 0.3em;
+  font-family: SimSun;
+  margin-top: 0.7em;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.7em;
 }
 .post-content h1::before {
   content: "#";

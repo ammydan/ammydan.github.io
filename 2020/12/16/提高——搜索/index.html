@@ -10,8 +10,6 @@
 
 
 
-    <meta name="description" content="净学了些精致的淘气o(*￣▽￣*)o">
-
 
 
 <title>提高——搜索 | DP&#39;s BLOG</title>
@@ -64,8 +62,6 @@
                 
                     <a class="menu-item" href="/tag">Tags</a>
                 
-                    <a class="menu-item" href="/about">About</a>
-                
                 <input id="switch_default" type="checkbox" class="switch_default">
                 <label for="switch_default" class="toggleBtn"></label>
             </div>
@@ -88,8 +84,6 @@
                     <a class="menu-item" href="/category">Categories</a>
                 
                     <a class="menu-item" href="/tag">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
                 
             </div>
         </div>
@@ -188,7 +182,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">December 16, 2020&nbsp;&nbsp;21:40:30</a>
+                        Created Date: <a href="#">December 16, 2020&nbsp;&nbsp;21:40:30</a>
                         </span>
                     
                     
@@ -246,10 +240,22 @@ for(int i=0;i&lt;4;i++)&#123;
 <li>对于改组不能继续装载则新开一组。</li>
 </ol>
 <h4 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h4><p><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/image-20201226182816191.png" alt="image-20201226182816191"></p>
-<h6 id="1-优化搜索顺序"><a href="#1-优化搜索顺序" class="headerlink" title="1. 优化搜索顺序"></a>1. 优化搜索顺序</h6><p>大部分情况下，我们应该优先搜索分支较少的节点。（特别是我们在剪枝的情况下）</p>
+<h6 id="1-优化搜索顺序"><a href="#1-优化搜索顺序" class="headerlink" title="1. 优化搜索顺序"></a>1. 优化搜索顺序</h6><p>大部分情况下，我们应该优先搜索分支较少的节点。（特别是我们在剪枝的情况下）先大后小；</p>
 <p><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/image-20201226183217096.png" alt="image-20201226183217096"></p>
-<h6 id="2-排除冗余等效"><a href="#2-排除冗余等效" class="headerlink" title="2. 排除冗余等效"></a>2. 排除冗余等效</h6><p>比如顺序并不重要，我们就将其变换成组合遍历</p>
-<h6 id="3-可行性剪枝"><a href="#3-可行性剪枝" class="headerlink" title="3. 可行性剪枝"></a>3. 可行性剪枝</h6><h6 id="4-最优性剪枝"><a href="#4-最优性剪枝" class="headerlink" title="4. 最优性剪枝"></a>4. 最优性剪枝</h6><h6 id="6-记忆化搜索（DP）"><a href="#6-记忆化搜索（DP）" class="headerlink" title="6. 记忆化搜索（DP）"></a>6. 记忆化搜索（DP）</h6>
+<p>是否可以使用完所有。</p>
+<h6 id="2-排除冗余等效"><a href="#2-排除冗余等效" class="headerlink" title="2. 排除冗余等效"></a>2. 排除冗余等效</h6><p>比如顺序并不重要，我们就将其变换成组合遍历。典型的一种就是分组最少的情况。（我们保持一定顺序搜索）</p>
+<h6 id="3-可行性剪枝"><a href="#3-可行性剪枝" class="headerlink" title="3. 可行性剪枝"></a>3. 可行性剪枝</h6><p>我们一般是查看题目要求，然后我们根据需要进行可行性排除。（dfs头部）</p>
+<h6 id="4-最优性剪枝"><a href="#4-最优性剪枝" class="headerlink" title="4. 最优性剪枝"></a>4. 最优性剪枝</h6><p>这里一般是大于我们已经得到的较优解，那么我们直接提前退出。（dfs头部）</p>
+<h6 id="6-记忆化搜索（DP）"><a href="#6-记忆化搜索（DP）" class="headerlink" title="6. 记忆化搜索（DP）"></a>6. 记忆化搜索（DP）</h6><h4 id="剪枝实例"><a href="#剪枝实例" class="headerlink" title="剪枝实例"></a>剪枝实例</h4><h6 id="acwing165小猫爬山——最小花费装载"><a href="#acwing165小猫爬山——最小花费装载" class="headerlink" title="acwing165小猫爬山——最小花费装载"></a>acwing165小猫爬山——最小花费装载</h6><p>翰翰和达达饲养了N只小猫，这天，小猫们要去爬山。</p>
+<p>经历了千辛万苦，小猫们终于爬上了山顶，但是疲倦的它们再也不想徒步走下山了（呜咕&gt;_&lt;）。</p>
+<p>翰翰和达达只好花钱让它们坐索道下山。</p>
+<p>索道上的缆车最大承重量为<code>W</code>，而N只小猫的重量分别是<code>C1、C2……CN</code>.</p>
+<p>当然，每辆缆车上的小猫的重量之和不能超过<code>W</code>。</p>
+<p>每租用一辆缆车，翰翰和达达就要付1美元，所以他们想知道，最少需要付多少美元才能把这N只小猫都运送下山？</p>
+<h6 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h6><p>优化搜索顺序——对猫的体重进行排序（从大到小），装载的时候也是按照这个顺序装入。</p>
+<p>最优化剪枝——如果中途使用缆车数量已经超过了较优解，那么我们就直接退出这个分支。</p>
+<p><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/image-20210123132105865.png" alt="image-20210123132105865"></p>
+
         </div>
 
         
@@ -315,7 +321,7 @@ for(int i=0;i&lt;4;i++)&#123;
 </footer>
 
     </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/nietzche.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
-<div id="player" style="z-index: 99999;">
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/nico.model.json"},"display":{"position":"right","width":250,"height":500,"hOffset":0,"vOffset":-20},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+<div id="player" style="z-index: 99999; float:right;">
 </div>
 </html>

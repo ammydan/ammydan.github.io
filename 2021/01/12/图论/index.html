@@ -10,8 +10,6 @@
 
 
 
-    <meta name="description" content="净学了些精致的淘气o(*￣▽￣*)o">
-
 
 
 <title>图论 | DP&#39;s BLOG</title>
@@ -64,8 +62,6 @@
                 
                     <a class="menu-item" href="/tag">Tags</a>
                 
-                    <a class="menu-item" href="/about">About</a>
-                
                 <input id="switch_default" type="checkbox" class="switch_default">
                 <label for="switch_default" class="toggleBtn"></label>
             </div>
@@ -88,8 +84,6 @@
                     <a class="menu-item" href="/category">Categories</a>
                 
                     <a class="menu-item" href="/tag">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
                 
             </div>
         </div>
@@ -188,7 +182,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">January 12, 2021&nbsp;&nbsp;19:35:56</a>
+                        Created Date: <a href="#">January 12, 2021&nbsp;&nbsp;19:35:56</a>
                         </span>
                     
                     
@@ -216,6 +210,17 @@
 <li>任意一棵最小生成树一定可以包含无向图中权值最小的边</li>
 <li>给定一张无向图<code>G=(V,E)</code>, <code>n=|V|</code></li>
 <li><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/image-20210120181729121.png" alt="image-20210120181729121"></li>
+</ol>
+<h4 id="次小生成树"><a href="#次小生成树" class="headerlink" title="次小生成树"></a>次小生成树</h4><blockquote>
+<p>给一个带权的图，把图的所有生成树按权值从小到大排序，第二小的称为次小生成树（严格定义是必须大于最小）</p>
+</blockquote>
+<p>方法一： 先求最小生成树，然后枚举删除最小生成树中的边求解。时间复杂度：O(mlogm+mn)，我们先排序然后再枚举。</p>
+<p>方法二： 先求最小生成树，然后依次枚举非树边，然后将该边加入树种，同时从树中去掉一条边，使得最终的图仍然是一棵树。</p>
+<p><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/image-20210124154857152.png" alt="image-20210124154857152"></p>
+<h6 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h6><ol>
+<li>求最小生成树， 统计标记每条边是树边还是非树边；同时把最小生成树建立出来。</li>
+<li>预处理任意两点间的边权最大值dist</li>
+<li>依次枚举所有非树边求min(sum+w-distab)，满足w&gt;distab。</li>
 </ol>
 
         </div>
@@ -281,7 +286,7 @@
 </footer>
 
     </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/nietzche.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
-<div id="player" style="z-index: 99999;">
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/nico.model.json"},"display":{"position":"right","width":250,"height":500,"hOffset":0,"vOffset":-20},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+<div id="player" style="z-index: 99999; float:right;">
 </div>
 </html>

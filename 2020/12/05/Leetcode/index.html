@@ -10,8 +10,6 @@
 
 
 
-    <meta name="description" content="净学了些精致的淘气o(*￣▽￣*)o">
-
 
 
 <title>Leetcode | DP&#39;s BLOG</title>
@@ -64,8 +62,6 @@
                 
                     <a class="menu-item" href="/tag">Tags</a>
                 
-                    <a class="menu-item" href="/about">About</a>
-                
                 <input id="switch_default" type="checkbox" class="switch_default">
                 <label for="switch_default" class="toggleBtn"></label>
             </div>
@@ -88,8 +84,6 @@
                     <a class="menu-item" href="/category">Categories</a>
                 
                     <a class="menu-item" href="/tag">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
                 
             </div>
         </div>
@@ -188,16 +182,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">December 5, 2020&nbsp;&nbsp;8:02:42</a>
+                        Created Date: <a href="#">December 5, 2020&nbsp;&nbsp;8:02:42</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/Interview/">Interview</a>
-                            
-                                <a href="/categories/Interview/Algorithm/">Algorithm</a>
+                                <a href="/categories/Algorithm/">Algorithm</a>
                             
                         </span>
                     
@@ -222,24 +214,28 @@
 <h2 id="2-排列"><a href="#2-排列" class="headerlink" title="2. 排列"></a>2. 排列</h2><h4 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h4><h6 id="剑指offer38"><a href="#剑指offer38" class="headerlink" title="剑指offer38"></a>剑指offer38</h6><p>输入一个字符串，打印出该字符串中字符的所有排列。你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。</p>
 <h6 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h6><p>和排列相关的题目使用回溯比较好，因为刚好可以对应的每个分支的结果。</p>
 <p>这里注意我们题目给出的东西可能出现重复，所以需要进行排除重复的处理，可以使用set进行排除，但是我们可以换一种遍历所有结果的方式，可以进行剪枝操作。</p>
-<h2 id="3-区间贪心问题"><a href="#3-区间贪心问题" class="headerlink" title="3.区间贪心问题"></a>3.区间贪心问题</h2><h4 id="入门1（合并）"><a href="#入门1（合并）" class="headerlink" title="入门1（合并）"></a>入门1（合并）</h4><h6 id="56-合并区间"><a href="#56-合并区间" class="headerlink" title="56 合并区间"></a>56 合并区间</h6><p>给出一个区间的集合，请合并所有重叠的区间。</p>
+<h2 id="3-贪心问题"><a href="#3-贪心问题" class="headerlink" title="3.贪心问题"></a>3.贪心问题</h2><h4 id="区间入门1（合并）"><a href="#区间入门1（合并）" class="headerlink" title="区间入门1（合并）"></a>区间入门1（合并）</h4><h6 id="56-合并区间"><a href="#56-合并区间" class="headerlink" title="56 合并区间"></a>56 合并区间</h6><p>给出一个区间的集合，请合并所有重叠的区间。</p>
 <h6 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h6><p>典型的贪心问题，但是需要注意这种区间贪心问题需要考虑到底对开始还是结束进行排序。我们需要得到所有的合并区间，我们不能按照结束点进行排序，因为你不知道从哪一个开始！！！！</p>
-<h4 id="入门2（不相交）"><a href="#入门2（不相交）" class="headerlink" title="入门2（不相交）"></a>入门2（不相交）</h4><h6 id="252-会议室"><a href="#252-会议室" class="headerlink" title="252. 会议室"></a>252. 会议室</h6><p>给定一个会议时间安排的数组 intervals ，每个会议时间都会包括开始和结束的时间 intervals[i] = [starti, endi] ，请你判断一个人是否能够参加这里面的全部会议。</p>
+<h4 id="区间入门2（不相交）"><a href="#区间入门2（不相交）" class="headerlink" title="区间入门2（不相交）"></a>区间入门2（不相交）</h4><h6 id="252-会议室"><a href="#252-会议室" class="headerlink" title="252. 会议室"></a>252. 会议室</h6><p>给定一个会议时间安排的数组 intervals ，每个会议时间都会包括开始和结束的时间 intervals[i] = [starti, endi] ，请你判断一个人是否能够参加这里面的全部会议。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/meeting-rooms">https://leetcode-cn.com/problems/meeting-rooms</a></p>
 <h6 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h6><p>仍然是一个贪心问题，这里我们只是做一个判断，而不是计算出区间，所以我们可以直接对起点进行排序然后，然后再开一个list数组保存改组最后一个时间终点。这道题我们还可以使用终点进行排序，然后再判断。</p>
-<h4 id="入门3（不相交个数）"><a href="#入门3（不相交个数）" class="headerlink" title="入门3（不相交个数）"></a>入门3（不相交个数）</h4><h6 id="acwing-908-最大不相交区间数量"><a href="#acwing-908-最大不相交区间数量" class="headerlink" title="acwing 908 最大不相交区间数量"></a>acwing 908 最大不相交区间数量</h6><p>给定N个闭区间[ai,biai,bi]，请你在数轴上选择若干区间，使得选中的区间之间互不相交（包括端点）。</p>
+<h4 id="区间入门3（不相交个数）"><a href="#区间入门3（不相交个数）" class="headerlink" title="区间入门3（不相交个数）"></a>区间入门3（不相交个数）</h4><h6 id="acwing-908-最大不相交区间数量"><a href="#acwing-908-最大不相交区间数量" class="headerlink" title="acwing 908 最大不相交区间数量"></a>acwing 908 最大不相交区间数量</h6><p>给定N个闭区间[ai,biai,bi]，请你在数轴上选择若干区间，使得选中的区间之间互不相交（包括端点）。</p>
 <p>输出可选取区间的最大数量。</p>
 <h6 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h6><p>终点排序，然后进行判断。这里不能使用起点进行排序，是因为可能起点最小但是终点最大，这样子我们无法求得最大不相交区间数量了。</p>
-<h4 id="入门4（区间分组）"><a href="#入门4（区间分组）" class="headerlink" title="入门4（区间分组）"></a>入门4（区间分组）</h4><h6 id="acwing-906-区间分组"><a href="#acwing-906-区间分组" class="headerlink" title="acwing 906. 区间分组"></a>acwing 906. 区间分组</h6><p>给定N个闭区间[ai,biai,bi]，请你将这些区间分成若干组，使得每组内部的区间两两之间（包括端点）没有交集，并使得组数尽可能小。</p>
+<h4 id="区间入门4（区间分组）"><a href="#区间入门4（区间分组）" class="headerlink" title="区间入门4（区间分组）"></a>区间入门4（区间分组）</h4><h6 id="acwing-906-区间分组"><a href="#acwing-906-区间分组" class="headerlink" title="acwing 906. 区间分组"></a>acwing 906. 区间分组</h6><p>给定N个闭区间[ai,biai,bi]，请你将这些区间分成若干组，使得每组内部的区间两两之间（包括端点）没有交集，并使得组数尽可能小。</p>
 <p>输出最小组数。</p>
 <h6 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h6><p>对起点进行排序，然后选出能够满足的一个数组放入即可。</p>
-<h4 id="入门5-（区间选点）"><a href="#入门5-（区间选点）" class="headerlink" title="入门5 （区间选点）"></a>入门5 （区间选点）</h4><h6 id="acwing-905-区间选点"><a href="#acwing-905-区间选点" class="headerlink" title="acwing 905. 区间选点"></a>acwing 905. 区间选点</h6><p>给定N个闭区间[ai,biai,bi]，请你在数轴上选择尽量少的点，使得每个区间内至少包含一个选出的点。</p>
+<h4 id="区间入门5-（区间选点）"><a href="#区间入门5-（区间选点）" class="headerlink" title="区间入门5 （区间选点）"></a>区间入门5 （区间选点）</h4><h6 id="acwing-905-区间选点"><a href="#acwing-905-区间选点" class="headerlink" title="acwing 905. 区间选点"></a>acwing 905. 区间选点</h6><p>给定N个闭区间[ai,biai,bi]，请你在数轴上选择尽量少的点，使得每个区间内至少包含一个选出的点。</p>
 <p>输出选择的点的最小数量。</p>
 <p>位于区间端点上的点也算作区间内。</p>
 <h6 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h6><p>我们按照终点进行排序，然后选择每一位的终点作为选点，如果后面的区间和该区间有重叠的部分我就不取新的终点；如果没有重叠的部分我们就选择新的终点作为选点。</p>
-<h4 id="提升1（覆盖指定区间）"><a href="#提升1（覆盖指定区间）" class="headerlink" title="提升1（覆盖指定区间）"></a>提升1（覆盖指定区间）</h4><h6 id="acwing-907-区间覆盖"><a href="#acwing-907-区间覆盖" class="headerlink" title="acwing 907. 区间覆盖"></a>acwing 907. 区间覆盖</h6><h2 id="3-自动状态机"><a href="#3-自动状态机" class="headerlink" title="3.自动状态机"></a>3.自动状态机</h2><h4 id="入门1"><a href="#入门1" class="headerlink" title="入门1"></a>入门1</h4><h6 id="剑指-Offer-20-表示数值的字符串"><a href="#剑指-Offer-20-表示数值的字符串" class="headerlink" title="剑指 Offer 20. 表示数值的字符串"></a>剑指 Offer 20. 表示数值的字符串</h6><p>请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”、”5e2”、”-123”、”3.1416”、”-1E-16”、”0123”都表示数值，但”12e”、”1a3.14”、”1.2.3”、”+-5”及”12e+5.4”都不是。</p>
+<h4 id="区间提升1（覆盖指定区间）"><a href="#区间提升1（覆盖指定区间）" class="headerlink" title="区间提升1（覆盖指定区间）"></a>区间提升1（覆盖指定区间）</h4><h6 id="acwing-907-区间覆盖"><a href="#acwing-907-区间覆盖" class="headerlink" title="acwing 907. 区间覆盖"></a>acwing 907. 区间覆盖</h6><h4 id="跳跃台阶"><a href="#跳跃台阶" class="headerlink" title="跳跃台阶"></a>跳跃台阶</h4><h6 id="55-跳跃游戏"><a href="#55-跳跃游戏" class="headerlink" title="55. 跳跃游戏"></a>55. 跳跃游戏</h6><p>给定一个非负整数数组，你最初位于数组的第一个位置。</p>
+<p>数组中的每个元素代表你在该位置可以跳跃的最大长度。</p>
+<p>判断你是否能够到达最后一个位置。</p>
+<h6 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h6><p>记录能够到达的最大值即可。如果某一个位置超过了能够到达的最大值，那么我们就无法继续前进了。</p>
+<h4 id="选址"><a href="#选址" class="headerlink" title="选址"></a>选址</h4><h6 id="acwing"><a href="#acwing" class="headerlink" title="acwing"></a>acwing</h6><h4 id="最小平均等待时间——huffman树"><a href="#最小平均等待时间——huffman树" class="headerlink" title="最小平均等待时间——huffman树"></a>最小平均等待时间——huffman树</h4><h2 id="3-自动状态机"><a href="#3-自动状态机" class="headerlink" title="3.自动状态机"></a>3.自动状态机</h2><h4 id="入门1"><a href="#入门1" class="headerlink" title="入门1"></a>入门1</h4><h6 id="剑指-Offer-20-表示数值的字符串"><a href="#剑指-Offer-20-表示数值的字符串" class="headerlink" title="剑指 Offer 20. 表示数值的字符串"></a>剑指 Offer 20. 表示数值的字符串</h6><p>请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”、”5e2”、”-123”、”3.1416”、”-1E-16”、”0123”都表示数值，但”12e”、”1a3.14”、”1.2.3”、”+-5”及”12e+5.4”都不是。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof">https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof</a></p>
-<h6 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h6><p>其实一开是我的思路是进行拆分，将数字都拆分成整数，然后我们再写一个整数的判断，但是这样写的细节太多了，我要分很多情况。这里可以引入一个自动状态机来解决这种匹配问题。</p>
+<h6 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h6><p>其实一开是我的思路是进行拆分，将数字都拆分成整数，然后我们再写一个整数的判断，但是这样写的细节太多了，我要分很多情况。这里可以引入一个自动状态机来解决这种匹配问题。</p>
 <blockquote>
 <p>确定有限状态自动机（以下简称「自动机」）是一类计算模型。它包含一系列状态，这些状态中：</p>
 <p>有一个特殊的状态，被称作「初始状态」。<br>还有一系列状态被称为「接受状态」，它们组成了一个特殊的集合。其中，一个状态可能既是「初始状态」，也是「接受状态」。<br>起初，这个自动机处于「初始状态」。随后，它顺序地读取字符串中的每一个字符，并根据当前状态和读入的字符，按照某个事先约定好的「转移规则」，从当前状态转移到下一个状态；当状态转移完成后，它就读取下一个字符。当字符串全部读取完毕后，如果自动机处于某个「接受状态」，则判定该字符串「被接受」；否则，判定该字符串「被拒绝」。</p>
@@ -279,41 +275,41 @@
 <h4 id="group入门2-（字符相对位置）"><a href="#group入门2-（字符相对位置）" class="headerlink" title="group入门2 （字符相对位置）"></a>group入门2 （字符相对位置）</h4><h6 id="249-Group-Shifted-Strings"><a href="#249-Group-Shifted-Strings" class="headerlink" title="249. Group Shifted Strings"></a>249. Group Shifted Strings</h6><p>Given a string, we can “shift” each of its letter to its successive letter, for example: “abc” -&gt; “bcd”. We can keep “shifting” which forms the sequence:</p>
 <p>“abc” -&gt; “bcd” -&gt; … -&gt; “xyz”<br>Given a list of non-empty strings which contains only lowercase alphabets, group all strings that belong to the same shifting sequence.</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/group-shifted-strings">https://leetcode-cn.com/problems/group-shifted-strings</a></p>
-<h6 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h6><p>我们可以将转移String的第0个位置变成a，其他的位置也减去相同的大小（我们需要进行26位的大小转换。）</p>
+<h6 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h6><p>我们可以将转移String的第0个位置变成a，其他的位置也减去相同的大小（我们需要进行26位的大小转换。）</p>
 <h4 id="识别是否有—提升1（字符数目相等）"><a href="#识别是否有—提升1（字符数目相等）" class="headerlink" title="识别是否有—提升1（字符数目相等）"></a>识别是否有—提升1（字符数目相等）</h4><h6 id="567-Permutation-in-String"><a href="#567-Permutation-in-String" class="headerlink" title="567. Permutation in String"></a>567. Permutation in String</h6><p>Given two strings s1 and s2, write a function to return true if s2 contains the permutation of s1. In other words, one of the first string’s permutations is the substring of the second string.</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/permutation-in-string">https://leetcode-cn.com/problems/permutation-in-string</a></p>
-<h6 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h6><p>我们需要找到字符数目相同的子字符串即可，但是我们使用排序的方式来用equals比较很是繁琐，而且无法利用前面的信息。我们这里直接存储j-i的所有我们想要的字符的个数，然后如果最终达到要求，我们再逐步减去前面的字符来达到我们长度的要求。（这里仍然是使用的数量比较的方式）。</p>
+<h6 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h6><p>我们需要找到字符数目相同的子字符串即可，但是我们使用排序的方式来用equals比较很是繁琐，而且无法利用前面的信息。我们这里直接存储j-i的所有我们想要的字符的个数，然后如果最终达到要求，我们再逐步减去前面的字符来达到我们长度的要求。（这里仍然是使用的数量比较的方式）。</p>
 <h2 id="5-数字变换（贪心）"><a href="#5-数字变换（贪心）" class="headerlink" title="5. 数字变换（贪心）"></a>5. 数字变换（贪心）</h2><blockquote>
 <p>单调栈的本质是在有限的长度（你可以删除或者保留一定长度的情况下）来取得最大值或者最小值。</p>
 </blockquote>
 <h4 id="入门1-递增最大小于N"><a href="#入门1-递增最大小于N" class="headerlink" title="入门1 递增最大小于N"></a>入门1 递增最大小于N</h4><h6 id="738-Monotone-Increasing-Digits"><a href="#738-Monotone-Increasing-Digits" class="headerlink" title="738. Monotone Increasing Digits"></a>738. Monotone Increasing Digits</h6><p>Given a non-negative integer N, find the largest number that is less than or equal to N with monotone increasing digits.</p>
 <p>(Recall that an integer has monotone increasing digits if and only if each pair of adjacent digits x and y satisfy x &lt;= y.)</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/monotone-increasing-digits">https://leetcode-cn.com/problems/monotone-increasing-digits</a></p>
-<h6 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h6><p>我们这里需要最大，但是不大于N。那么我们需高位越大越好，那么最好的情况就是等于N。但是这里我们需要从高到低需要变大，那么我们在某一位不能满足的时候我们就比该位小于1，后面我们就可以取999了。那么我们什么时候可以取呢？——当该位后面不和自己的一位相等next比较（除非一直到最后一位都一样），如果该位大于next那么我们这一位就需要-1后面取9，如果小于等于next那么我们就可以取自己这位最大值。</p>
+<h6 id="思路-10"><a href="#思路-10" class="headerlink" title="思路"></a>思路</h6><p>我们这里需要最大，但是不大于N。那么我们需高位越大越好，那么最好的情况就是等于N。但是这里我们需要从高到低需要变大，那么我们在某一位不能满足的时候我们就比该位小于1，后面我们就可以取999了。那么我们什么时候可以取呢？——当该位后面不和自己的一位相等next比较（除非一直到最后一位都一样），如果该位大于next那么我们这一位就需要-1后面取9，如果小于等于next那么我们就可以取自己这位最大值。</p>
 <h4 id="入门2-删除k位取最小值"><a href="#入门2-删除k位取最小值" class="headerlink" title="入门2 删除k位取最小值"></a>入门2 删除k位取最小值</h4><h6 id="402-Remove-K-Digits"><a href="#402-Remove-K-Digits" class="headerlink" title="402. Remove K Digits"></a>402. Remove K Digits</h6><p>Given a non-negative integer num represented as a string, remove k digits from the number so that the new number is the smallest possible.</p>
 <p>Note:<br>The length of num is less than 10002 and will be ≥ k.<br>The given num does not contain any leading zero.</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-k-digits">https://leetcode-cn.com/problems/remove-k-digits</a></p>
-<h6 id="思路-10"><a href="#思路-10" class="headerlink" title="思路"></a>思路</h6><p>使用单调队列来处理。但是 一定要注意到三种情况：1.我们的k已经用完了，后面的不能再保持单调了；2. 我们的k到最后也没有用完，其实我们可以直接在获取结果的时候减去对应的长度；3.恰好用完，这种情况无需进一步的操作。</p>
+<h6 id="思路-11"><a href="#思路-11" class="headerlink" title="思路"></a>思路</h6><p>使用单调队列来处理。但是 一定要注意到三种情况：1.我们的k已经用完了，后面的不能再保持单调了；2. 我们的k到最后也没有用完，其实我们可以直接在获取结果的时候减去对应的长度；3.恰好用完，这种情况无需进一步的操作。</p>
 <h4 id="提升1-删除重复元素"><a href="#提升1-删除重复元素" class="headerlink" title="提升1 删除重复元素"></a>提升1 删除重复元素</h4><h6 id="316-Remove-Duplicate-Letters"><a href="#316-Remove-Duplicate-Letters" class="headerlink" title="316. Remove Duplicate Letters"></a>316. Remove Duplicate Letters</h6><p>Given a string s, remove duplicate letters so that every letter appears once and only once. You must make sure your result is the smallest in lexicographical order among all possible results.</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-duplicate-letters">https://leetcode-cn.com/problems/remove-duplicate-letters</a></p>
-<h6 id="思路-11"><a href="#思路-11" class="headerlink" title="思路"></a>思路</h6><p>我们这里需要变通一下，因为不再是删除任意个k字符，只能删除重复元素。我们同样使用单调栈来处理，只是这一次我们要判断该字符能不能删除才能进行删除操作。如果最后还剩多余的K，我们直接从前往后删除对应字符。最后需要注意的是我们不能让重复出现的字符再次放入字符串中。</p>
+<h6 id="思路-12"><a href="#思路-12" class="headerlink" title="思路"></a>思路</h6><p>我们这里需要变通一下，因为不再是删除任意个k字符，只能删除重复元素。我们同样使用单调栈来处理，只是这一次我们要判断该字符能不能删除才能进行删除操作。如果最后还剩多余的K，我们直接从前往后删除对应字符。最后需要注意的是我们不能让重复出现的字符再次放入字符串中。</p>
 <h4 id="提升2-从两个里面获取k个元素"><a href="#提升2-从两个里面获取k个元素" class="headerlink" title="提升2 从两个里面获取k个元素"></a>提升2 从两个里面获取k个元素</h4><h6 id="321-Create-Maximum-Number"><a href="#321-Create-Maximum-Number" class="headerlink" title="321. Create Maximum Number"></a>321. Create Maximum Number</h6><p>Given two arrays of length m and n with digits 0-9 representing two numbers. Create the maximum number of length k &lt;= m + n from digits of the two. The relative order of the digits from the same array must be preserved. Return an array of the k digits.</p>
 <p>Note: You should try to optimize your time and space complexity.</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/create-maximum-numbe">https://leetcode-cn.com/problems/create-maximum-numbe</a></p>
-<h6 id="思路-12"><a href="#思路-12" class="headerlink" title="思路"></a>思路</h6><p>只能暴力枚举K个数字在每个数字取x(x&lt;K)的情况。</p>
+<h6 id="思路-13"><a href="#思路-13" class="headerlink" title="思路"></a>思路</h6><p>只能暴力枚举K个数字在每个数字取x(x&lt;K)的情况。</p>
 <h2 id="6-位运算"><a href="#6-位运算" class="headerlink" title="6. 位运算"></a>6. 位运算</h2><h4 id="入门1（异或的妙用）"><a href="#入门1（异或的妙用）" class="headerlink" title="入门1（异或的妙用）"></a>入门1（异或的妙用）</h4><h6 id="389-Find-the-Difference"><a href="#389-Find-the-Difference" class="headerlink" title="389 Find the Difference"></a>389 Find the Difference</h6><p>You are given two strings s and t.</p>
 <p>String t is generated by random shuffling string s and then add one more letter at a random position.</p>
 <p>Return the letter that was added to t</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-the-difference">https://leetcode-cn.com/problems/find-the-difference</a></p>
-<h6 id="思路-13"><a href="#思路-13" class="headerlink" title="思路"></a>思路</h6><p>常规的思路就是hashmap，但是这里我们可以使用异或求出多出来字符。</p>
+<h6 id="思路-14"><a href="#思路-14" class="headerlink" title="思路"></a>思路</h6><p>常规的思路就是hashmap，但是这里我们可以使用异或求出多出来字符。</p>
 <h6 id="136-Single-Number"><a href="#136-Single-Number" class="headerlink" title="136. Single Number"></a>136. Single Number</h6><p>Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.</p>
 <p>Follow up: Could you implement a solution with a linear runtime complexity and without using extra memory?</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number">https://leetcode-cn.com/problems/single-number</a></p>
-<h6 id="思路-14"><a href="#思路-14" class="headerlink" title="思路"></a>思路</h6><p>仍然和上题一样，可以使用异或来求得最终的答案。</p>
+<h6 id="思路-15"><a href="#思路-15" class="headerlink" title="思路"></a>思路</h6><p>仍然和上题一样，可以使用异或来求得最终的答案。</p>
 <h4 id="入门2"><a href="#入门2" class="headerlink" title="入门2"></a>入门2</h4><h6 id="剑指-Offer-65-不用加减乘除做加法"><a href="#剑指-Offer-65-不用加减乘除做加法" class="headerlink" title="剑指 Offer 65. 不用加减乘除做加法"></a>剑指 Offer 65. 不用加减乘除做加法</h6><p>写一个函数，求两个整数之和，要求在函数体内不得使用 “+”、“-”、“*”、“/” 四则运算符号。</p>
-<h6 id="思路-15"><a href="#思路-15" class="headerlink" title="思路"></a>思路</h6><h4 id="提升1-（逻辑运算）"><a href="#提升1-（逻辑运算）" class="headerlink" title="提升1 （逻辑运算）"></a>提升1 （逻辑运算）</h4><h6 id="137-Single-Number-II"><a href="#137-Single-Number-II" class="headerlink" title="137. Single Number II"></a>137. Single Number II</h6><p>Given an integer array nums where every element appears three times except for one, which appears exactly once. Find the single element and return it.</p>
+<h6 id="思路-16"><a href="#思路-16" class="headerlink" title="思路"></a>思路</h6><h4 id="提升1-（逻辑运算）"><a href="#提升1-（逻辑运算）" class="headerlink" title="提升1 （逻辑运算）"></a>提升1 （逻辑运算）</h4><h6 id="137-Single-Number-II"><a href="#137-Single-Number-II" class="headerlink" title="137. Single Number II"></a>137. Single Number II</h6><p>Given an integer array nums where every element appears three times except for one, which appears exactly once. Find the single element and return it.</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number-ii">https://leetcode-cn.com/problems/single-number-ii</a></p>
-<h6 id="思路-16"><a href="#思路-16" class="headerlink" title="思路"></a>思路</h6><p>我们想着如果也有类似于异或的方式来求得这个不同的数的话，那么我们解答方式就非常简单了。但是这里并没有这种运算符号，所以我们需要自己构建一个。每个数字的每一位（二进制表示）都需要进行以下的操作。</p>
+<h6 id="思路-17"><a href="#思路-17" class="headerlink" title="思路"></a>思路</h6><p>我们想着如果也有类似于异或的方式来求得这个不同的数的话，那么我们解答方式就非常简单了。但是这里并没有这种运算符号，所以我们需要自己构建一个。每个数字的每一位（二进制表示）都需要进行以下的操作。</p>
 <p><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/%E8%87%AA%E5%8A%A8%E7%8A%B6%E6%80%81%E6%9C%BA.PNG"></p>
 <p>因为这里状态有3个，所以我们至少需要两位二进制数字才能表示所有数字。所以我需要one和two两个数字。但是我们在这里暂时只关注一位的变化（因为其他位的变化也一样）。这里需要复习一下逻辑运算的公式和定律。</p>
 <p><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/image-20201218123744730.png" alt="image-20201218123744730"></p>
@@ -328,29 +324,29 @@
 <h4 id="提升2（如何分离两个数）"><a href="#提升2（如何分离两个数）" class="headerlink" title="提升2（如何分离两个数）"></a>提升2（如何分离两个数）</h4><h6 id="260-Single-Number-III"><a href="#260-Single-Number-III" class="headerlink" title="260. Single Number III"></a>260. Single Number III</h6><p>Given an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once. You can return the answer in any order.</p>
 <p>Follow up: Your algorithm should run in linear runtime complexity. Could you implement it using only constant space complexity?</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number-iii">https://leetcode-cn.com/problems/single-number-iii</a></p>
-<h6 id="思路-17"><a href="#思路-17" class="headerlink" title="思路"></a>思路</h6><p>我们可以使用异或来得到两个只出现一次的数字。我们得到的结果是两个不同的数字的一个异或结果，我们取得x&amp;-x可以得到两个数的差值，然后我们再利用这一位得到对应其中的一个数，最后我们使用这个数异或得到另一个数字。</p>
+<h6 id="思路-18"><a href="#思路-18" class="headerlink" title="思路"></a>思路</h6><p>我们可以使用异或来得到两个只出现一次的数字。我们得到的结果是两个不同的数字的一个异或结果，我们取得x&amp;-x可以得到两个数的差值，然后我们再利用这一位得到对应其中的一个数，最后我们使用这个数异或得到另一个数字。</p>
 <h2 id="7-原地旋转跳跃"><a href="#7-原地旋转跳跃" class="headerlink" title="7. 原地旋转跳跃"></a>7. 原地旋转跳跃</h2><p>对于我们程序员来说，翻转往往比旋转来得更容易一些（而且不需要额外的空间），所以对于旋转的题目，尽量转换成翻转。有时候如果数组中如果出现了数组长度和数组内数字大小有关，我们也可以采用这种方式。</p>
 <h4 id="入门1（90度）"><a href="#入门1（90度）" class="headerlink" title="入门1（90度）"></a>入门1（90度）</h4><h6 id="Rotate-Image"><a href="#Rotate-Image" class="headerlink" title="Rotate Image"></a>Rotate Image</h6><p>You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).</p>
 <p>You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/rotate-image">https://leetcode-cn.com/problems/rotate-image</a></p>
-<h6 id="思路-18"><a href="#思路-18" class="headerlink" title="思路"></a>思路</h6><p>先以对角线为轴进行翻转，再对每一行以中点进行翻转；我们可以拓展一下，如果需要我们旋转180度的话，我们就可以以直接对着两条中线进行翻转；如果我们要旋转270度的话，我们可以对应着另一条对角线进行翻转然后对中点进行翻转。</p>
+<h6 id="思路-19"><a href="#思路-19" class="headerlink" title="思路"></a>思路</h6><p>先以对角线为轴进行翻转，再对每一行以中点进行翻转；我们可以拓展一下，如果需要我们旋转180度的话，我们就可以以直接对着两条中线进行翻转；如果我们要旋转270度的话，我们可以对应着另一条对角线进行翻转然后对中点进行翻转。</p>
 <p>小技巧：</p>
 <ol>
 <li>左上到右下的对角线交换(i,j)与(j,i)</li>
 <li>右上到左下的对角线交换(i,j)与(n-j-1, n-i-1)</li>
 </ol>
 <h4 id="入门2（前k个字符移动到末尾）"><a href="#入门2（前k个字符移动到末尾）" class="headerlink" title="入门2（前k个字符移动到末尾）"></a>入门2（前k个字符移动到末尾）</h4><h6 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h6><p>给定一个长度为 n 的一维数组，将前 k 个数移动到末尾。要求 <strong>原地</strong> 操作，该如何实现？</p>
-<h6 id="思路-19"><a href="#思路-19" class="headerlink" title="思路"></a>思路</h6><p>我们可以将前k个部分进行翻转，然后再对剩余部分进行翻转，最后再对整个数组进行翻转。</p>
+<h6 id="思路-20"><a href="#思路-20" class="headerlink" title="思路"></a>思路</h6><p>我们可以将前k个部分进行翻转，然后再对剩余部分进行翻转，最后再对整个数组进行翻转。</p>
 <h4 id="入门3-（如何查找出有重复的数字）"><a href="#入门3-（如何查找出有重复的数字）" class="headerlink" title="入门3 （如何查找出有重复的数字）"></a>入门3 （如何查找出有重复的数字）</h4><h2 id="8-约瑟夫环"><a href="#8-约瑟夫环" class="headerlink" title="8.约瑟夫环"></a>8.约瑟夫环</h2><h4 id="入门1-1"><a href="#入门1-1" class="headerlink" title="入门1"></a>入门1</h4><h6 id="剑指-Offer-62-圆圈中最后剩下的数字"><a href="#剑指-Offer-62-圆圈中最后剩下的数字" class="headerlink" title="剑指 Offer 62. 圆圈中最后剩下的数字"></a>剑指 Offer 62. 圆圈中最后剩下的数字</h6><p>0,1,,n-1这n个数字排成一个圆圈，从数字0开始，每次从这个圆圈里删除第m个数字。求出这个圆圈里剩下的最后一个数字。</p>
 <p>例如，0、1、2、3、4这5个数字组成一个圆圈，从数字0开始每次删除第3个数字，则删除的前4个数字依次是2、0、4、1，因此最后剩下的数字是3。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof">https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof</a></p>
-<h6 id="思路-20"><a href="#思路-20" class="headerlink" title="思路"></a>思路</h6><p>公式：<code>f(N,M)=(f(N−1,M)+M)%N</code></p>
+<h6 id="思路-21"><a href="#思路-21" class="headerlink" title="思路"></a>思路</h6><p>公式：<code>f(N,M)=(f(N−1,M)+M)%N</code></p>
 <p>可以很好理解；假设我们从最后一个幸存者开始反推，那么我们需要这个幸存者是最后一个，那么需要数一轮M，但是我们现在只有两个人那么我们就需要取模2；然后现在再加上一个人，那么我们的序号应该是什么样的？我们需要再数一轮M，但是现在是三个人我们就取模3；…</p>
 <h2 id="9-双指针"><a href="#9-双指针" class="headerlink" title="9. 双指针"></a>9. 双指针</h2><h4 id="入门1（链表倒数第K个数字）"><a href="#入门1（链表倒数第K个数字）" class="headerlink" title="入门1（链表倒数第K个数字）"></a>入门1（链表倒数第K个数字）</h4><h6 id="剑指-Offer-22-链表中倒数第k个节点"><a href="#剑指-Offer-22-链表中倒数第k个节点" class="headerlink" title="剑指 Offer 22. 链表中倒数第k个节点"></a>剑指 Offer 22. 链表中倒数第k个节点</h6><p>输入一个链表，输出该链表中倒数第k个节点。为了符合大多数人的习惯，本题从1开始计数，即链表的尾节点是倒数第1个节点。例如，一个链表有6个节点，从头节点开始，它们的值依次是1、2、3、4、5、6。这个链表的倒数第3个节点是值为4的节点。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof">https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof</a></p>
-<h6 id="思路-21"><a href="#思路-21" class="headerlink" title="思路"></a>思路</h6><p>第一次的思路肯定是比较普通的，先遍历链表得到链表的长度，然后再到达第(n-k)的位置即是我们所求的答案；那么我们有没有只遍历一次的方法呢？有的，那就是我们大名鼎鼎的双指针算法了。快指针先走K步，然后快慢指针一起前进，快指针到达终点。</p>
+<h6 id="思路-22"><a href="#思路-22" class="headerlink" title="思路"></a>思路</h6><p>第一次的思路肯定是比较普通的，先遍历链表得到链表的长度，然后再到达第(n-k)的位置即是我们所求的答案；那么我们有没有只遍历一次的方法呢？有的，那就是我们大名鼎鼎的双指针算法了。快指针先走K步，然后快慢指针一起前进，快指针到达终点。</p>
 <h2 id="10-数据结构设计"><a href="#10-数据结构设计" class="headerlink" title="10. 数据结构设计"></a>10. 数据结构设计</h2><h4 id="入门1-序列化和反序列化二叉树"><a href="#入门1-序列化和反序列化二叉树" class="headerlink" title="入门1 序列化和反序列化二叉树"></a>入门1 序列化和反序列化二叉树</h4><h6 id="剑指-Offer-37-序列化二叉树"><a href="#剑指-Offer-37-序列化二叉树" class="headerlink" title="剑指 Offer 37. 序列化二叉树"></a>剑指 Offer 37. 序列化二叉树</h6><p>请实现两个函数，分别用来序列化和反序列化二叉树。</p>
-<h6 id="思路-22"><a href="#思路-22" class="headerlink" title="思路"></a>思路</h6><p>直接层次遍历进行序列化和反序列化。</p>
+<h6 id="思路-23"><a href="#思路-23" class="headerlink" title="思路"></a>思路</h6><p>直接层次遍历进行序列化和反序列化。</p>
 <h2 id="11-树的遍历"><a href="#11-树的遍历" class="headerlink" title="11.树的遍历"></a>11.树的遍历</h2><h4 id="入门1-层次遍历"><a href="#入门1-层次遍历" class="headerlink" title="入门1 层次遍历"></a>入门1 层次遍历</h4><h4 id="入门2-N叉树的层次遍历"><a href="#入门2-N叉树的层次遍历" class="headerlink" title="入门2 N叉树的层次遍历"></a>入门2 N叉树的层次遍历</h4><p>我们这一题主要时要熟悉一下Iterator</p>
 <h2 id="12-高低变化"><a href="#12-高低变化" class="headerlink" title="12. 高低变化"></a>12. 高低变化</h2><blockquote>
 <p>单调栈还可以维护左右较高或者较低，然后记录两者相隔大小，并且进行计算。</p>
@@ -360,33 +356,39 @@
 <h6 id="思路2-1"><a href="#思路2-1" class="headerlink" title="思路2"></a>思路2</h6><p>竖着算，我们需要求得该柱子左右两侧的最大值，并且取较小的一个作为其补偿的高度。</p>
 <h4 id="提高2-两小夹一大"><a href="#提高2-两小夹一大" class="headerlink" title="提高2 两小夹一大"></a>提高2 两小夹一大</h4><h6 id="84-柱状图中最大的矩形"><a href="#84-柱状图中最大的矩形" class="headerlink" title="84. 柱状图中最大的矩形"></a>84. 柱状图中最大的矩形</h6><p>给定 <em>n</em> 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。</p>
 <p>求在该柱状图中，能够勾勒出来的矩形的最大面积。</p>
-<h6 id="思路-23"><a href="#思路-23" class="headerlink" title="思路"></a>思路</h6><p>这里的思路可以借鉴提高1来实现，我们计算连续的面积，就是两小夹一大。因为如果我们后面迎来的是比当前柱子更小，我们前面已经是比该柱子小的了，那么这个柱子的面积最大扩展已经到头了。</p>
+<h6 id="思路-24"><a href="#思路-24" class="headerlink" title="思路"></a>思路</h6><p>这里的思路可以借鉴提高1来实现，我们计算连续的面积，就是两小夹一大。因为如果我们后面迎来的是比当前柱子更小，我们前面已经是比该柱子小的了，那么这个柱子的面积最大扩展已经到头了。</p>
 <h4 id="提高3"><a href="#提高3" class="headerlink" title="提高3"></a>提高3</h4><h6 id="135-分发糖果"><a href="#135-分发糖果" class="headerlink" title="135. 分发糖果"></a>135. 分发糖果</h6><p>老师想给孩子们分发糖果，有 N 个孩子站成了一条直线，老师会根据每个孩子的表现，预先给他们评分。</p>
 <p>你需要按照以下要求，帮助老师给这些孩子分发糖果：</p>
 <p>每个孩子至少分配到 1 个糖果。<br>相邻的孩子中，评分高的孩子必须获得更多的糖果。<br>那么这样下来，老师至少需要准备多少颗糖果呢？</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/candy">https://leetcode-cn.com/problems/candy</a></p>
-<h6 id="思路-24"><a href="#思路-24" class="headerlink" title="思路"></a>思路</h6><p>因为要求高分必须比周围低分得到的糖果数要多，那么我们其实是求得从左到右和从右到左的连续递增较大的一个。</p>
+<h6 id="思路-25"><a href="#思路-25" class="headerlink" title="思路"></a>思路</h6><p>因为要求高分必须比周围低分得到的糖果数要多，那么我们其实是求得从左到右和从右到左的连续递增较大的一个。</p>
 <h4 id="终极1"><a href="#终极1" class="headerlink" title="终极1"></a>终极1</h4><h6 id="407-接雨水-II"><a href="#407-接雨水-II" class="headerlink" title="407. 接雨水 II"></a>407. 接雨水 II</h6><p>给你一个 <code>m x n</code> 的矩阵，其中的值均为非负整数，代表二维高度图每个单元的高度，请计算图中形状最多能接多少体积的雨水。</p>
-<h6 id="思路-25"><a href="#思路-25" class="headerlink" title="思路"></a>思路</h6><p>这里的思路是将整个模块分成内外，所以我们先将外围一圈全部添加进来（使用优先队列）；然后再获取外部最小值，探索其周围的柱子，如果比自己低那么将高度差添加到ans（然后再次添加到队列，高度取较大的），比自己高，那么就不会添加雨水，只改变添加的高度；我们需要一个st数组来保存已被遍历的柱子。</p>
+<h6 id="思路-26"><a href="#思路-26" class="headerlink" title="思路"></a>思路</h6><p>这里的思路是将整个模块分成内外，所以我们先将外围一圈全部添加进来（使用优先队列）；然后再获取外部最小值，探索其周围的柱子，如果比自己低那么将高度差添加到ans（然后再次添加到队列，高度取较大的），比自己高，那么就不会添加雨水，只改变添加的高度；我们需要一个st数组来保存已被遍历的柱子。</p>
 <h4 id="终极2"><a href="#终极2" class="headerlink" title="终极2"></a>终极2</h4><h6 id="85-最大矩形"><a href="#85-最大矩形" class="headerlink" title="85. 最大矩形"></a>85. 最大矩形</h6><p>给定一个仅包含 <code>0</code> 和 <code>1</code> 、大小为 <code>rows x cols</code> 的二维二进制矩阵，找出只包含 <code>1</code> 的最大矩形，并返回其面积。</p>
-<h6 id="思路-26"><a href="#思路-26" class="headerlink" title="思路"></a>思路</h6><p>我们可以累积一列的高度，但是对于中间有0的列就会清空为0.得到这样一个row数组，我们可以将其转换为最大连续面积问题。</p>
+<h6 id="思路-27"><a href="#思路-27" class="headerlink" title="思路"></a>思路</h6><p>我们可以累积一列的高度，但是对于中间有0的列就会清空为0.得到这样一个row数组，我们可以将其转换为最大连续面积问题。</p>
 <h2 id="不一样的DP"><a href="#不一样的DP" class="headerlink" title="不一样的DP"></a>不一样的DP</h2><h4 id="入门1-连续方格"><a href="#入门1-连续方格" class="headerlink" title="入门1 连续方格"></a>入门1 连续方格</h4><p>这题让我想起了状态DP，但是又和状态DP有区别，状态DP一般求的是方案数。这个是求某一个的最大连续格子。而且状态DP是指数级别的，这题明显不合适。</p>
 <h6 id="221-最大正方形"><a href="#221-最大正方形" class="headerlink" title="221. 最大正方形"></a>221. 最大正方形</h6><p>在一个由 <code>&#39;0&#39;</code> 和 <code>&#39;1&#39;</code> 组成的二维矩阵内，找到只包含 <code>&#39;1&#39;</code> 的最大正方形，并返回其面积。</p>
-<h6 id="思路-27"><a href="#思路-27" class="headerlink" title="思路"></a>思路</h6><p>求周围的最小延伸边长，然后DP解决。</p>
+<h6 id="思路-28"><a href="#思路-28" class="headerlink" title="思路"></a>思路</h6><p>求周围的最小延伸边长，然后DP解决。</p>
 <h2 id="需要一点数学"><a href="#需要一点数学" class="headerlink" title="需要一点数学"></a>需要一点数学</h2><h4 id="补齐连续空间"><a href="#补齐连续空间" class="headerlink" title="补齐连续空间"></a>补齐连续空间</h4><h6 id="330-按要求补齐数组"><a href="#330-按要求补齐数组" class="headerlink" title="330. 按要求补齐数组"></a>330. 按要求补齐数组</h6><p>给定一个已排序的正整数数组 nums，和一个正整数 n 。从 [1, n] 区间内选取任意个数字补充到 nums 中，使得 [1, n] 区间内的任何数字都可以用 nums 中某几个数字的和来表示。请输出满足上述要求的最少需要补充的数字个数。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/patching-array">https://leetcode-cn.com/problems/patching-array</a></p>
-<h6 id="思路-28"><a href="#思路-28" class="headerlink" title="思路"></a>思路</h6><p>补齐数组特点：</p>
+<h6 id="思路-29"><a href="#思路-29" class="headerlink" title="思路"></a>思路</h6><p>补齐数组特点：</p>
 <ul>
-<li>假设数组 arrarr 添加一个元素即可覆盖 [1, n)[1,n) 内所有数字，那么添加的数字 mm 一定满足m &lt;= n。</li>
-<li>假设数组 arrarr 可以覆盖 [1, n)[1,n) 的所有数字，则给 arrarr 内加元素 mm ：<br>  若m &lt;= n，新数组可以覆盖[1, m + n) = [1, n) ∪ [m, m + n)内所有数字；</li>
+<li>假设数组 arr 添加一个元素即可覆盖 [1, n)内所有数字，那么添加的数字 m 一定满足m &lt;= n。</li>
+<li>假设数组 arr 可以覆盖 [1, n) 的所有数字，则给 arr 内加元素 m ：<br>  若m &lt;= n，新数组可以覆盖[1, m + n) = [1, n) ∪ [m, m + n)内所有数字；</li>
 </ul>
 <h4 id="1-n有多少个1"><a href="#1-n有多少个1" class="headerlink" title="1-n有多少个1"></a>1-n有多少个1</h4><h6 id="剑指-Offer-43-1～n-整数中-1-出现的次数"><a href="#剑指-Offer-43-1～n-整数中-1-出现的次数" class="headerlink" title="剑指 Offer 43. 1～n 整数中 1 出现的次数"></a>剑指 Offer 43. 1～n 整数中 1 出现的次数</h6><p>输入一个整数 n ，求1～n这n个整数的十进制表示中1出现的次数。</p>
 <p>例如，输入12，1～12这些整数中包含1 的数字有1、10、11和12，1一共出现了5次。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof">https://leetcode-cn.com/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof</a></p>
-<h6 id="思路-29"><a href="#思路-29" class="headerlink" title="思路"></a>思路</h6><p>像这种9次方的数据量的时候，我们可以考虑将数字拆为每一位计算。</p>
+<h6 id="思路-30"><a href="#思路-30" class="headerlink" title="思路"></a>思路</h6><p>像这种9次方的数据量的时候，我们可以考虑将数字拆为每一位计算。</p>
 <h4 id="如何使得乘积最大"><a href="#如何使得乘积最大" class="headerlink" title="如何使得乘积最大"></a>如何使得乘积最大</h4><h6 id="剑指-Offer-14-I-剪绳子"><a href="#剑指-Offer-14-I-剪绳子" class="headerlink" title="剑指 Offer 14- I. 剪绳子"></a>剑指 Offer 14- I. 剪绳子</h6><p>给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n&gt;1并且m&gt;1），每段绳子的长度记为 k[0],k[1]…k[m-1] 。请问 k[0]<em>k[1]</em>…*k[m-1] 可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/jian-sheng-zi-lcof">https://leetcode-cn.com/problems/jian-sheng-zi-lcof</a></p>
-<h6 id="思路-30"><a href="#思路-30" class="headerlink" title="思路"></a>思路</h6><p>看题目的时候觉得就是使用DP，而且n的大小刚好比较小，使用dp绰绰有余，但是题解中看到了数学解决方法觉得很有意思这里参考：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/integer-break/solution/343-zheng-shu-chai-fen-tan-xin-by-jyd/%E3%80%82%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95%E5%9C%A8%E5%B8%B8%E6%95%B0%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%86%85%E5%8D%B3%E5%8F%AF%E3%80%82">https://leetcode-cn.com/problems/integer-break/solution/343-zheng-shu-chai-fen-tan-xin-by-jyd/。数学方法在常数时间复杂度内即可。</a></p>
+<h6 id="思路-31"><a href="#思路-31" class="headerlink" title="思路"></a>思路</h6><p>看题目的时候觉得就是使用DP，而且n的大小刚好比较小，使用dp绰绰有余，但是题解中看到了数学解决方法觉得很有意思这里参考：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/integer-break/solution/343-zheng-shu-chai-fen-tan-xin-by-jyd/%E3%80%82%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95%E5%9C%A8%E5%B8%B8%E6%95%B0%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%86%85%E5%8D%B3%E5%8F%AF%E3%80%82">https://leetcode-cn.com/problems/integer-break/solution/343-zheng-shu-chai-fen-tan-xin-by-jyd/。数学方法在常数时间复杂度内即可。</a></p>
+<h4 id="异或的小秘密"><a href="#异或的小秘密" class="headerlink" title="异或的小秘密"></a>异或的小秘密</h4><h6 id="5647-解码异或后的排列-双周赛44-t3"><a href="#5647-解码异或后的排列-双周赛44-t3" class="headerlink" title="5647. 解码异或后的排列 双周赛44 t3"></a>5647. 解码异或后的排列 双周赛44 t3</h6><p>给你一个整数数组 perm ，它是前 n 个正整数的排列，且 n 是个 奇数 。</p>
+<p>它被加密成另一个长度为 n - 1 的整数数组 encoded ，满足 encoded[i] = perm[i] XOR perm[i + 1] 。比方说，如果 perm = [1,3,2] ，那么 encoded = [2,1] 。</p>
+<p>给你 encoded 数组，请你返回原始数组 perm 。题目保证答案存在且唯一。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/decode-xored-permutation">https://leetcode-cn.com/problems/decode-xored-permutation</a></p>
+<h6 id="思路-32"><a href="#思路-32" class="headerlink" title="思路"></a>思路</h6><p>＞︿＜啊啊啊为什么双周赛总是只能做2道题，周赛只能3道，啥时候能突破瓶颈。┭┮﹏┭┮</p>
+<p>我们将奇数数位的异或值进行异或（从1开始），我们可以得到除了第一个数字的异或结果，然后我们将1-n异或结果和其异或得到第一个数字。最后的工作只有递推了。</p>
 <h2 id="数据结构设计"><a href="#数据结构设计" class="headerlink" title="数据结构设计"></a>数据结构设计</h2><h4 id="LRU-Least-Recently-Used"><a href="#LRU-Least-Recently-Used" class="headerlink" title="LRU(Least Recently Used)"></a>LRU(Least Recently Used)</h4><h6 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h6><ol>
 <li>一个最大容量，get、put、size。</li>
 <li>保证所有的操作都是O(1)复杂度</li>
@@ -399,37 +401,48 @@
 <li>删除，删除队头元素。</li>
 <li>更新，通过hashmap找到对应元素更新val，然后将该元素放置队尾。</li>
 </ol>
-<h4 id="LFU"><a href="#LFU" class="headerlink" title="LFU"></a>LFU</h4><h2 id="逆向思考"><a href="#逆向思考" class="headerlink" title="逆向思考"></a>逆向思考</h2><h4 id="并查集逆向合并"><a href="#并查集逆向合并" class="headerlink" title="并查集逆向合并"></a>并查集逆向合并</h4><h6 id="803-打砖块"><a href="#803-打砖块" class="headerlink" title="803 打砖块"></a>803 打砖块</h6><p>有一个 m x n 的二元网格，其中 1 表示砖块，0 表示空白。砖块 稳定（不会掉落）的前提是：</p>
+<h4 id="LFU-Least-Frequently-Used"><a href="#LFU-Least-Frequently-Used" class="headerlink" title="LFU(Least Frequently Used)"></a>LFU(Least Frequently Used)</h4><p>这个算法设计和上面的不同在于我们需要保存一下每个节点被使用的次数。</p>
+<h6 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h6><ol>
+<li>删除时如何快速获得最小频率的节点，而且相同频率的节点要按照时间顺序排序。</li>
+<li>如何快速找到对应节点。</li>
+</ol>
+<h6 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h6><ol>
+<li>一个hashmap存储所有点key-node值——这样可以快速获取对应点</li>
+<li>一个hashmap存储频率-list值——这样可以快速获取频率最小的链表，然后再删除头节点即可。</li>
+<li>一个min和一个capacity来设置这个结构的大小。</li>
+</ol>
+<p><img src="https://pic.leetcode-cn.com/9e1fd010642e306d4616e6580d0ac75ee4fd1ecca7a3351ae1be415c35d10f5a-01.png" alt="01.png"></p>
+<h2 id="逆向思考"><a href="#逆向思考" class="headerlink" title="逆向思考"></a>逆向思考</h2><h4 id="并查集逆向合并"><a href="#并查集逆向合并" class="headerlink" title="并查集逆向合并"></a>并查集逆向合并</h4><h6 id="803-打砖块"><a href="#803-打砖块" class="headerlink" title="803 打砖块"></a>803 打砖块</h6><p>有一个 m x n 的二元网格，其中 1 表示砖块，0 表示空白。砖块 稳定（不会掉落）的前提是：</p>
 <p>一块砖直接连接到网格的顶部，或者<br>至少有一块相邻（4 个方向之一）砖块 稳定 不会掉落时<br>给你一个数组 hits ，这是需要依次消除砖块的位置。每当消除 hits[i] = (rowi, coli) 位置上的砖块时，对应位置的砖块（若存在）会消失，然后其他的砖块可能因为这一消除操作而掉落。一旦砖块掉落，它会立即从网格中消失（即，它不会落在其他稳定的砖块上）。</p>
 <p>返回一个数组 result ，其中 result[i] 表示第 i 次消除操作对应掉落的砖块数目。</p>
 <p>注意，消除可能指向是没有砖块的空白位置，如果发生这种情况，则没有砖块掉落。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/bricks-falling-when-hit">https://leetcode-cn.com/problems/bricks-falling-when-hit</a></p>
-<h6 id="思路-31"><a href="#思路-31" class="headerlink" title="思路"></a>思路</h6><p>当初思路就是判断是不是卡点（也就是该点将连通块一分为二的点，且分开后两个连通块，其中一块不能连通到顶部），但是这样动态维护始终没有想到比较好的方法。</p>
+<h6 id="思路-33"><a href="#思路-33" class="headerlink" title="思路"></a>思路</h6><p>当初思路就是判断是不是卡点（也就是该点将连通块一分为二的点，且分开后两个连通块，其中一块不能连通到顶部），但是这样动态维护始终没有想到比较好的方法。</p>
 <p>看了题解之后，恍然大悟，并查集本身是将两个点合并在一起，那么这道题的逆向不就是合并吗。当我们将一个不稳定的连通块合并后变得稳定，那么该连通块的数量就是我们消除的额外砖块。</p>
 <h4 id="DP无后效性"><a href="#DP无后效性" class="headerlink" title="DP无后效性"></a>DP无后效性</h4><h6 id="174-地下城游戏"><a href="#174-地下城游戏" class="headerlink" title="174. 地下城游戏"></a>174. 地下城游戏</h6><p>一些恶魔抓住了公主（P）并将她关在了地下城的右下角。地下城是由 M x N 个房间组成的二维网格。我们英勇的骑士（K）最初被安置在左上角的房间里，他必须穿过地下城并通过对抗恶魔来拯救公主。</p>
 <p>骑士的初始健康点数为一个正整数。如果他的健康点数在某一时刻降至 0 或以下，他会立即死亡。</p>
 <p>有些房间由恶魔守卫，因此骑士在进入这些房间时会失去健康点数（若房间里的值为负整数，则表示骑士将损失健康点数）；其他房间要么是空的（房间里的值为 0），要么包含增加骑士健康点数的魔法球（若房间里的值为正整数，则表示骑士将增加健康点数）。</p>
 <p>为了尽快到达公主，骑士决定每次只向右或向下移动一步。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/dungeon-game">https://leetcode-cn.com/problems/dungeon-game</a></p>
-<h6 id="思路-32"><a href="#思路-32" class="headerlink" title="思路"></a>思路</h6><p>对于这个东西，我们需要知道为什么我们正序来更新dp数组会失败，因为累计和会影响该路径后半部分的最小值。这样我们就无法使用DP了。</p>
+<h6 id="思路-34"><a href="#思路-34" class="headerlink" title="思路"></a>思路</h6><p>对于这个东西，我们需要知道为什么我们正序来更新dp数组会失败，因为累计和会影响该路径后半部分的最小值。这样我们就无法使用DP了。</p>
 <p>逆序为什么可以呢？因为逆序之后我们我们累计和无法影响路径前半部分最小值的变化。</p>
 <h2 id="并查集的综和应用"><a href="#并查集的综和应用" class="headerlink" title="并查集的综和应用"></a>并查集的综和应用</h2><h4 id="移除同一连通块的方块"><a href="#移除同一连通块的方块" class="headerlink" title="移除同一连通块的方块"></a>移除同一连通块的方块</h4><h6 id="947-移除最多的同行或同列石头"><a href="#947-移除最多的同行或同列石头" class="headerlink" title="947. 移除最多的同行或同列石头"></a>947. 移除最多的同行或同列石头</h6><p>n 块石头放置在二维平面中的一些整数坐标点上。每个坐标点上最多只能有一块石头。</p>
 <p>如果一块石头的 同行或者同列 上有其他石头存在，那么就可以移除这块石头。</p>
 <p>给你一个长度为 n 的数组 stones ，其中 stones[i] = [xi, yi] 表示第 i 块石头的位置，返回 可以移除的石子 的最大数量。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/most-stones-removed-with-same-row-or-column">https://leetcode-cn.com/problems/most-stones-removed-with-same-row-or-column</a></p>
-<h6 id="思路-33"><a href="#思路-33" class="headerlink" title="思路"></a>思路</h6><p>理解题目意思比自己吭哧吭哧瞎写好很多，这个意思就是连通块最后只剩下一个，那么我们可以统计一下连通块的个数，然后用总个数减去连通块的个数。</p>
+<h6 id="思路-35"><a href="#思路-35" class="headerlink" title="思路"></a>思路</h6><p>理解题目意思比自己吭哧吭哧瞎写好很多，这个意思就是连通块最后只剩下一个，那么我们可以统计一下连通块的个数，然后用总个数减去连通块的个数。</p>
 <p>那么如何改进并查集来实现连通块的统计呢？我们可以使用hashmap替代传统的数组，然后我们在root的时候检测一下是否有对应的键值对，没有的话需要cnt++，在union时cnt–。（因为hashmap没有提前初始化，在root的时候才会进行初始化）。</p>
 <h4 id="存在多余的边（变成树）"><a href="#存在多余的边（变成树）" class="headerlink" title="存在多余的边（变成树）"></a>存在多余的边（变成树）</h4><h6 id="684-冗余连接"><a href="#684-冗余连接" class="headerlink" title="684. 冗余连接"></a>684. 冗余连接</h6><p>在本问题中, 树指的是一个连通且无环的无向图。</p>
 <p>输入一个图，该图由一个有着N个节点 (节点值不重复1, 2, …, N) 的树及一条附加的边构成。附加的边的两个顶点包含在1到N中间，这条附加的边不属于树中已存在的边。</p>
 <p>结果图是一个以边组成的二维数组。每一个边的元素是一对[u, v] ，满足 u &lt; v，表示连接顶点u 和v的无向图的边。</p>
 <p>返回一条可以删去的边，使得结果图是一个有着N个节点的树。如果有多个答案，则返回二维数组中最后出现的边。答案边 [u, v] 应满足相同的格式 u &lt; v。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/redundant-connection">https://leetcode-cn.com/problems/redundant-connection</a></p>
-<h6 id="思路-34"><a href="#思路-34" class="headerlink" title="思路"></a>思路</h6><p>树上多出了一条边，那么一定会形成一个三个点及三点以上的环，那么我们使用并查集，在发现添加一条边之前两个点就在一个连通块里面了，那么这条边是可以删除的。</p>
+<h6 id="思路-36"><a href="#思路-36" class="headerlink" title="思路"></a>思路</h6><p>树上多出了一条边，那么一定会形成一个三个点及三点以上的环，那么我们使用并查集，在发现添加一条边之前两个点就在一个连通块里面了，那么这条边是可以删除的。</p>
 <h2 id="拓扑"><a href="#拓扑" class="headerlink" title="拓扑"></a>拓扑</h2><h4 id="分组拓扑"><a href="#分组拓扑" class="headerlink" title="分组拓扑"></a>分组拓扑</h4><h6 id="203-项目管理"><a href="#203-项目管理" class="headerlink" title="203. 项目管理"></a>203. 项目管理</h6><p>有 n 个项目，每个项目或者不属于任何小组，或者属于 m 个小组之一。group[i] 表示第 i 个小组所属的小组，如果第 i 个项目不属于任何小组，则 group[i] 等于 -1。项目和小组都是从零开始编号的。可能存在小组不负责任何项目，即没有任何项目属于这个小组。</p>
 <p>请你帮忙按要求安排这些项目的进度，并返回排序后的项目列表：</p>
 <p>同一小组的项目，排序后在列表中彼此相邻。<br>项目之间存在一定的依赖关系，我们用一个列表 beforeItems 来表示，其中 beforeItems[i] 表示在进行第 i 个项目前（位于第 i 个项目左侧）应该完成的所有项目。<br>如果存在多个解决方案，只需要返回其中任意一个即可。如果没有合适的解决方案，就请返回一个 空列表 。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sort-items-by-groups-respecting-dependencies">https://leetcode-cn.com/problems/sort-items-by-groups-respecting-dependencies</a></p>
-<h6 id="思路-35"><a href="#思路-35" class="headerlink" title="思路"></a>思路</h6><p>在xxx之前或者说在xxx之后，我们可以迅速联想到拓扑序。这里有一个难点就是需要分组，每组需要连续，那么如何处理这样的拓扑序呢？其实我们可以进行组内外两次拓扑序，首先我们检测组外拓扑序是否成功，然后再进行组内拓扑序连接。</p>
+<h6 id="思路-37"><a href="#思路-37" class="headerlink" title="思路"></a>思路</h6><p>在xxx之前或者说在xxx之后，我们可以迅速联想到拓扑序。这里有一个难点就是需要分组，每组需要连续，那么如何处理这样的拓扑序呢？其实我们可以进行组内外两次拓扑序，首先我们检测组外拓扑序是否成功，然后再进行组内拓扑序连接。</p>
 <h2 id="bfprt"><a href="#bfprt" class="headerlink" title="bfprt"></a>bfprt</h2><pre><code class="java"></code></pre>
 
         </div>
@@ -497,7 +510,7 @@
 </footer>
 
     </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/nietzche.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
-<div id="player" style="z-index: 99999;">
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/nico.model.json"},"display":{"position":"right","width":250,"height":500,"hOffset":0,"vOffset":-20},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+<div id="player" style="z-index: 99999; float:right;">
 </div>
 </html>
