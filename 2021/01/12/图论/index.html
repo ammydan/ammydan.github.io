@@ -222,6 +222,18 @@
 <li>预处理任意两点间的边权最大值dist</li>
 <li>依次枚举所有非树边求min(sum+w-distab)，满足w&gt;distab。</li>
 </ol>
+<h4 id="求负环得常用得方法，基于SPFA"><a href="#求负环得常用得方法，基于SPFA" class="headerlink" title="求负环得常用得方法，基于SPFA"></a>求负环得常用得方法，基于SPFA</h4><ol>
+<li>统计每个点入队的次数，如果某个点入队n次，则说明存在负环。</li>
+<li>统计当前每个点的最短路种所包含的边数，如果某点的最短路所包含的边数大于等于n，则也说明存在环。</li>
+</ol>
+<p>第二个方法优于第一个方法，比如下面的例子。</p>
+<p><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/image-20210125195933703.png" alt="image-20210125195933703"></p>
+<p>但是对于第一个方法有一个trick，当所有点的入队次数超过2n时，我们就认为图中存在负环。</p>
+<h6 id="01分数规划"><a href="#01分数规划" class="headerlink" title="01分数规划"></a>01分数规划</h6><ol>
+<li>先二分得到一个定值</li>
+<li>求得不等式</li>
+<li>判断</li>
+</ol>
 
         </div>
 

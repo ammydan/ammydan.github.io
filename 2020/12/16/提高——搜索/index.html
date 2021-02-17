@@ -231,6 +231,7 @@ for(int i=0;i&lt;4;i++)&#123;
 <li>第K短路：我们可以使用堆优化版的最小距离，然后弹出到终点t的第k次为k小距离。</li>
 </ol>
 <p>注意：八数码问题要有解，必须逆序对为偶数。</p>
+<h6 id="IDE"><a href="#IDE" class="headerlink" title="IDE*"></a>IDE*</h6><p>这个方法适合搜索环境很深，但是最终答案很浅。</p>
 <h2 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><h4 id="基于连通性"><a href="#基于连通性" class="headerlink" title="基于连通性"></a>基于连通性</h4><p><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/image-20201225200655455.png" alt="image-20201225200655455"></p>
 <p>这种连通性的模型，一般也能使用并查集来做，题目也比较简单。</p>
 <h4 id="决策树模型"><a href="#决策树模型" class="headerlink" title="决策树模型"></a>决策树模型</h4><p>这种模型需要进行状态恢复，因为我们是通过演变每种选择带来的结果来计算最优解/可行解的。一般这种情况要么是全局变量要么是boolean返回值。</p>
@@ -243,7 +244,7 @@ for(int i=0;i&lt;4;i++)&#123;
 <h6 id="1-优化搜索顺序"><a href="#1-优化搜索顺序" class="headerlink" title="1. 优化搜索顺序"></a>1. 优化搜索顺序</h6><p>大部分情况下，我们应该优先搜索分支较少的节点。（特别是我们在剪枝的情况下）先大后小；</p>
 <p><img src="https://dpassests.oss-cn-shanghai.aliyuncs.com/image-20201226183217096.png" alt="image-20201226183217096"></p>
 <p>是否可以使用完所有。</p>
-<h6 id="2-排除冗余等效"><a href="#2-排除冗余等效" class="headerlink" title="2. 排除冗余等效"></a>2. 排除冗余等效</h6><p>比如顺序并不重要，我们就将其变换成组合遍历。典型的一种就是分组最少的情况。（我们保持一定顺序搜索）</p>
+<h6 id="2-排除冗余等效"><a href="#2-排除冗余等效" class="headerlink" title="2. 排除冗余等效"></a>2. 排除冗余等效</h6><p>比如顺序并不重要，我们就将其变换成组合遍历。典型的一种就是分组最少的情况。（我们保持一定顺序搜索）；我们还可以开出一个boolean数组来记录哪个数已经被枚举过了。</p>
 <h6 id="3-可行性剪枝"><a href="#3-可行性剪枝" class="headerlink" title="3. 可行性剪枝"></a>3. 可行性剪枝</h6><p>我们一般是查看题目要求，然后我们根据需要进行可行性排除。（dfs头部）</p>
 <h6 id="4-最优性剪枝"><a href="#4-最优性剪枝" class="headerlink" title="4. 最优性剪枝"></a>4. 最优性剪枝</h6><p>这里一般是大于我们已经得到的较优解，那么我们直接提前退出。（dfs头部）</p>
 <h6 id="6-记忆化搜索（DP）"><a href="#6-记忆化搜索（DP）" class="headerlink" title="6. 记忆化搜索（DP）"></a>6. 记忆化搜索（DP）</h6><h4 id="剪枝实例"><a href="#剪枝实例" class="headerlink" title="剪枝实例"></a>剪枝实例</h4><h6 id="acwing165小猫爬山——最小花费装载"><a href="#acwing165小猫爬山——最小花费装载" class="headerlink" title="acwing165小猫爬山——最小花费装载"></a>acwing165小猫爬山——最小花费装载</h6><p>翰翰和达达饲养了N只小猫，这天，小猫们要去爬山。</p>
